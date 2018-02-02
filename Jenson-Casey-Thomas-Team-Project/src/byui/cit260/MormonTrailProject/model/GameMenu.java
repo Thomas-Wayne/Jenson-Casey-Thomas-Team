@@ -74,11 +74,12 @@ public class GameMenu implements Serializable{
         hash = 37 * hash + Objects.hashCode(this.player);
         return hash;
     }
-     @Override
+
+    @Override
     public String toString() {
-        String pace = null;
-        return "GameMenu{" + "daysOnTrail=" + daysOnTrail + ", pace=" + pace + ", milesTraveled=" + milesTraveled + ", currentMoneyBalance=" + currentMoneyBalance + '}';
+        return "GameMenu{" + "daysOnTrail=" + daysOnTrail + ", pace=" + pace + ", milesTraveled=" + milesTraveled + ", currentMoneyBalance=" + currentMoneyBalance + ", player=" + player + '}';
     }
+     
 
     @Override
     public boolean equals(Object obj) {

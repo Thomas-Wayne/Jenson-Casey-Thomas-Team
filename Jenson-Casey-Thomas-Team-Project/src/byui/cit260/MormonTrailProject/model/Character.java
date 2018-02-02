@@ -13,12 +13,12 @@ import java.util.Objects;
  */
 public class Character implements Serializable{
     
-    public String Name;
-    public int Money;
-    public int HuntingSkill;
-    public int GatheringSkill;
-    public int DailyStaminaDraw;
-    public int CurrentHealth;
+    public String name;
+    public int money;
+    public int huntingSkill;
+    public int gatheringSkill;
+    public int dailyStaminaDraw;
+    public int currentHealth;
     private ArrayList<GameMenu> games = new ArrayList<GameMenu>(); 
 
     
@@ -27,51 +27,51 @@ public class Character implements Serializable{
     }
     
     public String getName() {
-        return Name;
+        return name;
     }
 
-    public void setName(String Name) {
-        this.Name = Name;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public int getMoney() {
-        return Money;
+        return money;
     }
 
-    public void setMoney(int Money) {
-        this.Money = Money;
+    public void setMoney(int money) {
+        this.money = money;
     }
 
     public int getHuntingSkill() {
-        return HuntingSkill;
+        return huntingSkill;
     }
 
-    public void setHuntingSkill(int HuntingSkill) {
-        this.HuntingSkill = HuntingSkill;
+    public void setHuntingSkill(int huntingSkill) {
+        this.huntingSkill = huntingSkill;
     }
 
     public int getGatheringSkill() {
-        return GatheringSkill;
+        return gatheringSkill;
     }
 
-    public void setGatheringSkill(int GatheringSkill) {
-        this.GatheringSkill = GatheringSkill;
+    public void setGatheringSkill(int gatheringSkill) {
+        this.gatheringSkill = gatheringSkill;
     }
 
     public int getDailyStaminaDraw() {
-        return DailyStaminaDraw;
+        return dailyStaminaDraw;
     }
 
-    public void setDailyStaminaDraw(int DailyStaminaDraw) {
-        this.DailyStaminaDraw = DailyStaminaDraw;
+    public void setDailyStaminaDraw(int dailyStaminaDraw) {
+        this.dailyStaminaDraw = dailyStaminaDraw;
     }
 
     public int getCurrentHealth() {
-        return CurrentHealth;
+        return currentHealth;
     }
 
-    public void setCurrentHealth(int CurrentHealth) {
-        this.CurrentHealth = CurrentHealth;
+    public void setCurrentHealth(int currentHealth) {
+        this.currentHealth = currentHealth;
     }
     public ArrayList<GameMenu> getGames() {
         return games;
@@ -84,18 +84,18 @@ public class Character implements Serializable{
     @Override
     public int hashCode() {
         int hash = 7;
-        hash = 19 * hash + Objects.hashCode(this.Name);
-        hash = 19 * hash + this.Money;
-        hash = 19 * hash + this.HuntingSkill;
-        hash = 19 * hash + this.GatheringSkill;
-        hash = 19 * hash + this.DailyStaminaDraw;
-        hash = 19 * hash + this.CurrentHealth;
+        hash = 19 * hash + Objects.hashCode(this.name);
+        hash = 19 * hash + this.money;
+        hash = 19 * hash + this.huntingSkill;
+        hash = 19 * hash + this.gatheringSkill;
+        hash = 19 * hash + this.dailyStaminaDraw;
+        hash = 19 * hash + this.currentHealth;
         return hash;
     }
 
     @Override
     public String toString() {
-        return "Character{" + "Name=" + Name + ", Money=" + Money + ", HuntingSkill=" + HuntingSkill + ", GatheringSkill=" + GatheringSkill + ", DailyStaminaDraw=" + DailyStaminaDraw + ", CurrentHealth=" + CurrentHealth + '}';
+        return "Character{" + "name=" + name + ", money=" + money + ", huntingSkill=" + huntingSkill + ", gatheringSkill=" + gatheringSkill + ", dailyStaminaDraw=" + dailyStaminaDraw + ", currentHealth=" + currentHealth + '}';
     }
     
     @Override
@@ -110,22 +110,22 @@ public class Character implements Serializable{
             return false;
         }
         final Character other = (Character) obj;
-        if (this.Money != other.Money) {
+        if (this.money != other.money) {
             return false;
         }
-        if (this.HuntingSkill != other.HuntingSkill) {
+        if (this.huntingSkill != other.huntingSkill) {
             return false;
         }
-        if (this.GatheringSkill != other.GatheringSkill) {
+        if (this.gatheringSkill != other.gatheringSkill) {
             return false;
         }
-        if (this.DailyStaminaDraw != other.DailyStaminaDraw) {
+        if (this.dailyStaminaDraw != other.dailyStaminaDraw) {
             return false;
         }
-        if (this.CurrentHealth != other.CurrentHealth) {
+        if (this.currentHealth != other.currentHealth) {
             return false;
         }
-        if (!Objects.equals(this.Name, other.Name)) {
+        if (!Objects.equals(this.name, other.name)) {
             return false;
         }
         return true;
