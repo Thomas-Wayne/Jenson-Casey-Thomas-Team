@@ -5,6 +5,7 @@
  */
 package jenson.casey.thomas.team.project.CIT260;
 
+import byui.cit260.MormonTrailProject.model.Game;
 import byui.cit260.MormonTrailProject.model.Player;
 
 /**
@@ -34,6 +35,30 @@ public class BYUICIT260MormonTrailProject {
         int playerOneCurrentHealth = playerOne.getCurrentHealth();
         
         System.out.println(playerOne.toString());
+        
+        
+        Game newGame = new Game();
+        
+        newGame.setDaysOnTrail(10);
+        newGame.setPace("Slow speed");
+        newGame.setMilesTraveled(120);
+        newGame.setCurrentMoneyBalance(700);
+        newGame.setPlayer(playerOne);
+        
+        int newGameDaysOnTrail = newGame.getDaysOnTrail();
+        String newGamePace = newGame.getPace();
+        int newGameMilesTraveled = newGame.getMilesTraveled();
+        int newGameCurrentMoneyBalance = newGame.getCurrentMoneyBalance();
+        Player newGamePlayer = newGame.getPlayer();
+        
+        System.out.println(newGame.toString());
+        
+        
+        
+        
+        
+        
+        
         
         
     }
