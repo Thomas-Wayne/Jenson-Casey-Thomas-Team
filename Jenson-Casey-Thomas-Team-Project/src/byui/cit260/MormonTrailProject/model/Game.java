@@ -11,17 +11,15 @@ import java.util.Objects;
  *
  * @author Jenson, Casey, Thomas Team
  */
-public class GameMenu implements Serializable{
+public class Game implements Serializable{
     
-    public int daysOnTrail;
-    public String pace;
-    public int milesTraveled;
-    public int currentMoneyBalance;
-    private Character player;
+    private int daysOnTrail;
+    private String pace;
+    private int milesTraveled;
+    private int currentMoneyBalance;
+    private Player player;
 
-
-
-    public GameMenu() {
+    public Game() {
     }
 
     public int getDaysOnTrail() {
@@ -56,11 +54,11 @@ public class GameMenu implements Serializable{
         this.currentMoneyBalance = currentMoneyBalance;
     }
     
-    public Character getPlayer() {
+    public Player getPlayer() {
         return player;
     }
 
-    public void setPlayer(Character player) {
+    public void setPlayer(Player player) {
         this.player = player;
     }
 
@@ -92,7 +90,7 @@ public class GameMenu implements Serializable{
         if (getClass() != obj.getClass()) {
             return false;
         }
-        final GameMenu other = (GameMenu) obj;
+        final Game other = (Game) obj;
         if (this.daysOnTrail != other.daysOnTrail) {
             return false;
         }

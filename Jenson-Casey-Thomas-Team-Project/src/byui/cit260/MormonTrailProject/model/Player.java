@@ -11,21 +11,19 @@ import java.util.Objects;
  *
  *  @author Jenson, Casey, Thomas Team
  */
-public class Character implements Serializable{
+public class Player implements Serializable{
     
-    public String name;
-    public int money;
-    public int huntingSkill;
-    public int gatheringSkill;
-    public int dailyStaminaDraw;
-    public int currentHealth;
-    private ArrayList<GameMenu> games = new ArrayList<GameMenu>(); 
+    private String name;
+    private int money;
+    private int huntingSkill;
+    private int gatheringSkill;
+    private int dailyStaminaDraw;
+    private int currentHealth;
+    private ArrayList<Game> games = new ArrayList<Game>(); 
 
-    
-
-    public Character() {
+    public Player() {
     }
-    
+       
     public String getName() {
         return name;
     }
@@ -73,30 +71,33 @@ public class Character implements Serializable{
     public void setCurrentHealth(int currentHealth) {
         this.currentHealth = currentHealth;
     }
-    public ArrayList<GameMenu> getGames() {
+
+    public ArrayList<Game> getGames() {
         return games;
     }
 
-    public void setGames(ArrayList<GameMenu> games) {
+    public void setGames(ArrayList<Game> games) {
         this.games = games;
     }
 
     @Override
     public int hashCode() {
-        int hash = 7;
-        hash = 19 * hash + Objects.hashCode(this.name);
-        hash = 19 * hash + this.money;
-        hash = 19 * hash + this.huntingSkill;
-        hash = 19 * hash + this.gatheringSkill;
-        hash = 19 * hash + this.dailyStaminaDraw;
-        hash = 19 * hash + this.currentHealth;
+        int hash = 3;
+        hash = 11 * hash + Objects.hashCode(this.name);
+        hash = 11 * hash + this.money;
+        hash = 11 * hash + this.huntingSkill;
+        hash = 11 * hash + this.gatheringSkill;
+        hash = 11 * hash + this.dailyStaminaDraw;
+        hash = 11 * hash + this.currentHealth;
+        hash = 11 * hash + Objects.hashCode(this.games);
         return hash;
     }
 
     @Override
     public String toString() {
-        return "Character{" + "name=" + name + ", money=" + money + ", huntingSkill=" + huntingSkill + ", gatheringSkill=" + gatheringSkill + ", dailyStaminaDraw=" + dailyStaminaDraw + ", currentHealth=" + currentHealth + '}';
+        return "Character{" + "name=" + name + ", money=" + money + ", huntingSkill=" + huntingSkill + ", gatheringSkill=" + gatheringSkill + ", dailyStaminaDraw=" + dailyStaminaDraw + ", currentHealth=" + currentHealth + ", games=" + games + '}';
     }
+    
     
     @Override
     public boolean equals(Object obj) {
@@ -109,7 +110,7 @@ public class Character implements Serializable{
         if (getClass() != obj.getClass()) {
             return false;
         }
-        final Character other = (Character) obj;
+        final Player other = (Player) obj;
         if (this.money != other.money) {
             return false;
         }
@@ -128,7 +129,13 @@ public class Character implements Serializable{
         if (!Objects.equals(this.name, other.name)) {
             return false;
         }
+        if (!Objects.equals(this.games, other.games)) {
+            return false;
+        }
         return true;
     }
-        
+
+    
+
+    
 }
