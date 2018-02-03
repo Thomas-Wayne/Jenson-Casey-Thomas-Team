@@ -6,6 +6,7 @@
 package jenson.casey.thomas.team.project.CIT260;
 
 import byui.cit260.MormonTrailProject.model.Game;
+import byui.cit260.MormonTrailProject.model.Pace;
 import byui.cit260.MormonTrailProject.model.Player;
 
 /**
@@ -52,14 +53,7 @@ public class BYUICIT260MormonTrailProject {
         Player newGamePlayer = newGame.getPlayer();
         
         System.out.println(newGame.toString());
-        
-        
-        
-        
-        
-        
-        
-        
+  
         
     }
     
