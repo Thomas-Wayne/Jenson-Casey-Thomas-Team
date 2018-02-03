@@ -75,7 +75,7 @@ public class Game implements Serializable{
 
     @Override
     public String toString() {
-        return "GameMenu{" + "daysOnTrail=" + daysOnTrail + ", pace=" + pace + ", milesTraveled=" + milesTraveled + ", currentMoneyBalance=" + currentMoneyBalance + ", player=" + player + '}';
+        return "Game{" + "daysOnTrail=" + daysOnTrail + ", pace=" + pace + ", milesTraveled=" + milesTraveled + ", currentMoneyBalance=" + currentMoneyBalance + ", player=" + player + '}';
     }
      
 
