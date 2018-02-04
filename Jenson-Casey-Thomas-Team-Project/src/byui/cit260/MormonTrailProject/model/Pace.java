@@ -12,5 +12,5 @@ package byui.cit260.MormonTrailProject.model;
 public enum Pace {
     
  slowSpeed, averageSpeed, fastSpeed;
-
+    
 }
