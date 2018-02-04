@@ -185,7 +185,7 @@ public class BYUICIT260MormonTrailProject {
         
         System.out.println(newMap.toString());
         
-        
+                
         Location newLocation = new Location();
         
         
@@ -197,11 +197,11 @@ public class BYUICIT260MormonTrailProject {
         String newLocationMilepost = newLocation.getMilepost();
         
         System.out.println(newLocation.toString());
-
-
-        for (LocationType s : LocationType.values()){
-        System.out.print(s);
+        
+        for (LocationType s :LocationType.values()){
+        System.out.println(s);
         }
+        
         
     }
 }
