@@ -5,13 +5,16 @@
  */
 package byui.cit260.MormonTrailProject.model;
 
+
+
 /**
  *
- * @author Jenson, Casey, Thomas Team
+ * @author Isabel Jenson
  */
-public enum Pace {
-  
- slowSpeed, averageSpeed, fastSpeed;
- 
-}
+public enum LocationType {
+    
+  town, fort, river, landmark;
 
+
+   
+}
