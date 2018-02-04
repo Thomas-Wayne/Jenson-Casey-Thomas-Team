@@ -5,9 +5,16 @@
  */
 package jenson.casey.thomas.team.project.CIT260;
 
+import byui.cit260.MormonTrailProject.model.FortScene;
 import byui.cit260.MormonTrailProject.model.Game;
+import byui.cit260.MormonTrailProject.model.GeneralStoreScene;
+import byui.cit260.MormonTrailProject.model.HotelScene;
 import byui.cit260.MormonTrailProject.model.Pace;
 import byui.cit260.MormonTrailProject.model.Player;
+import byui.cit260.MormonTrailProject.model.RiverCrossingScene;
+import byui.cit260.MormonTrailProject.model.Scene;
+import byui.cit260.MormonTrailProject.model.TownScene;
+import byui.cit260.MormonTrailProject.model.TrailStopScene;
 
 /**
  *
@@ -55,6 +62,81 @@ public class BYUICIT260MormonTrailProject {
         System.out.println(newGame.toString());
   
         
+        for(Pace s :Pace.values())System.out.println(s);  
+        
+        
+        Scene newScene = new Scene();
+        
+        newScene.setDiscription("Winter Quarters");
+        newScene.setFortScene("True");
+        newScene.setGeneralStoreScene("Inventory Available");
+        newScene.setHotelScene("Not Available");
+        newScene.setRiverCrossingScene("Lets go fishing.");
+        newScene.setTrailStopScene("other");
+        
+        String newSceneDiscription = newScene.getDiscription();
+        String newSceneFortScene = newScene.getFortScene();
+        String newSceneGeneralStoreScene = newScene.getGeneralStoreScene();
+        String newSceneHotelScene = newScene.getHotelScene();
+        String newSceneRiverCrossingScene = newScene.getRiverCrossingScene();
+        String newSceneTrailStopScene = newScene.getTrailStopScene();
+                
+        System.out.println(newScene.toString());
+        
+        FortScene newFortScene = new FortScene();
+      
+        newFortScene.setGeneralStoreScene("Inventory");
+        
+        String newFortSceneGeneralStoreScene = newFortScene.getGeneralStoreScene();
+        
+        System.out.println(newFortScene.toString());
+        
+        GeneralStoreScene newGeneralStoreScene = new GeneralStoreScene();
+        
+        newGeneralStoreScene.setInventory("ox");
+        
+        String newGeneralStoreSceneInventory = newGeneralStoreScene.getInventory();
+        
+        System.out.println(newGeneralStoreScene.toString());
+        
+        HotelScene newHotelScene = new HotelScene();
+        
+        newHotelScene.setPlayer(playerOne);
+        
+        Player newHotelScenePlayer = newHotelScene.getPlayer();
+        
+        System.out.println(newHotelScene.toString());
+        
+        TownScene newTownScene = new TownScene();
+      
+        newTownScene.setGeneralStoreScene("wagon");
+        newTownScene.setHotelScene("PlayerTwo");
+        
+        String newTownSceneGeneralStoreScene = newTownScene.getGeneralStoreScene();
+        String newTownSceneHotelScenePlayer = newTownScene.getHotelScene();
+        
+        System.out.println(newTownScene.toString());
+        
+        RiverCrossingScene newRiverCrossingScene = new RiverCrossingScene();
+        
+        System.out.println(newRiverCrossingScene.toString());
+        
+        TrailStopScene newTrailStopScene = new TrailStopScene();
+      
+        newTrailStopScene.setHasNearByTown(true);
+        newTrailStopScene.setNearbyTownName("Winter Quarters");
+        newTrailStopScene.setHasNearbyFort(true);
+        newTrailStopScene.setNearbyFortName("Fort Kearny");
+        
+        boolean newTrailStopSceneHasNearByTown = newTrailStopScene.isHasNearByTown();
+        String newTrailStopSceneNearbyTownName = newTrailStopScene.getNearbyTownName();
+        boolean newTrailStopSceneHasNearByFort = newTrailStopScene.isHasNearbyFort();
+        String newTrailStopSceneNearbyFortName = newTrailStopScene.getNearbyFortName();                   
+        
+        System.out.println(newTrailStopScene.toString());
+         
+        
     }
-    
 }
+
+
