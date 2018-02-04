@@ -6,6 +6,7 @@
 package byui.cit260.MormonTrailProject.model;
 import java.io.Serializable;
 import java.util.Objects;
+import static javax.swing.text.html.HTML.Tag.HEAD;
 
 /**
  *
@@ -21,6 +22,7 @@ public class Game implements Serializable{
     private String Map;
 
     
+    private String inventory;
 
     public Game() {
     }

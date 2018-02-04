@@ -14,6 +14,11 @@ import byui.cit260.MormonTrailProject.model.LocationType;
 import byui.cit260.MormonTrailProject.model.Map;
 import byui.cit260.MormonTrailProject.model.Pace;
 import byui.cit260.MormonTrailProject.model.Player;
+import byui.cit260.MormonTrailProject.model.Inventory;
+import byui.cit260.MormonTrailProject.model.Event;
+import byui.cit260.MormonTrailProject.model.InventoryItemType;
+//import java.util.HashSet;
+//import java.util.Set;
 import byui.cit260.MormonTrailProject.model.RiverCrossingScene;
 import byui.cit260.MormonTrailProject.model.Scene;
 import byui.cit260.MormonTrailProject.model.TownScene;
@@ -47,6 +52,33 @@ public class BYUICIT260MormonTrailProject {
         
         System.out.println(playerOne.toString());
         
+        Inventory newInventory = new Inventory();
+        
+        newInventory.setItemType("ox");
+        newInventory.getCurrentStrength();
+        newInventory.getCurrentWeight();
+        
+        System.out.println(newInventory.toString());
+        
+        Event newEvent = new Event();
+        
+        newEvent.setDescription("Snake Bite");
+        newEvent.getHealthImpact();
+
+        System.out.println(newEvent.toString());
+        
+      
+
+        for (InventoryItemType s : InventoryItemType.values()) System.out.println(s);
+        
+        
+       
+        
+  
+        
+        
+        
+        
         
         Game newGame = new Game();
         
@@ -63,6 +95,10 @@ public class BYUICIT260MormonTrailProject {
         Player newGamePlayer = newGame.getPlayer();
         
         System.out.println(newGame.toString());
+        
+     
+        
+        
   
         
         for(Pace s :Pace.values())System.out.println(s);  
