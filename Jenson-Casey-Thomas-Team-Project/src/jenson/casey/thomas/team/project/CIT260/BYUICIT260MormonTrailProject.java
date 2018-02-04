@@ -9,6 +9,9 @@ import byui.cit260.MormonTrailProject.model.FortScene;
 import byui.cit260.MormonTrailProject.model.Game;
 import byui.cit260.MormonTrailProject.model.GeneralStoreScene;
 import byui.cit260.MormonTrailProject.model.HotelScene;
+import byui.cit260.MormonTrailProject.model.Location;
+import byui.cit260.MormonTrailProject.model.LocationType;
+import byui.cit260.MormonTrailProject.model.Map;
 import byui.cit260.MormonTrailProject.model.Pace;
 import byui.cit260.MormonTrailProject.model.Player;
 import byui.cit260.MormonTrailProject.model.RiverCrossingScene;
@@ -135,6 +138,32 @@ public class BYUICIT260MormonTrailProject {
         
         System.out.println(newTrailStopScene.toString());
          
+        
+        Map newMap = new Map();
+        
+        newMap.setCurrentLocation("Winter Quarters");
+        
+        String newMapCurrentLocation = newMap.getCurrentLocation();
+        
+        System.out.println(newMap.toString());
+        
+        
+        Location newLocation = new Location();
+        
+        
+        newLocation.setType("Chimney Rock");
+        newLocation.setMilepost("NW 989");
+        
+        
+        String newLocationType = newLocation.getType();
+        String newLocationMilepost = newLocation.getMilepost();
+        
+        System.out.println(newLocation.toString());
+
+
+        for (LocationType s : LocationType.values())
+        System.out.print(s);
+
         
     }
 }

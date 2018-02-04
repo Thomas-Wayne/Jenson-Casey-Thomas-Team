@@ -18,6 +18,9 @@ public class Game implements Serializable{
     private int milesTraveled;
     private int currentMoneyBalance;
     private Player player;
+    private String Map;
+
+    
 
     public Game() {
     }
@@ -62,6 +65,14 @@ public class Game implements Serializable{
         this.player = player;
     }
 
+    public String getMap() {
+        return Map;
+    }
+
+    public void setMap(String Map) {
+        this.Map = Map;
+    }
+    
     @Override
     public int hashCode() {
         int hash = 7;
