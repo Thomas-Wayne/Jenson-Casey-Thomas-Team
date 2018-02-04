@@ -101,7 +101,9 @@ public class BYUICIT260MormonTrailProject {
         
   
         
-        for(Pace s :Pace.values())System.out.println(s);  
+        for(Pace s :Pace.values()){
+            System.out.println(s);
+        }  
         
         
         Scene newScene = new Scene();
@@ -197,9 +199,9 @@ public class BYUICIT260MormonTrailProject {
         System.out.println(newLocation.toString());
 
 
-        for (LocationType s : LocationType.values())
+        for (LocationType s : LocationType.values()){
         System.out.print(s);
-
+        }
         
     }
 }
