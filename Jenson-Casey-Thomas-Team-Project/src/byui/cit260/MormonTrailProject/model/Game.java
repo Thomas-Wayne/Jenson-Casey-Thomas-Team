@@ -18,6 +18,7 @@ public class Game implements Serializable{
     private int milesTraveled;
     private int currentMoneyBalance;
     private Player player;
+    private String inventory;
 
     public Game() {
     }
