@@ -23,9 +23,9 @@ public class PlayControl {
             return dailyHealthDraw;
 	
     }
- /**
- * @author tcasey
- */
+ 
+ // Author tcasey
+
     public static double calcRiverCrossingProbability (int riverHeight, int wagonWeight, 
         int riverFlow, int oxenHealth, int weather){
         
@@ -48,9 +48,7 @@ public class PlayControl {
             return riverCrossingProbability;
     }
 
-/**
- * author Wayne Thomas
- */
+//Author Wayne Thomas
     public static double calcDailyFoodSupplyDraw (int noPlayers, int weather, int pace, int waterSupply, int foodSupply){
         if (noPlayers <= 0){ //noPlayers cannot be less than or equal to zero (0)
             return -999;
