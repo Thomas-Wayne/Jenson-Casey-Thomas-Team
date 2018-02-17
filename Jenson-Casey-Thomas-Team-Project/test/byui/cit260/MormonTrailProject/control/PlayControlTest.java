@@ -150,7 +150,5 @@ public class PlayControlTest {
         double result = PlayControl.calcDailyFoodSupplyDraw(5, 2, 0, -1, -2);
         assertEquals(-13, result, 0.0);
     }
-        
-    
-   
+         
 }
