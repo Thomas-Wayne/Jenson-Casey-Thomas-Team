@@ -29,19 +29,19 @@ public class PlayControl {
     public static double calcRiverCrossingProbability (int riverHeight, int wagonWeight, 
         int riverFlow, int oxenHealth, int weather){
         
-        if (wagonWeight > 3000){ // riverHeight too high for wagon
+        if (wagonWeight > 3000){ // wagonWeight too heavy, must be less than 3001
             return -1;
         }
-	if (riverFlow > 6){ // playerStamina must be higher than 0
+	if (riverFlow > 6){ // riverFlow too swift, must be less than 6
             return -2;
         }
-        if (riverHeight > 24){ // playerStamina must be higher than 0
+        if (riverHeight > 24){ // riverHeight too high, must not be hight than 24"
             return -3;
         }
-        if (oxenHealth < 3){ // playerStamina must be higher than 0
+        if (oxenHealth < 3){ // oxenHealth too low, oven must be 3 or higher
             return -4;
         }
-        if (riverHeight + wagonWeight + riverFlow + oxenHealth + weather > 1299){
+        if (riverHeight + wagonWeight + riverFlow + oxenHealth + weather >= 1300){
             return 1;       
 	} 
         double riverCrossingProbability = (riverHeight + wagonWeight + riverFlow + oxenHealth + weather);   
