@@ -65,4 +65,49 @@ public class PlayControlTest {
         assertEquals(1, result, 0.0);
     }
     
+     /**
+     * Test of calcDailyFoodSupplyDraw method, of class PlayControl.
+     */
+    @Test
+    public void testCalcDailyFoodSupplyDraw() {
+        System.out.println("calcDailyFoodSupplyDraw");
+        int noPlayers = 4;
+        int weather = -3;
+        int pace = -2;
+        int waterSupply = -1;
+        int foodSupply = -2;
+        double expResult = -17;
+        double result = PlayControl.calcDailyFoodSupplyDraw(noPlayers, weather, pace, waterSupply, foodSupply);
+
+        assertEquals(expResult, result, 0.0);
+    }
+
+    @Test
+    public void testFoodDrawCase2(){
+        double result = PlayControl.calcDailyFoodSupplyDraw(0, -5, 0, -1, -2);
+        assertEquals(-999, result, 0.0);//returns error for noPlayers <= 0
+    }
+    @Test
+    public void testFoodDrawCase3(){
+        double result = PlayControl.calcDailyFoodSupplyDraw(1, -5, -5, -1, -2);
+        assertEquals(-13, result, 0.0);
+    }
+    @Test
+    public void testFoodDrawCase4(){
+        double result = PlayControl.calcDailyFoodSupplyDraw(5, -5, -5, -1, -2);
+        assertEquals(-25, result, 0.0);
+    }
+    @Test
+    public void testFoodDrawCase5(){
+        double result = PlayControl.calcDailyFoodSupplyDraw(1, 2, 0, -1, -2);
+        assertEquals(-1, result, 0.0);
+    }
+    @Test
+    public void testFoodDrawCase6(){
+        double result = PlayControl.calcDailyFoodSupplyDraw(5, 2, 0, -1, -2);
+        assertEquals(-13, result, 0.0);
+    }
+        
+    
+   
 }
