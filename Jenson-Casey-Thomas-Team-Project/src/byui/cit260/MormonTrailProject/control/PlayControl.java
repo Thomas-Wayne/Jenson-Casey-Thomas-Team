@@ -47,4 +47,13 @@ public class PlayControl {
         double riverCrossingProbability = (riverHeight + wagonWeight + riverFlow + oxenHealth + weather);   
             return riverCrossingProbability;
     }
+
+
+    public static double calcDailyFoodSupplyDraw (int noPlayers, int weather, int pace, int waterSupply, int foodSupply){
+        if (noPlayers <= 0){ //noPlayers cannot be less than or equal to zero (0)
+            return -999;
+        }
+            double dailyFoodSupplyDraw = (weather + pace + (waterSupply(-1)*noPlayers)+(foodSupply(-2)*noPlayers));//-1 represents waterSupply in gallons ; -2 represents foodSupply in pounds
+            return dailyFoodSupplyDraw;
+    }
 }
