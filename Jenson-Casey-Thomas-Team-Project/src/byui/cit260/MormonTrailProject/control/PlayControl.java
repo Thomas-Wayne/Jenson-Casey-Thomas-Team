@@ -31,7 +31,7 @@ public class PlayControl {
         if (noPlayers <= 0){ //noPlayers cannot be less than or equal to zero (0)
             return -999;
         }
-            double dailyFoodSupplyDraw = (weather + pace + (waterSupply(-1)*noPlayers)+(foodSupply(-2)*noPlayers));//-1 represents waterSupply in gallons ; -2 represents foodSupply in pounds
+            double dailyFoodSupplyDraw = (weather + pace + (waterSupply*noPlayers)+(foodSupply*noPlayers));//-1 represents waterSupply in gallons ; -2 represents foodSupply in pounds
             return dailyFoodSupplyDraw;
     }
 }
