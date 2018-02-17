@@ -48,7 +48,9 @@ public class PlayControl {
             return riverCrossingProbability;
     }
 
-
+/**
+ * author Wayne Thomas
+ */
     public static double calcDailyFoodSupplyDraw (int noPlayers, int weather, int pace, int waterSupply, int foodSupply){
         if (noPlayers <= 0){ //noPlayers cannot be less than or equal to zero (0)
             return -999;
