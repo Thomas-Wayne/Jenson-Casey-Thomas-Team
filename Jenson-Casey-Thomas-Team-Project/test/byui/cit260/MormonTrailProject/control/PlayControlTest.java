@@ -27,7 +27,7 @@ public class PlayControlTest {
      * Test of calcDailyHealthDraw method, of class PlayControl.
      */
     @Test
-    public void testCalcDailyHealthDraw() {
+    public void testCalcDailyHealthDraw1() {
         System.out.println("calcDailyHealthDraw");
         int playerHealth = 90;
         int playerStamina = 5;
@@ -40,28 +40,71 @@ public class PlayControlTest {
         
     }
     @Test
-    public void testCase2(){
+    public void testCalcDailyHealthDraw2(){
         double result = PlayControl.calcDailyHealthDraw(15, 0, -5, -5, -5);
         assertEquals(-2, result, 0.0);
     }
     @Test
-    public void testCase3(){
+    public void testCalcDailyHealthDraw3(){
         double result = PlayControl.calcDailyHealthDraw(13, 1, -5, -5, -5);
         assertEquals(-1, result, 0.0);
     }
     @Test
-    public void testCase4(){
+    public void testCalcDailyHealthDraw4(){
         double result = PlayControl.calcDailyHealthDraw(100, 5, 0, -2, 2);
         assertEquals(-3, result, 0.0);
     }
     @Test
-    public void testCase5(){
+    public void testCalcDailyHealthDraw5(){
         double result = PlayControl.calcDailyHealthDraw(95, 5, 0, 0, 0);
         assertEquals(100, result, 0.0);
     }
     @Test
-    public void testCase6(){
+    public void testCalcDailyHealthDraw6(){
         double result = PlayControl.calcDailyHealthDraw(15, 1, -5, -5, -5);
+        assertEquals(1, result, 0.0);
+    }
+    @Test
+    public void testCalcRiverCrossingProbability1() {
+        System.out.println("calcRiverCrossingProbability");
+        int riverHeight = 12;
+        int wagonWeight = 2800;
+        int riverFlow = 3;
+        int oxenHealth = 8;
+        int weather = 2;
+        double expResult = 1;
+        double result = PlayControl.calcRiverCrossingProbability(riverHeight, wagonWeight, riverFlow, oxenHealth, weather);
+        assertEquals(expResult, result, 0.0);
+        
+    }
+    @Test
+    public void testCalcRiverCrossingProbability2(){
+        double result = PlayControl.calcRiverCrossingProbability(12, 3200, 5, 3, -5);
+        assertEquals(-1, result, 0.0);
+    }
+    @Test
+    public void testCalcRiverCrossingProbability3(){
+        double result = PlayControl.calcRiverCrossingProbability(16, 2600, 8, 5, 0);
+        assertEquals(-2, result, 0.0);
+    }
+    @Test
+    public void testCalcRiverCrossingProbability4(){
+        double result = PlayControl.calcRiverCrossingProbability(25, 2900, 6, 4, 2);
+        assertEquals(-3, result, 0.0);
+    }
+    @Test
+    public void testCalcRiverCrossingProbability5(){
+        double result = PlayControl.calcRiverCrossingProbability(16, 2500, 3, 2, 0);
+        assertEquals(-4, result, 0.0);
+    }
+    @Test
+    public void testCalcRiverCrossingProbability6(){
+        double result = PlayControl.calcRiverCrossingProbability(1, 1300, 1, 3, -5);
+        assertEquals(1, result, 0.0);
+    }
+    @Test
+    public void testCalcRiverCrossingProbability7(){
+        double result = PlayControl.calcRiverCrossingProbability(24, 3000, 6, 10, 2);
         assertEquals(1, result, 0.0);
     }
     

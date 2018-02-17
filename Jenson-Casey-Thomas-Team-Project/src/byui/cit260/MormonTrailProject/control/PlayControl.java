@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package byui.cit260.MormonTrailProject.control;
 
 /**
@@ -26,6 +22,29 @@ public class PlayControl {
         double dailyHealthDraw = (playerHealth + playerStamina + pace + weather + terrain);   
             return dailyHealthDraw;
 	
-}
-    
+    }
+ /**
+ * @author tcasey
+ */
+    public static double calcRiverCrossingProbability (int riverHeight, int wagonWeight, 
+        int riverFlow, int oxenHealth, int weather){
+        
+        if (wagonWeight > 3000){ // riverHeight too high for wagon
+            return -1;
+        }
+	if (riverFlow > 6){ // playerStamina must be higher than 0
+            return -2;
+        }
+        if (riverHeight > 24){ // playerStamina must be higher than 0
+            return -3;
+        }
+        if (oxenHealth < 3){ // playerStamina must be higher than 0
+            return -4;
+        }
+        if (riverHeight + wagonWeight + riverFlow + oxenHealth + weather > 1299){
+            return 1;       
+	} 
+        double riverCrossingProbability = (riverHeight + wagonWeight + riverFlow + oxenHealth + weather);   
+            return riverCrossingProbability;
+    }
 }
