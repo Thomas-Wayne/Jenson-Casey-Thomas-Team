@@ -15,6 +15,7 @@ public enum InventoryItemType {
     ox(0,"Full"),
     wagon(700,"Medium"),
     food(20,"half"),
+    water(100,"Full"),
     spareWheel(100,"Full"),
     ammunition(75,"Full");
     
