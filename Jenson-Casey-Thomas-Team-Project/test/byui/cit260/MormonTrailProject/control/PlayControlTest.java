@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package byui.cit260.MormonTrailProject.control;
 
 import org.junit.After;
@@ -33,16 +29,40 @@ public class PlayControlTest {
     @Test
     public void testCalcDailyHealthDraw() {
         System.out.println("calcDailyHealthDraw");
-        int playerHealth = 15;
-        int playerStamina = 1;
-        int pace = -5;
-        int terrain = -5;
-        int weather = -5;
-        double expResult = 1;
+        int playerHealth = 90;
+        int playerStamina = 5;
+        int pace = 0;
+        int terrain = -2;
+        int weather = -3;
+        double expResult = 90;
         double result = PlayControl.calcDailyHealthDraw(playerHealth, playerStamina, pace, terrain, weather);
-        assertEquals(expResult, result, 1);
-        // TODO review the generated test code and remove the default call to fail.
-        // fail("The test case is a prototype.");
+        assertEquals(expResult, result, 0.0);
+        
+    }
+    @Test
+    public void testCase2(){
+        double result = PlayControl.calcDailyHealthDraw(15, 0, -5, -5, -5);
+        assertEquals(-2, result, 0.0);
+    }
+    @Test
+    public void testCase3(){
+        double result = PlayControl.calcDailyHealthDraw(13, 1, -5, -5, -5);
+        assertEquals(-1, result, 0.0);
+    }
+    @Test
+    public void testCase4(){
+        double result = PlayControl.calcDailyHealthDraw(100, 5, 0, -2, 2);
+        assertEquals(-3, result, 0.0);
+    }
+    @Test
+    public void testCase5(){
+        double result = PlayControl.calcDailyHealthDraw(95, 5, 0, 0, 0);
+        assertEquals(100, result, 0.0);
+    }
+    @Test
+    public void testCase6(){
+        double result = PlayControl.calcDailyHealthDraw(15, 1, -5, -5, -5);
+        assertEquals(1, result, 0.0);
     }
     
 }

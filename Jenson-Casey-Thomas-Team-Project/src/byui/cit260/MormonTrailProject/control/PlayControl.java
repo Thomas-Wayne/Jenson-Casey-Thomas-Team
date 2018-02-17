@@ -7,7 +7,7 @@ package byui.cit260.MormonTrailProject.control;
 
 /**
  *
- * @author tcasey
+ * @author tcasey, wthomas, ijenson
  */
 public class PlayControl {
     public static double calcDailyHealthDraw (int playerHealth, int playerStamina, 
@@ -19,10 +19,12 @@ public class PlayControl {
 	if (playerStamina <= 0){ // playerStamina must be higher than 0
             return -2;
         }
+        if (playerHealth + playerStamina + pace + weather + terrain  > 100){ //healthResult cannot exceed 100
+            return -3;
+        }
        
-        double dailyHealthDraw = (playerHealth + playerStamina + pace + weather + terrain);
-               
-        return dailyHealthDraw;
+        double dailyHealthDraw = (playerHealth + playerStamina + pace + weather + terrain);   
+            return dailyHealthDraw;
 	
 }
     
