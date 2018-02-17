@@ -56,4 +56,28 @@ public class PlayControl {
             double dailyFoodSupplyDraw = (weather + pace + (waterSupply*noPlayers)+(foodSupply*noPlayers));
             return dailyFoodSupplyDraw;
     }
+
+
+     // Isabel Jenson
+    
+    public static double calcGatheringSuccess (int weather, int location, int localResources) {
+      
+           
+            
+            if (weather + location + localResources > 0) {
+                
+                return 2;
+            
+            }
+            
+            if (weather + location + localResources < 0) {
+                
+                return -2;
+            }
+            
+                double calcGatheringSuccess = (weather + location + localResources);
+                    return calcGatheringSuccess;
+    }
+             
 }
+
