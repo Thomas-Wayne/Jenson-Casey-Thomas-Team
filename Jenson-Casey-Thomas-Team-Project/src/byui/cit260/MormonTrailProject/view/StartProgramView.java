@@ -41,7 +41,7 @@ public class StartProgramView {
         System.out.println("\tinputs = " + inputs[0]);
         return true;
     }
-    }
+    
    
 
     private void displayStartProgramView() {
