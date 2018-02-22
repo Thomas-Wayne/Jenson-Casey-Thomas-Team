@@ -150,5 +150,82 @@ public class PlayControlTest {
         double result = PlayControl.calcDailyFoodSupplyDraw(5, 2, 0, -1, -2);
         assertEquals(-13, result, 0.0);
     }
-         
+
+    /**
+     * Test of calcDailyHealthDraw method, of class PlayControl.
+     */
+    @Test
+    public void testCalcDailyHealthDraw() {
+        System.out.println("calcDailyHealthDraw");
+        int playerHealth = 0;
+        int playerStamina = 0;
+        int pace = 0;
+        int terrain = 0;
+        int weather = 0;
+        double expResult = 0.0;
+        double result = PlayControl.calcDailyHealthDraw(playerHealth, playerStamina, pace, terrain, weather);
+        assertEquals(expResult, result, 0.0);
+        // TODO review the generated test code and remove the default call to fail.
+        fail("The test case is a prototype.");
+    }
+
+    /**
+     * Test of calcRiverCrossingProbability method, of class PlayControl.
+     */
+    @Test
+    public void testCalcRiverCrossingProbability() {
+        System.out.println("calcRiverCrossingProbability");
+        int riverHeight = 0;
+        int wagonWeight = 0;
+        int riverFlow = 0;
+        int oxenHealth = 0;
+        int weather = 0;
+        double expResult = 0.0;
+        double result = PlayControl.calcRiverCrossingProbability(riverHeight, wagonWeight, riverFlow, oxenHealth, weather);
+        assertEquals(expResult, result, 0.0);
+        // TODO review the generated test code and remove the default call to fail.
+        fail("The test case is a prototype.");
+    }
+
+/** Author Isabel Jenson
+     * Test of calcGatheringSuccess method, of class PlayControl.
+     */
+    @Test
+    public void testCalcGatheringSuccess() {
+        System.out.println("calcGatheringSuccess");
+        int weather = 0;
+        int location = 0;
+        int localResources = 0;
+        double expResult = 0.0;
+        double result = PlayControl.calcGatheringSuccess(weather, location, localResources);
+        assertEquals(expResult, result, 0.0);
+        // TODO review the generated test code and remove the default call to fail.
+        //fail("The test case is a prototype.");
+    }
+    
+    @Test
+    public void calcGatheringSuccessCase1(){
+        double result = PlayControl.calcGatheringSuccess(0, 5, 5);
+        assertEquals(2, result, 0.0);
+    }
+    @Test
+    public void calcGatheringSuccessCase2(){
+        double result = PlayControl.calcGatheringSuccess(-3, -5, -5);
+        assertEquals(-2, result, 0.0);
+    }
+    @Test
+    public void calcGatheringSuccessCase3(){
+        double result = PlayControl.calcGatheringSuccess(2, -5, -5);
+        assertEquals(-2, result, 0.0);
+    }
+    @Test
+    public void calcGatheringSuccessCase4(){
+        double result = PlayControl.calcGatheringSuccess(-3, -2, 1);
+        assertEquals(-2, result, 0.0);
+    }
+    @Test
+    public void calcGatheringSuccessCase5(){
+        double result = PlayControl.calcGatheringSuccess(2, 5, 5);
+        assertEquals(2, result, 0.0);
+    }
 }
