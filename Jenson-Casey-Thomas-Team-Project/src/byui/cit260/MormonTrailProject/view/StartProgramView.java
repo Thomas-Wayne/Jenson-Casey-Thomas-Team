@@ -11,28 +11,32 @@ package byui.cit260.MormonTrailProject.view;
  */
 public class StartProgramView {
 
+
     public StartProgramView() {
                 
-        public displayStartProgramView(){
-            boolean endOfView = false; 
-            do{
-            String[] inputs = this.getInputs();
-            if (inputs == null){
-                 System.out.println("Please enter a valid name to continue.");
-            }else if (inputs == "Q"){
-                System.out.println("Thanks for playing!");
-            }else 
-                endOfView = doAction(inputs);
-                System.out.println("Welcome to the longest ride of your life...");
-            }while (endOfView != true);
         
-        }
+}
+    public void DisplayStartProgramView() {
+        boolean endOfView = false;
+         do {
+            String[] inputs = this.getInputs();
+            if (inputs == null) {
+                System.out.println("Please enter a valid name to continue.");
+            } /*else if (inputs == String[Q]) {
+                System.out.println("Thanks for playing!");
+            } */else {
+                endOfView = doAction(inputs);
+            }
+            System.out.println("Welcome to the longest ride of your life...");
+        } while (endOfView != true);
+    
+    }
 
     private String[] getInputs() {
         System.out.println("getInputs() called");
         String[] inputs = new String[1];
         inputs[0] = "testInput";
-        
+
         return inputs;
     }
 
@@ -41,14 +45,8 @@ public class StartProgramView {
         System.out.println("\tinputs = " + inputs[0]);
         return true;
     }
-    
-   
 
-    private void displayStartProgramView() {
-        System.out.println("displayStartProgramView() has been called.");
-    }
-    
     public void display() {
-         System.out.println("display() has been called.");
+        System.out.println("display() has been called.");
     }
 }
