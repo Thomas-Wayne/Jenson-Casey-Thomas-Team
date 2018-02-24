@@ -135,6 +135,10 @@ public class Player implements Serializable{
         return true;
     }
 
+    public String getInputs() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
     
 
     
