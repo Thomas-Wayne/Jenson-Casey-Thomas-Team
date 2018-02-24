@@ -9,7 +9,7 @@ import java.util.Scanner;
 
 /**
  *
- * @author Thomas'
+ * @author Wayne Thomas
  */
 public class StartProgramView {
     public StartProgramView() {
@@ -22,7 +22,7 @@ public class StartProgramView {
             
             if (inputs == null) {
                 System.out.println("Please enter a valid name to continue.");
-            } else if (inputs == "Q"){
+            } else if ("Q".equals(inputs)){
                 System.out.println("Thanks for playing!");
             } else {
                 endOfView = doAction(inputs);
@@ -35,6 +35,7 @@ public class StartProgramView {
         System.out.println("Please enter you name to continue.");
         Scanner userInput = new Scanner(System.in);
         String inputs = userInput.nextLine();
+        
         return inputs;
     }
 
