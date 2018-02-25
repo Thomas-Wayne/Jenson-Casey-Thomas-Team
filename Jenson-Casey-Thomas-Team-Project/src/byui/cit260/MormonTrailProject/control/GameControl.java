@@ -16,21 +16,39 @@ public class GameControl {
 
     private static Player player;
 
-    public static Player createPlayer(String inputs) {
-        System.out.println("*** savePlayer() called ***");
-        return new Player();
+    public static Player createPlayer(String playerName) {
+        Player player = new Player();
+        player.setName(playerName);
+        return player;
+
     }
-    
-    public static boolean savePlayer(String name){
-    
-        if (playerName.length() < 2){
-        
+
+    public static boolean savePlayer(String name) {
+
+        if (playerName.length() < 2) {
+
             return false;
         }
-        
+
         BYUICIT260MormonTrailProject.setPlayer(player);
-        
+
         return true;
-    }   
-    
+    }
+
+    public static void createNewGame(Player player) {
+
+    }
+
+    public static void loadGame(Player player) {
+
+    }
+
+    public static void saveGame(Player player) {
+
+    }
+
+    public static void getHelp(Player player) {
+
+    }
+
 }

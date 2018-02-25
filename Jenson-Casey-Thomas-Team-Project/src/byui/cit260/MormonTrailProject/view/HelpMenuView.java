@@ -5,41 +5,43 @@
  */
 package byui.cit260.MormonTrailProject.view;
 
-import byui.cit260.MormonTrailProject.control.GameControl;
 import java.util.Scanner;
-import jenson.casey.thomas.team.project.CIT260.BYUICIT260MormonTrailProject;
+
 
 /**
  *
  * @author Jenson, Casey, and Thomas
  */
-class MainMenuView {
+ 
+public class HelpMenuView {
 
     private String promptMessage;
     private String menu;
 
-    public MainMenuView() {
+    public HelpMenuView() {
+
         this.promptMessage = "\nPlease choose an option: ";
         this.menu = "\n"
                 + "\n*****************************************"
-                + "\n| Main Menu |"
+                + "\n| Help Menu |"
                 + "\n******************************************"
-                + "\nN - Start new game"
-                + "\nL - Load and start a saved game"
-                + "\nH - Get help on how to play the game"
-                + "\nS - Save game"
+                + "\nG - What is the goal of the game?"
+                + "\nM - How to move"
+                + "\nE - Estimate the number of resources"
+                + "\nH - Harvest resources"
+                + "\nD - Delivering resources to warehouse"
                 + "\nQ - Quit"
                 + "\n*******************************************";
     }
 
-    public void displayMainMenuView() {
+    public void displayHelpMenuView() {
         boolean endOfView = false;
 
         do {
             String menuOption = this.getMenuOption();
 
             if (menuOption.toUpperCase().equals("Q")) {
-                System.out.println("Thanks for playing!");
+
                 return;
             } else {
                 endOfView = doAction(menuOption);
@@ -51,7 +53,7 @@ class MainMenuView {
 
     private String getMenuOption() {
         Scanner keyboard = new Scanner(System.in);
-        String value = "N";
+        String value = "";
         boolean valid = false;
         while (!valid) {
 
@@ -76,25 +78,26 @@ class MainMenuView {
         menuOption = menuOption.toUpperCase();
         switch (menuOption) {
 
-            case "N":
-                this.startNewGame();
+            case "G":
+                this.goalHelp();
                 break;
 
-            case "L":
-                this.loadGame();
+            case "M":
+                this.moveHelp();
                 break;
 
-            case "S":
-                this.saveGame();
+            case "E":
+                this.estimateHelp();
                 break;
 
             case "H":
-                this.getHelp();
+                this.harvestHelp();
                 break;
 
-            case "Q":
-                this.quitGame();
+            case "D":
+                this.deliverHelp();
                 break;
+
             default:
                 System.out.println("\n*** Invalid selection *** Try again.");
                 break;
@@ -105,27 +108,24 @@ class MainMenuView {
 
     }
 
-    private void startNewGame() {
-        System.out.println("\nstartNewGame() was called");
-
+    private void goalHelp() {
+        System.out.println("\ngoalHelp() was called");
     }
 
-    private void loadGame() {
-        System.out.println("\nloadGame() was called");
+    private void moveHelp() {
+        System.out.println("\nmoveHelp() was called");
     }
 
-    private void saveGame() {
-        System.out.println("\nsaveGame() was called");
+    private void estimateHelp() {
+        System.out.println("\nestimateHelp() was called");
     }
 
-    private void getHelp() {
-        GameControl.getHelp(BYUICIT260MormonTrailProject.getPlayer());
-        HelpMenuView helpMenu = new HelpMenuView();
-        helpMenu.displayHelpMenuView();
+    private void harvestHelp() {
+        System.out.println("\nharvestHelp() was called");
     }
 
-    private void quitGame() {
-        System.exit(0);
+    private void deliverHelp() {
+        System.out.println("\ndeliverHelp() was called");
     }
 
 }
