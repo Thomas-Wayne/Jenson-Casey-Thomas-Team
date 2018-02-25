@@ -21,15 +21,15 @@ class MainMenuView {
     public MainMenuView() {
         this.promptMessage = "\nPlease choose an option: ";
         this.menu = "\n"
-                + "\n*****************************************"
+                + "\n********************************************"
                 + "\n| Main Menu |"
-                + "\n******************************************"
+                + "\n********************************************"
                 + "\nN - Start new game"
                 + "\nL - Load and start a saved game"
                 + "\nH - Get help on how to play the game"
                 + "\nS - Save game"
                 + "\nQ - Quit"
-                + "\n*******************************************";
+                + "\n********************************************";
     }
 
     public void displayMainMenuView() {

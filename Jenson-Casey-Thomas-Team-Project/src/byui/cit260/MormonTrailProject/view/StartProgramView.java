@@ -84,7 +84,7 @@ public class StartProgramView {
 
     private void displayNextView(Player player) {
 
-        System.out.println("\n*******************************************"
+        System.out.println("\n***************************************************"
                 + "\nWelcome to the game " + player.getName()
                 + "\n***************************************************");
 
