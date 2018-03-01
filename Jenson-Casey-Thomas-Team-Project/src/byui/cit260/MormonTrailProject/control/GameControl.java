@@ -51,4 +51,16 @@ public class GameControl {
 
     }
 
+    public static void riverCrossing(Player player) {
+      
+    }
+
+    public static void riverCrossingSceneMenuView(Player player) {
+        
+    }
+
+    public static void riverCrossingView(Player player) {
+        
+    }
+
 }
