@@ -5,42 +5,40 @@
  */
 package byui.cit260.MormonTrailProject.view;
 
-import byui.cit260.MormonTrailProject.control.GameControl;
 import java.util.Scanner;
-import jenson.casey.thomas.team.project.CIT260.BYUICIT260MormonTrailProject;
 
 /**
  *
- * @author Jenson, Casey, and Thomas
+ * @author Thomas
  */
-class MainMenuView {
+public class DailyTrailStopSceneMenuView {
 
     private String promptMessage;
     private String menu;
 
-    public MainMenuView() {
+    public DailyTrailStopSceneMenuView() {
         this.promptMessage = "\nPlease choose an option: ";
         this.menu = "\n"
                 + "\n********************************************"
-                + "\n| Main Menu |"
+                + "\n| Daily Trail Stop Scene Menu |"
                 + "\n********************************************"
-                + "\nN - Start new game"
-                + "\nL - Load and start a saved game"
-                + "\nH - Get help on how to play the game"
-                + "\nD - DailyTrailStopSceneMenuView"
-                + "\nS - Save game"
+                + "\nT - Visit the town"
+                + "\nF - Visit the fort"
+                + "\nC - Cross the River"
+                + "\nR - Rest for the day"
+                + "\nH - Go Hunting"
+                + "\nG - Gather resources"
                 + "\nQ - Quit"
                 + "\n********************************************";
     }
 
-    public void displayMainMenuView() {
+    public void displayDailyTrailStopSceneMenuView() {
         boolean endOfView = false;
 
         do {
             String menuOption = this.getMenuOption();
 
             if (menuOption.toUpperCase().equals("Q")) {
-                System.out.println("Thanks for playing!");
                 return;
             } else {
                 endOfView = doAction(menuOption);
@@ -52,10 +50,9 @@ class MainMenuView {
 
     private String getMenuOption() {
         Scanner keyboard = new Scanner(System.in);
-        String value = "N";
+        String value = "T";
         boolean valid = false;
         while (!valid) {
-
             System.out.println("\n" + this.menu);
             System.out.println("\n" + this.promptMessage);
             value = keyboard.nextLine();
@@ -77,63 +74,67 @@ class MainMenuView {
         menuOption = menuOption.toUpperCase();
         switch (menuOption) {
 
-            case "N":
-                this.startNewGame();
+            case "T":
+                this.visitTheTown();
                 break;
 
-            case "L":
-                this.loadGame();
+            case "F":
+                this.visitTheFort();
                 break;
 
-            case "S":
-                this.saveGame();
+            case "C":
+                this.crossTheRiver();
+                break;
+
+            case "R":
+                this.restForTheDay();
                 break;
 
             case "H":
-                this.getHelp();
+                this.goHunting();
                 break;
-            case "D":
-                this.DailyTrailStopSceneMenuView();
+
+            case "G":
+                this.gatherResources();
                 break;
+
             case "Q":
                 this.quitGame();
                 break;
             default:
                 System.out.println("\n*** Invalid selection *** Try again.");
                 break;
-
         }
 
         return false;
 
     }
 
-    private void startNewGame() {
-        System.out.println("\nstartNewGame() was called");
-
+    private void gatherResources() {
+        System.out.println("\n gatheringResources() has been called");
     }
 
-    private void loadGame() {
-        System.out.println("\nloadGame() was called");
+    private void goHunting() {
+        System.out.println("\n goHunting() has been called");
     }
 
-    private void saveGame() {
-        System.out.println("\nsaveGame() was called");
+    private void restForTheDay() {
+        System.out.println("\n restForTheDay() has been called");
     }
 
-    private void getHelp() {
-        GameControl.getHelp(BYUICIT260MormonTrailProject.getPlayer());
-        HelpMenuView helpMenu = new HelpMenuView();
-        helpMenu.displayHelpMenuView();
+    private void crossTheRiver() {
+        System.out.println("\n crossTheRiver() has been called");
+    }
+
+    private void visitTheFort() {
+        System.out.println("\n visitTheFort() has been called");
+    }
+
+    private void visitTheTown() {
+        System.out.println("\n visitTheTown() has been called");
     }
 
     private void quitGame() {
         System.exit(0);
     }
-
-    private void DailyTrailStopSceneMenuView() {
-        DailyTrailStopSceneMenuView DailytrailStopSceneMenuView = new DailyTrailStopSceneMenuView();
-        DailytrailStopSceneMenuView.displayDailyTrailStopSceneMenuView();
-    }
-
 }
