@@ -6,6 +6,7 @@
 package byui.cit260.MormonTrailProject.view;
 
 import byui.cit260.MormonTrailProject.control.GameControl;
+import static byui.cit260.MormonTrailProject.control.GameControl.riverCrossingView;
 import java.util.Scanner;
 import jenson.casey.thomas.team.project.CIT260.BYUICIT260MormonTrailProject;
 
@@ -27,6 +28,8 @@ class MainMenuView {
                 + "\nN - Start new game"
                 + "\nL - Load and start a saved game"
                 + "\nH - Get help on how to play the game"
+                + "\nR - RIVERCROSSINGSCENEMENUVIEW"
+                + "\nC - RIVERCROSSINGVIEW"
                 + "\nS - Save game"
                 + "\nQ - Quit"
                 + "\n********************************************";
@@ -51,7 +54,7 @@ class MainMenuView {
 
     private String getMenuOption() {
         Scanner keyboard = new Scanner(System.in);
-        String value = "N";
+        String value = "";
         boolean valid = false;
         while (!valid) {
 
@@ -87,7 +90,15 @@ class MainMenuView {
             case "S":
                 this.saveGame();
                 break;
-
+            
+            case "R":
+                this.riverCrossingSceneMenuView();
+                break;
+                
+            case "C":
+                this.riverCrossingView();
+                break;
+                
             case "H":
                 this.getHelp();
                 break;
@@ -117,11 +128,23 @@ class MainMenuView {
     private void saveGame() {
         System.out.println("\nsaveGame() was called");
     }
+    
+    private void riverCrossingSceneMenuView(){
+        GameControl.riverCrossingSceneMenuView(BYUICIT260MormonTrailProject.getPlayer());
+        RiverCrossingSceneMenuView riverCrossingSceneMenuView = new RiverCrossingSceneMenuView();
+        riverCrossingSceneMenuView.displayRiverCrossingSceneMenuView();
+    }
 
+    private void riverCrossingView(){
+        GameControl.riverCrossingView(BYUICIT260MormonTrailProject.getPlayer());
+        RiverCrossingView riverCrossingView = new RiverCrossingView();
+        riverCrossingView.displayRiverCrossingView();
+    }
     private void getHelp() {
-        GameControl.getHelp(BYUICIT260MormonTrailProject.getPlayer());
+        /*GameControl.getHelp(BYUICIT260MormonTrailProject.getPlayer());
         HelpMenuView helpMenu = new HelpMenuView();
-        helpMenu.displayHelpMenuView();
+        helpMenu.displayHelpMenuView();*/
+        System.out.println("\nsaveGame() was called");
     }
 
     private void quitGame() {
