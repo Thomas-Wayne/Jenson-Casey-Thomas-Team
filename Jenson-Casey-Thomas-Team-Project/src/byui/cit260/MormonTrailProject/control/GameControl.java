@@ -51,4 +51,24 @@ public class GameControl {
 
     }
 
+    public static void riverCrossing(Player player) {
+      
+    }
+
+    public static void riverCrossingSceneMenuView(Player player) {
+        
+    }
+
+    public static void riverCrossingView(Player player) {
+        
+    }
+
+    public static void DailyTrailStopSceneMenuView(Player player) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public static void gameMenuView(Player player) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
 }

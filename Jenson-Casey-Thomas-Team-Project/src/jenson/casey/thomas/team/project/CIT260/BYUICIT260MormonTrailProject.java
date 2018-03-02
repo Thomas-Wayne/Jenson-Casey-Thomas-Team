@@ -7,6 +7,8 @@ package jenson.casey.thomas.team.project.CIT260;
 
 import byui.cit260.MormonTrailProject.model.Game;
 import byui.cit260.MormonTrailProject.model.Player;
+import byui.cit260.MormonTrailProject.view.RiverCrossingSceneMenuView;
+import byui.cit260.MormonTrailProject.view.RiverCrossingView;
 import byui.cit260.MormonTrailProject.view.StartProgramView;
 
 /**
@@ -42,6 +44,13 @@ public class BYUICIT260MormonTrailProject {
 
         StartProgramView startProgramView = new StartProgramView();
         startProgramView.display();
+        
+        RiverCrossingSceneMenuView riverCrossingSceneMenuView = new RiverCrossingSceneMenuView();
+        riverCrossingSceneMenuView.display();
+        
+        RiverCrossingView riverCrossingView = new RiverCrossingView();
+        riverCrossingView.display();
+        
 
     }
 
