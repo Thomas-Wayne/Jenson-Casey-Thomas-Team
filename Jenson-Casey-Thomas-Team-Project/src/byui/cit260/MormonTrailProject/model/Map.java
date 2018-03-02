@@ -10,21 +10,16 @@ import java.io.Serializable;
 
 /**
  *
- * @author Isabel Jenson 
+ * @author Isabel Jenson
  */
 public class Map implements Serializable {
-    
+
     private String currentLocation;
     private String location;
-
-  
-    
 
     public Map() {
     }
 
-    
-    
     public String getCurrentLocation() {
         return currentLocation;
     }
@@ -32,8 +27,8 @@ public class Map implements Serializable {
     public void setCurrentLocation(String currentLocation) {
         this.currentLocation = currentLocation;
     }
-    
-          public String getLocation() {
+
+    public String getLocation() {
         return location;
     }
 
@@ -52,8 +47,6 @@ public class Map implements Serializable {
     public String toString() {
         return "Map{" + "currentLocation=" + currentLocation + '}';
     }
-    
-    
 
     @Override
     public boolean equals(Object obj) {
@@ -72,7 +65,5 @@ public class Map implements Serializable {
         }
         return true;
     }
-    
 
-    
 }

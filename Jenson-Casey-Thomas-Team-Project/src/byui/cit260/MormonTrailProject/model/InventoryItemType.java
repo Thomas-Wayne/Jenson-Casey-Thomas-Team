@@ -12,27 +12,28 @@ package byui.cit260.MormonTrailProject.model;
 public enum InventoryItemType {
     //These are constant values for each item, with
     //the max weight and max strength of the available items.
-    ox(0,"Full"),
-    wagon(700,"Medium"),
-    food(20,"half"),
-    water(100,"Full"),
-    spareWheel(100,"Full"),
-    ammunition(75,"Full");
-    
+    ox(0, "Full"),
+    wagon(700, "Medium"),
+    food(20, "half"),
+    water(100, "Full"),
+    spareWheel(100, "Full"),
+    ammunition(75, "Full");
+
     //This is the maximum weight each item is
     //physically or can carry.
     private int maxWeight;
-    
-    InventoryItemType(int wgt,String strength){
-        maxWeight=wgt;
-       maxStrength=strength;
+
+    InventoryItemType(int wgt, String strength) {
+        maxWeight = wgt;
+        maxStrength = strength;
     }
-    int getmaxWeight(){
+
+    int getmaxWeight() {
         return maxWeight;
     }
-    
+
     private String maxStrength;
-    
+
     private InventoryItemType() {
     }
 
@@ -56,7 +57,5 @@ public enum InventoryItemType {
     public String toString() {
         return super.toString() + "{ maxWeight=" + maxWeight + ", maxStrength=" + maxStrength + "}";
     }
-   
-     
 
 }

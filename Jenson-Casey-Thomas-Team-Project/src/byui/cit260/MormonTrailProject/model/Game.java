@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package byui.cit260.MormonTrailProject.model;
+
 import java.io.Serializable;
 import java.util.Objects;
 import static javax.swing.text.html.HTML.Tag.HEAD;
@@ -12,8 +13,8 @@ import static javax.swing.text.html.HTML.Tag.HEAD;
  *
  * @author Jenson, Casey, Thomas Team
  */
-public class Game implements Serializable{
-    
+public class Game implements Serializable {
+
     private int daysOnTrail;
     private String pace;
     private int milesTraveled;
@@ -21,7 +22,6 @@ public class Game implements Serializable{
     private Player player;
     private String Map;
 
-    
     private String inventory;
 
     public Game() {
@@ -58,7 +58,7 @@ public class Game implements Serializable{
     public void setCurrentMoneyBalance(int currentMoneyBalance) {
         this.currentMoneyBalance = currentMoneyBalance;
     }
-    
+
     public Player getPlayer() {
         return player;
     }
@@ -74,7 +74,7 @@ public class Game implements Serializable{
     public void setMap(String Map) {
         this.Map = Map;
     }
-    
+
     @Override
     public int hashCode() {
         int hash = 7;
@@ -90,7 +90,6 @@ public class Game implements Serializable{
     public String toString() {
         return "Game{" + "daysOnTrail=" + daysOnTrail + ", pace=" + pace + ", milesTraveled=" + milesTraveled + ", currentMoneyBalance=" + currentMoneyBalance + ", player=" + player + '}';
     }
-     
 
     @Override
     public boolean equals(Object obj) {
@@ -121,10 +120,5 @@ public class Game implements Serializable{
         }
         return true;
     }
-    
+
 }
-    
-          
-    
-            
-    

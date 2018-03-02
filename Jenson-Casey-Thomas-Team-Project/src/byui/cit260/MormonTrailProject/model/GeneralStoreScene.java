@@ -4,14 +4,18 @@
  * and open the template in the editor.
  */
 package byui.cit260.MormonTrailProject.model;
+
 import java.io.Serializable;
 import java.util.Objects;
+
 /**
  *
  * @author Wayne Thomas
  */
-public class GeneralStoreScene implements Serializable{
+public class GeneralStoreScene implements Serializable {
+
     private String inventory;
+
     public GeneralStoreScene() {
     }
 
@@ -32,5 +36,4 @@ public class GeneralStoreScene implements Serializable{
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
-    
 }

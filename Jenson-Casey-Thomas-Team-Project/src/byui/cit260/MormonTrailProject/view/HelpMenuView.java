@@ -7,12 +7,10 @@ package byui.cit260.MormonTrailProject.view;
 
 import java.util.Scanner;
 
-
 /**
  *
  * @author Jenson, Casey, and Thomas
  */
- 
 public class HelpMenuView {
 
     private String promptMessage;

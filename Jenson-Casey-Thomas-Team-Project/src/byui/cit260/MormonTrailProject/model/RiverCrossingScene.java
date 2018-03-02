@@ -4,20 +4,21 @@
  * and open the template in the editor.
  */
 package byui.cit260.MormonTrailProject.model;
+
 import java.io.Serializable;
+
 /**
  *
  * @author Wayne Thomas
  */
-public class RiverCrossingScene implements Serializable{
+public class RiverCrossingScene implements Serializable {
 
     public RiverCrossingScene() {
     }
-    
 
     @Override
     public String toString() {
         return "RiverCrossingScene{" + '}';
     }
-    
+
 }

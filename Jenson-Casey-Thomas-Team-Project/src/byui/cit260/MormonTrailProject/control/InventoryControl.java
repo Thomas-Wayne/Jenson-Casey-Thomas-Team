@@ -10,5 +10,5 @@ package byui.cit260.MormonTrailProject.control;
  * @author tcasey
  */
 public class InventoryControl {
-    
+
 }

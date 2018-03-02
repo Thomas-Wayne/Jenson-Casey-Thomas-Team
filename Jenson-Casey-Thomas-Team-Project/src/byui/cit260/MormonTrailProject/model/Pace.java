@@ -10,8 +10,7 @@ package byui.cit260.MormonTrailProject.model;
  * @author Jenson, Casey, Thomas Team
  */
 public enum Pace {
-  
- slowSpeed, averageSpeed, fastSpeed;
- 
-}
 
+    slowSpeed, averageSpeed, fastSpeed;
+
+}

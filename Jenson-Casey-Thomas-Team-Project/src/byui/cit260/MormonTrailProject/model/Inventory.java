@@ -4,21 +4,22 @@
  * and open the template in the editor.
  */
 package byui.cit260.MormonTrailProject.model;
+
 import java.io.Serializable;
 import java.util.Objects;
+
 /**
  *
  * @author Thom Casey
  */
-public class Inventory implements Serializable{
+public class Inventory implements Serializable {
+
     private String itemType;
     private int currentWeight;
     private int currentStrength;
 
     public Inventory() {
     }
-    
-    
 
     public String getItemType() {
         return itemType;
@@ -57,9 +58,7 @@ public class Inventory implements Serializable{
     public String toString() {
         return "Inventory{" + "itemType=" + itemType + ", currentWeight=" + currentWeight + ", currentStrength=" + currentStrength + '}';
     }
-    
-    
-    
+
     @Override
     public boolean equals(Object obj) {
         if (this == obj) {
@@ -83,7 +82,5 @@ public class Inventory implements Serializable{
         }
         return true;
     }
-    
-    
-    
+
 }
