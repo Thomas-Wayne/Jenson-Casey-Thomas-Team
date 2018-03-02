@@ -110,8 +110,7 @@ class MainMenuView {
 
     private void startNewGame() {
         GameMenuView gameMenuView = new GameMenuView();
-        GameMenuView.displayGameMenuView();
-
+        gameMenuView.displayGameMenuView();
     }
 
     private void loadGame() {
