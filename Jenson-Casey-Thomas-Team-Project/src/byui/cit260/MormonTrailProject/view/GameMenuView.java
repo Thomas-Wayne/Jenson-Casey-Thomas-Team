@@ -123,23 +123,23 @@ class GameMenuView {
     }
 
     private void viewMap() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        System.out.println("viewMap() has been called");
     }
 
     private void sceneMenu() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        System.out.println("viewMenu() has been called");
     }
 
     private void setTeamPace() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        System.out.println("setTeamPace() has been called");
     }
 
     private void viewTeamSupplies() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        System.out.println("viewTeamSupplies() has been called");
     }
 
     private void viewTeamStatus() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        System.out.println("viewTeamStatus() has been called");
     }
 
 }
