@@ -145,11 +145,10 @@ class MainMenuView {
         riverCrossingView.displayRiverCrossingView();
     }
     private void getHelp() {
-        /*GameControl.getHelp(BYUICIT260MormonTrailProject.getPlayer());
+        GameControl.getHelp(BYUICIT260MormonTrailProject.getPlayer());
         HelpMenuView helpMenu = new HelpMenuView();
-        helpMenu.displayHelpMenuView();*/
-        System.out.println("\nsaveGame() was called");
-    }
+        helpMenu.displayHelpMenuView();
+     }
 
     private void quitGame() {
         System.exit(0);
