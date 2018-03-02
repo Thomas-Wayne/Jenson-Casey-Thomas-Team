@@ -109,7 +109,8 @@ class MainMenuView {
     }
 
     private void startNewGame() {
-        System.out.println("\nstartNewGame() was called");
+        GameMenuView gameMenuView = new GameMenuView();
+        GameMenuView.displayGameMenuView();
 
     }
 
