@@ -19,12 +19,10 @@ public class RiverCrossingView {
         private String riverFlowMessage;
         private String riverHeightMessage;
         private String oxenHealthMessage;
-        /*private String weatherConditionsMessage;*/
         private String wagonWeight;
         private String riverFlow;
         private String riverHeight;
         private String oxenHealth;
-        /*private String weatherConditions;*/
     
     public RiverCrossingView() {
         
@@ -32,7 +30,6 @@ public class RiverCrossingView {
         this.riverFlowMessage = "\nEnter the flow of the river; slow to raging (1-10): ";
         this.riverHeightMessage = "\nEnter the height of the river in INCHES: ";
         this.oxenHealthMessage = "\nEnter the health of your oxen team bad to good(1-10): ";
-       /* this.weatherConditions = "\nEnter the current weather conditions (-5 - 2): ";*/
         
         this.displayBanner(); // display this banner when creating the view
     }
@@ -93,18 +90,6 @@ public class RiverCrossingView {
         } while (!done);
 
         done = false;
-        
-       /* do {
-
-            this.weatherConditions = this.getUserString(this.weatherConditionsMessage);
-            if (this.weatherConditions.toUpperCase().equals("Q")) // user is quitting
-                return; // exit the game
-            
-            done = this.doNumericAction(this.weatherConditions);
-        
-        } while (!done);
-
-        done = false;*/
         
         do {
 
@@ -194,7 +179,6 @@ public class RiverCrossingView {
                           + "\n* River flow rate: " + this.riverFlow
                           + "\n* Height of the river: " + this.riverHeight
                           + "\n* Health of the oxen team: " + this.oxenHealth
-                         /* + "\n* Weather conditions: " + this.weatherConditions*/
                           + "\n***************************************"
                           );
         
@@ -202,15 +186,10 @@ public class RiverCrossingView {
         int riverFlow = Integer.parseInt(this.riverFlow);
         int riverHeight = Integer.parseInt(this.riverHeight);
         int oxenHealth = Integer.parseInt(this.oxenHealth);
-      /*  int weather = Integer.parseInt(this.weatherConditions);*/
-
-        // Create MainMenuView object
-        RiverCrossingView probability  = new RiverCrossingView();
-            double riverCrossing;
-            int weather = 2;
-            riverCrossing = PlayControl.calcRiverCrossingProbability(wagonWeight, riverFlow, riverHeight, oxenHealth, weather);
-           
-            return probability;
+      
+       System.out.println(PlayControl.calcRiverCrossingProbability(riverHeight, wagonWeight, riverFlow, oxenHealth, oxenHealth));
+       
+       return null;
     }
 
     public void display() {

@@ -147,28 +147,28 @@ public class RiverCrossingSceneMenuView {
 
     private void lookForCrossingAid() {
         System.out.println(
-                "\nYou have looked around for a while, but there"
+                "\nYou have looked around for a while, but there "
                 + "are no ferry boats or bridges available here. Make another choice");
     }
 
     private void prepareCrossing() {
         System.out.println(
-                "\nCheck your wagon weight, the weather conditions,"
-                + "the swiftness and depth of the river to see if you"
+                "\nCheck your wagon weight, the weather conditions, "
+                + "the swiftness and depth of the river to see if you "
                 + "can safely cross at this time.");
     }
 
     private void lookForCampsite() {
         System.out.println(
-                "\nIf you are planning to stay for a little while, you"
-                + "will want to find a sufficient campsite to rest your"
+                "\nIf you are planning to stay for a little while, you "
+                + "will want to find a sufficient campsite to rest your "
                 + "team until you are ready to cross.");
     }
 
     private void rest() {
         System.out.println(
-                "\nFor whatever reason you have decided to rest, ENJOY!"
-                + "This is a good time to rebuild your strength, both"
+                "\nFor whatever reason you have decided to rest, ENJOY! "
+                + "This is a good time to rebuild your strength, both "
                 + "physically and spiritually.");
     }
     private void quitGame() {
