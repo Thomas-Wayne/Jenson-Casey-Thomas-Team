@@ -64,11 +64,10 @@ public class GameControl {
     }
 
     public static void DailyTrailStopSceneMenuView(Player player) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
-    public static void gameMenuView(Player player) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public static void GameMenuView(Player player) {
+       
     }
 
 }

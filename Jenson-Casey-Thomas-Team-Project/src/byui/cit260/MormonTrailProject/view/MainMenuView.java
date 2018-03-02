@@ -120,7 +120,7 @@ class MainMenuView {
     }
 
     private void startNewGame() {
-        GameControl.gameMenuView(BYUICIT260MormonTrailProject.getPlayer());
+        GameControl.GameMenuView(BYUICIT260MormonTrailProject.getPlayer());
         GameMenuView gameMenuView = new GameMenuView();
         gameMenuView.displayGameMenuView();
     }
