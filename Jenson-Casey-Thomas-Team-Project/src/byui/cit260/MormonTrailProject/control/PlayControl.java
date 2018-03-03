@@ -73,5 +73,18 @@ public class PlayControl {
         double calcGatheringSuccess = (weather + location + localResources);
         return calcGatheringSuccess;
     }
-
+    private int distanceRemainingValue;
+   public int calcDistanceRemaining(int paceValue, int miles){
+           
+        if (paceValue == 6) {
+            int distanceRemainingValue = paceValue - miles;
+            return distanceRemainingValue;
+        } else if (paceValue == 10) {
+            int distanceRemainingValue = paceValue - miles;
+            return distanceRemainingValue;
+        } else if (paceValue == 16) {
+            int distanceRemainingValue = paceValue - miles;
+            return distanceRemainingValue;
+        } else return distanceRemainingValue;
+    }  
 }

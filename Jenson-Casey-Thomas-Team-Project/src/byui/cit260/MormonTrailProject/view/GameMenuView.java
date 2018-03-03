@@ -4,21 +4,46 @@
  * and open the template in the editor.
  */
 package byui.cit260.MormonTrailProject.view;
-
 import byui.cit260.MormonTrailProject.control.GameControl;
 import java.util.Scanner;
 import jenson.casey.thomas.team.project.CIT260.BYUICIT260MormonTrailProject;
 
 /**
  *
- * @author Thomas
+ * @author WThomas
  */
-class GameMenuView {
+public class GameMenuView {
 
     private String promptMessage;
     private String menu;
+    private String dateDayOfWeek;
+    private int distanceTraveled;
+    private int distanceRemaining;
+    private int miles = 1300;
+    private String currentSurroundings;
+    private String potentialIssues;
+    private String todaysWeather;
+    private int distanceRemainingValue;
 
     public GameMenuView() {
+        this.dateDayOfWeek = "";
+        this.distanceTraveled = distanceTraveled;
+        this.distanceRemaining = distanceRemainingValue;
+        this.currentSurroundings = "You are in the middle of nowhere.";
+        this.potentialIssues = "A racoon made off with your breakfast. Tough luck!";
+        this.todaysWeather = "Partly cloudy skies. High 75 Low 65";
+
+        System.out.println(
+                "\n*******************************************************"
+                + "\n Today's date is:\t\t" + this.dateDayOfWeek
+                + "\n Distance traveled from Nauvoo:\t" + this.distanceTraveled
+                + "\n Distance to Salt Lake Valley:\t" + this.distanceRemaining
+                + "\n Current surroundings:\t\t" + this.currentSurroundings
+                + "\n Potential issues:\t\t" + this.potentialIssues
+                + "\n Today's weather:\t\t" + this.todaysWeather
+                + "\n*******************************************************"
+        );
+
         this.promptMessage = "\nPlease choose an option: ";
         this.menu = "\n"
                 + "\n********************************************"
@@ -85,7 +110,7 @@ class GameMenuView {
                 break;
 
             case "P":
-                this.setTeamPace();
+                this.TeamPace();
                 break;
 
             case "S":
@@ -127,11 +152,11 @@ class GameMenuView {
     }
 
     private void sceneMenu() {
-        System.out.println("viewMenu() has been called");
+        System.out.println("sceneMenu() has been called");
     }
 
-    private void setTeamPace() {
-        System.out.println("setTeamPace() has been called");
+    private void TeamPace() {
+        System.out.println("teamPace() has been called");
     }
 
     private void viewTeamSupplies() {
@@ -141,5 +166,5 @@ class GameMenuView {
     private void viewTeamStatus() {
         System.out.println("viewTeamStatus() has been called");
     }
-
+      
 }

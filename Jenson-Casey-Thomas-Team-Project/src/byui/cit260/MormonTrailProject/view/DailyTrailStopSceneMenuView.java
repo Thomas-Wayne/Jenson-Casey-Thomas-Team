@@ -9,7 +9,7 @@ import java.util.Scanner;
 
 /**
  *
- * @author Thomas
+ * @author WThomas
  */
 public class DailyTrailStopSceneMenuView {
 
