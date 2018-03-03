@@ -44,13 +44,7 @@ public class BYUICIT260MormonTrailProject {
 
         StartProgramView startProgramView = new StartProgramView();
         startProgramView.display();
-        
-        RiverCrossingSceneMenuView riverCrossingSceneMenuView = new RiverCrossingSceneMenuView();
-        riverCrossingSceneMenuView.display();
-        
-        RiverCrossingView riverCrossingView = new RiverCrossingView();
-        riverCrossingView.display();
-        
+              
 
     }
 
