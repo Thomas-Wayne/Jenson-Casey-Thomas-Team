@@ -1,5 +1,7 @@
 package byui.cit260.MormonTrailProject.control;
 
+import byui.cit260.MormonTrailProject.model.Pace;
+
 /**
  *
  * @author tcasey, wthomas, ijenson
@@ -74,8 +76,9 @@ public class PlayControl {
         return calcGatheringSuccess;
     }
     private int distanceRemainingValue;
+    
    public int calcDistanceRemaining(int paceValue, int miles){
-           
+      
         if (paceValue == 6) {
             int distanceRemainingValue = paceValue - miles;
             return distanceRemainingValue;

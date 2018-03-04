@@ -19,7 +19,6 @@ public class GameMenuView {
     private String dateDayOfWeek;
     private int distanceTraveled;
     private int distanceRemaining;
-    private int miles = 1300;
     private String currentSurroundings;
     private String potentialIssues;
     private String todaysWeather;
