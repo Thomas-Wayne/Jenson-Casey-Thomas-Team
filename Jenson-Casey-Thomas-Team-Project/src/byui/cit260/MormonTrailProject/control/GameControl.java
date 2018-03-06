@@ -64,6 +64,7 @@ public class GameControl {
     }
 
     public static void DailyTrailStopSceneMenuView(Player player) {
+      
     }
 
     public static void GameMenuView(Player player) {
