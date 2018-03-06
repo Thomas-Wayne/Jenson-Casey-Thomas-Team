@@ -16,7 +16,7 @@ import static javax.swing.text.html.HTML.Tag.HEAD;
 public class Game implements Serializable {
 
     private int daysOnTrail;
-    private String pace;
+    private Pace pace;
     private int milesTraveled;
     private int currentMoneyBalance;
     private Player player;
@@ -35,18 +35,20 @@ public class Game implements Serializable {
         this.daysOnTrail = daysOnTrail;
     }
 
-    public String getPace() {
+    public Pace getPace() {
         return pace;
     }
 
-    public void setPace(String pace) {
+    public void setPace(Pace pace) {
         this.pace = pace;
     }
 
     public int getMilesTraveled() {
         return milesTraveled;
     }
-
+    public void addMilesTraveled(int miles){
+        milesTraveled+= miles;    
+    }
     public void setMilesTraveled(int milesTraveled) {
         this.milesTraveled = milesTraveled;
     }

@@ -62,32 +62,28 @@ public class PlayControl {
     public static double calcGatheringSuccess(int weather, int location, int localResources) {
 
         if (weather + location + localResources > 0) {
-
             return 2;
-
         }
-
         if (weather + location + localResources < 0) {
-
             return -2;
         }
-
         double calcGatheringSuccess = (weather + location + localResources);
         return calcGatheringSuccess;
     }
-    private int distanceRemainingValue;
-    
-   public int calcDistanceRemaining(int paceValue, int miles){
-      
+
+    public static int calcDistanceTravelDay(int paceValue) {
+        int distanceRemainingValue = 0;
         if (paceValue == 6) {
-            int distanceRemainingValue = paceValue - miles;
+            distanceRemainingValue = paceValue;
             return distanceRemainingValue;
         } else if (paceValue == 10) {
-            int distanceRemainingValue = paceValue - miles;
+            distanceRemainingValue = paceValue;
             return distanceRemainingValue;
         } else if (paceValue == 16) {
-            int distanceRemainingValue = paceValue - miles;
+            distanceRemainingValue = paceValue;
             return distanceRemainingValue;
-        } else return distanceRemainingValue;
-    }  
+        } else {
+            return distanceRemainingValue;
+        }
+    }
 }

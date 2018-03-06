@@ -5,6 +5,7 @@
  */
 package byui.cit260.MormonTrailProject.control;
 
+import byui.cit260.MormonTrailProject.model.Game;
 import byui.cit260.MormonTrailProject.model.Player;
 import jenson.casey.thomas.team.project.CIT260.BYUICIT260MormonTrailProject;
 
@@ -35,8 +36,15 @@ public class GameControl {
         return true;
     }
 
-    public static void createNewGame(Player player) {
+    public void dailyMiles() {
+        int distance = PlayControl.calcDistanceTravelDay(BYUICIT260MormonTrailProject.getCurrentGame().getPace().ordinal());
+        BYUICIT260MormonTrailProject.getCurrentGame().addMilesTraveled(distance);
+    }
 
+    public static void createNewGame(Player player) {
+        Game game = new Game();
+        game.setPlayer(player);
+        BYUICIT260MormonTrailProject.setCurrentGame(game);
     }
 
     public static void loadGame(Player player) {
@@ -52,23 +60,23 @@ public class GameControl {
     }
 
     public static void riverCrossing(Player player) {
-      
+
     }
 
     public static void riverCrossingSceneMenuView(Player player) {
-        
+
     }
 
     public static void riverCrossingView(Player player) {
-        
+
     }
 
     public static void DailyTrailStopSceneMenuView(Player player) {
-      
+
     }
 
     public static void GameMenuView(Player player) {
-       
+
     }
 
 }

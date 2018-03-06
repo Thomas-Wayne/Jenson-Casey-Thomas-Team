@@ -5,6 +5,7 @@
  */
 package byui.cit260.MormonTrailProject.view;
 import byui.cit260.MormonTrailProject.control.GameControl;
+import byui.cit260.MormonTrailProject.control.PlayControl;
 import java.util.Scanner;
 import jenson.casey.thomas.team.project.CIT260.BYUICIT260MormonTrailProject;
 
@@ -23,11 +24,11 @@ public class GameMenuView {
     private String potentialIssues;
     private String todaysWeather;
     private int distanceRemainingValue;
+    
 
     public GameMenuView() {
         this.dateDayOfWeek = "";
-        this.distanceTraveled = distanceTraveled;
-        this.distanceRemaining = distanceRemainingValue;
+        this.distanceRemaining = 1300; 
         this.currentSurroundings = "You are in the middle of nowhere.";
         this.potentialIssues = "A racoon made off with your breakfast. Tough luck!";
         this.todaysWeather = "Partly cloudy skies. High 75 Low 65";
@@ -35,7 +36,7 @@ public class GameMenuView {
         System.out.println(
                 "\n*******************************************************"
                 + "\n Today's date is:\t\t" + this.dateDayOfWeek
-                + "\n Distance traveled from Nauvoo:\t" + this.distanceTraveled
+                + "\n Distance traveled from Nauvoo:\t" + 0
                 + "\n Distance to Salt Lake Valley:\t" + this.distanceRemaining
                 + "\n Current surroundings:\t\t" + this.currentSurroundings
                 + "\n Potential issues:\t\t" + this.potentialIssues
@@ -155,7 +156,8 @@ public class GameMenuView {
     }
 
     private void TeamPace() {
-        System.out.println("teamPace() has been called");
+        SetPaceView view = new SetPaceView();
+        view.displaySetPaceView();
     }
 
     private void viewTeamSupplies() {
