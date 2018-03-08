@@ -105,11 +105,7 @@ class MainMenuView {
             case "G":
                 this.gatheringSuccessMenuView();
                 break;
-                
-            case "A":
-                this.gatheringSuccessView();
-                break;
-                
+                                
             case "H":
                 this.getHelp();
                 break;
@@ -171,13 +167,7 @@ class MainMenuView {
         GatheringSuccessMenuView gatheringSuccessMenuView = new GatheringSuccessMenuView();
         gatheringSuccessMenuView.displayGatheringSuccessMenuView();
     }
-
-    private void gatheringSuccessView() {
-        GameControl.gatheringSuccessView(BYUICIT260MormonTrailProject.getPlayer());
-        GatheringSuccessView gatheringSuccessView = new GatheringSuccessView();
-        gatheringSuccessView.displayGatheringSuccessView();
         
-    }
     private void DailyTrailStopSceneMenuView() {
         GameControl.DailyTrailStopSceneMenuView(BYUICIT260MormonTrailProject.getPlayer());
         DailyTrailStopSceneMenuView DailytrailStopSceneMenuView = new DailyTrailStopSceneMenuView();

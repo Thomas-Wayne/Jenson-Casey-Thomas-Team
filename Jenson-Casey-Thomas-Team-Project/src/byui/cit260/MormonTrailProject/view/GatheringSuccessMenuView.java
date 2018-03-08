@@ -5,7 +5,9 @@
  */
 package byui.cit260.MormonTrailProject.view;
 
+import byui.cit260.MormonTrailProject.control.GameControl;
 import java.util.Scanner;
+import jenson.casey.thomas.team.project.CIT260.BYUICIT260MormonTrailProject;
 
 /**
  *
@@ -36,11 +38,11 @@ public class GatheringSuccessMenuView {
                 + "\nV - Vegetables                               *"
                 + "\nF - Fruits                                   *"
                 + "\nE - Edible plants                            *"
-                + "\nB - Go back to previous menu                 *"
+                + "\nQ - Go back to previous menu                 *"
                 + "\n**********************************************";
     }
 
-    public void displayRiverCrossingSceneMenuView() {
+    public void displayGatheringSuccessMenuView() {
         boolean endOfView = false;
 
         do {
@@ -57,7 +59,7 @@ public class GatheringSuccessMenuView {
         do {
             String menuOption = this.getMenuOption();
 
-            if (menuOption.toUpperCase().equals("B")) {
+            if (menuOption.toUpperCase().equals("F")) {
 
                 return;
             } else {
@@ -81,7 +83,7 @@ public class GatheringSuccessMenuView {
         do {
             String menuOption = this.getMenuOption();
 
-            if (menuOption.toUpperCase().equals("B")) {
+            if (menuOption.toUpperCase().equals("Q")) {
 
                 return;
             } else {
@@ -131,7 +133,7 @@ public class GatheringSuccessMenuView {
                 this.getEdiblePlants();
                 break;
 
-            case "B":
+            case "Q":
                 this.quitGame();
             
             default:
@@ -152,7 +154,10 @@ public class GatheringSuccessMenuView {
     }
 
     private void getVegetables() {
-        System.out.println("\n getVetables() was called.");
+        GetVegetablesView getVegetablesView = new GetVegetablesView();
+        getVegetablesView.displayGetVegetablesView();
+        GameControl.gatheringSuccessMenuView(BYUICIT260MormonTrailProject.getPlayer());
+        
     }
 
     private void getFruits() {
@@ -164,12 +169,9 @@ public class GatheringSuccessMenuView {
     }
 
     private void quitGame() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        System.exit(0);
     }
 
-    void displayGatheringSuccessMenuView() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
 
 
 }
