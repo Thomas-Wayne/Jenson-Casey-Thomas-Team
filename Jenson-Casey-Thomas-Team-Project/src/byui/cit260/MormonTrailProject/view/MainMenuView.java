@@ -30,6 +30,8 @@ class MainMenuView {
                 + "\nH - Get help on how to play the game"
                 + "\nR - RIVERCROSSINGSCENEMENUVIEW"
                 + "\nC - RIVERCROSSINGVIEW"
+                + "\nG - GATHERINGSUCCESSMENUVIEW"
+                + "\nA - GATHERINGSUCCESSVIEW"
                 + "\nS - Save game"
                 + "\nQ - Quit"
                 + "\n********************************************";
@@ -99,6 +101,14 @@ class MainMenuView {
                 this.riverCrossingView();
                 break;
                 
+            case "G":
+                this.gatheringSuccessMenuView();
+                break;
+                
+            case "A":
+                this.gatheringSuccessView();
+                break;
+                
             case "H":
                 this.getHelp();
                 break;
@@ -149,6 +159,19 @@ class MainMenuView {
 
     private void quitGame() {
         System.exit(0);
+    }
+
+    private void gatheringSuccessMenuView() {
+        GameControl.gatheringSuccessMenuView(BYUICIT260MormonTrailProject.getPlayer());
+        GatheringSuccessMenuView gatheringSuccessMenuView = new GatheringSuccessMenuView();
+        gatheringSuccessMenuView.displayGatheringSuccessMenuView();
+    }
+
+    private void gatheringSuccessView() {
+        GameControl.gatheringSuccessView(BYUICIT260MormonTrailProject.getPlayer());
+        GatheringSuccessView gatheringSuccessView = new GatheringSuccessView();
+        gatheringSuccessView.displayGatheringSuccessView();
+        
     }
 
 }

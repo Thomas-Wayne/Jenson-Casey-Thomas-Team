@@ -63,4 +63,12 @@ public class GameControl {
         
     }
 
+    public static void gatheringSuccessView(Player player) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public static void gatheringSuccessMenuView(Player player) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
 }
