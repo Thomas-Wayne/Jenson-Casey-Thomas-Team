@@ -5,16 +5,12 @@
  */
 package byui.cit260.MormonTrailProject.model;
 
-
-
 /**
  *
  * @author Isabel Jenson
  */
 public enum LocationType {
-    
-  town, fort, river, landmark;
 
+    town, fort, river, landmark;
 
-   
 }

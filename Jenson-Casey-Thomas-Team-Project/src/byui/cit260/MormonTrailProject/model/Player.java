@@ -4,26 +4,28 @@
  * and open the template in the editor.
  */
 package byui.cit260.MormonTrailProject.model;
+
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Objects;
+
 /**
  *
- *  @author Jenson, Casey, Thomas Team
+ * @author Jenson, Casey, Thomas Team
  */
-public class Player implements Serializable{
-    
+public class Player implements Serializable {
+
     private String name;
     private int money;
     private int huntingSkill;
     private int gatheringSkill;
     private int dailyStaminaDraw;
     private int currentHealth;
-    private ArrayList<Game> games = new ArrayList<Game>(); 
+    private ArrayList<Game> games = new ArrayList<Game>();
 
     public Player() {
     }
-       
+
     public String getName() {
         return name;
     }
@@ -97,8 +99,7 @@ public class Player implements Serializable{
     public String toString() {
         return "Player{" + "name=" + name + ", money=" + money + ", huntingSkill=" + huntingSkill + ", gatheringSkill=" + gatheringSkill + ", dailyStaminaDraw=" + dailyStaminaDraw + ", currentHealth=" + currentHealth + ", games=" + games + '}';
     }
-    
-    
+
     @Override
     public boolean equals(Object obj) {
         if (this == obj) {
@@ -135,8 +136,4 @@ public class Player implements Serializable{
         return true;
     }
 
-   
-    
-
-    
 }

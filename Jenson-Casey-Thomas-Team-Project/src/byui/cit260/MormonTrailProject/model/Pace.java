@@ -10,8 +10,18 @@ package byui.cit260.MormonTrailProject.model;
  * @author Jenson, Casey, Thomas Team
  */
 public enum Pace {
-  
- slowSpeed, averageSpeed, fastSpeed;
- 
-}
 
+    slowSpeed(2),
+    averageSpeed(10),
+    fastSpeed(16);
+
+    private final int paceValue;
+
+    private Pace(int paceValue) {
+        this.paceValue = paceValue;
+    }
+
+    public int getPaceValue() {
+        return this.paceValue;
+    }
+}

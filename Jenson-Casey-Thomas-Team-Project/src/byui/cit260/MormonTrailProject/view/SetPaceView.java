@@ -5,34 +5,34 @@
  */
 package byui.cit260.MormonTrailProject.view;
 
+import byui.cit260.MormonTrailProject.model.Pace;
 import java.util.Scanner;
+import jenson.casey.thomas.team.project.CIT260.BYUICIT260MormonTrailProject;
 
 /**
  *
  * @author Jenson, Casey, and Thomas
  */
-public class HelpMenuView {
+public class SetPaceView {
 
     private String promptMessage;
     private String menu;
 
-    public HelpMenuView() {
+    public SetPaceView() {
 
         this.promptMessage = "\nPlease choose an option: ";
         this.menu = "\n"
                 + "\n*******************************************"
-                + "\n| Help Menu |"
+                + "\n| Set Pace Menu |"
                 + "\n*******************************************"
-                + "\nG - What is the goal of the game?"
-                + "\nM - How to move"
-                + "\nE - Estimate the number of resources"
-                + "\nH - Harvest resources"
-                + "\nD - Delivering resources to warehouse"
+                + "\nS - Slow "
+                + "\nA - Average"
+                + "\nF - Fast"
                 + "\nQ - Quit"
                 + "\n*******************************************";
     }
 
-    public void displayHelpMenuView() {
+    public void displaySetPaceView() {
         boolean endOfView = false;
 
         do {
@@ -76,26 +76,18 @@ public class HelpMenuView {
         menuOption = menuOption.toUpperCase();
         switch (menuOption) {
 
-            case "G":
-                this.goalHelp();
+            case "S":
+                this.slowPace();
                 break;
 
-            case "M":
-                this.moveHelp();
+            case "A":
+                this.averagePace();
                 break;
 
-            case "E":
-                this.estimateHelp();
+            case "F":
+                this.fastPace();
                 break;
-
-            case "H":
-                this.harvestHelp();
-                break;
-
-            case "D":
-                this.deliverHelp();
-                break;
-
+                
             default:
                 System.out.println("\n*** Invalid selection *** Try again.");
                 break;
@@ -106,24 +98,18 @@ public class HelpMenuView {
 
     }
 
-    private void goalHelp() {
-        System.out.println("\ngoalHelp() was called");
+    private void slowPace() {
+        BYUICIT260MormonTrailProject.getCurrentGame().setPace(Pace.slowSpeed);
+        System.out.println("A nice leisurely stroll today huh?");
     }
 
-    private void moveHelp() {
-        System.out.println("\nmoveHelp() was called");
+    private void averagePace() {
+        BYUICIT260MormonTrailProject.getCurrentGame().setPace(Pace.averageSpeed);
+        System.out.println("Let's get a move on, time is a waisten!");
     }
 
-    private void estimateHelp() {
-        System.out.println("\nestimateHelp() was called");
+    private void fastPace() {
+        BYUICIT260MormonTrailProject.getCurrentGame().setPace(Pace.fastSpeed);
+        System.out.println("At this pace we will be there in no time!");
     }
-
-    private void harvestHelp() {
-        System.out.println("\nharvestHelp() was called");
-    }
-
-    private void deliverHelp() {
-        System.out.println("\ndeliverHelp() was called");
-    }
-
 }

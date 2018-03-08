@@ -16,6 +16,9 @@ public class RiverCrossingSceneMenuView {
     private String promptMessage;
     private String menu;
 
+    /**
+     *
+     */
     public RiverCrossingSceneMenuView() {
 
         System.out.println(

@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package byui.cit260.MormonTrailProject.model;
+
 import java.io.Serializable;
 import java.util.Objects;
 
@@ -12,15 +13,13 @@ import java.util.Objects;
  * @author Isabel Jenson
  */
 public class Location implements Serializable {
-    
+
     private String type;
-    private  String milepost;
+    private String milepost;
     private String scene;
 
-    
     public Location() {
     }
-    
 
     public String getType() {
         return type;
@@ -37,7 +36,7 @@ public class Location implements Serializable {
     public void setMilepost(String milepost) {
         this.milepost = milepost;
     }
-    
+
     public String getScene() {
         return scene;
     }
@@ -45,7 +44,6 @@ public class Location implements Serializable {
     public void setScene(String scene) {
         this.scene = scene;
     }
-    
 
     @Override
     public int hashCode() {
@@ -59,8 +57,6 @@ public class Location implements Serializable {
     public String toString() {
         return "Location{" + "type=" + type + ", milepost=" + milepost + '}';
     }
-    
-    
 
     @Override
     public boolean equals(Object obj) {
@@ -83,8 +79,4 @@ public class Location implements Serializable {
         return true;
     }
 
-    
-    
-    
-    
 }

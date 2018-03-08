@@ -4,22 +4,22 @@
  * and open the template in the editor.
  */
 package byui.cit260.MormonTrailProject.model;
+
 import java.io.Serializable;
 import java.util.Objects;
+
 /**
  *
  * @author Thom Casey
  */
-public class Event implements Serializable{
-    
+public class Event implements Serializable {
+
     private int healthImpact;
     private String description;
 
     public Event() {
     }
-    
-    
-    
+
     public int getHealthImpact() {
         return healthImpact;
     }
@@ -48,7 +48,6 @@ public class Event implements Serializable{
     public String toString() {
         return "Event{" + "healthImpact=" + healthImpact + ", description=" + description + '}';
     }
-    
 
     @Override
     public boolean equals(Object obj) {
@@ -70,7 +69,5 @@ public class Event implements Serializable{
         }
         return true;
     }
-    
-    
-    
+
 }

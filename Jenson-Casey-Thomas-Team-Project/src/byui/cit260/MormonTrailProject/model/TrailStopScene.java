@@ -4,13 +4,16 @@
  * and open the template in the editor.
  */
 package byui.cit260.MormonTrailProject.model;
+
 import java.io.Serializable;
 import java.util.Objects;
+
 /**
  *
  * @author Wayne Thomas
  */
-public class TrailStopScene implements Serializable{
+public class TrailStopScene implements Serializable {
+
     private boolean hasNearByTown;
     private String nearbyTownName;
     private boolean hasNearbyFort;
@@ -18,7 +21,7 @@ public class TrailStopScene implements Serializable{
 
     public TrailStopScene() {
     }
-    
+
     public boolean isHasNearByTown() {
         return hasNearByTown;
     }
@@ -66,8 +69,6 @@ public class TrailStopScene implements Serializable{
         return "TrailStopScene{" + "hasNearByTown=" + hasNearByTown + ", nearbyTownName=" + nearbyTownName + ", hasNearbyFort=" + hasNearbyFort + ", nearbyFortName=" + nearbyFortName + '}';
     }
 
-    
-    
     @Override
     public boolean equals(Object obj) {
         if (this == obj) {
@@ -94,5 +95,5 @@ public class TrailStopScene implements Serializable{
         }
         return true;
     }
-     
+
 }

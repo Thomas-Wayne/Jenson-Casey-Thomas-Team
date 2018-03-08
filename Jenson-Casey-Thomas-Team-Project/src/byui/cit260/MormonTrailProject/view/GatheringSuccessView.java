@@ -68,6 +68,7 @@ public class GatheringSuccessView {
             else if ("E".equals(inputs)) {
                 System.out.println("Thanks for playing!");
                 break;
+            }
             
             else {
                 endOfView = doAction(inputs);
@@ -75,7 +76,7 @@ public class GatheringSuccessView {
 
         } while (endOfView != true);
 
-    }
+       }
 
     private String getInputs() {
         System.out.println("Please, make a choice for gathering.");
