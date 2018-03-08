@@ -105,6 +105,10 @@ class MainMenuView {
             case "G":
                 this.gatheringSuccessMenuView();
                 break;
+            
+            case "A":
+                this.getVegetablesView();
+                break;    
                                 
             case "H":
                 this.getHelp();
@@ -175,4 +179,10 @@ class MainMenuView {
 
     }
 
+    private void getVegetablesView() {
+         GameControl.getVegetablesView(BYUICIT260MormonTrailProject.getPlayer());
+        GetVegetablesView getVegetablesView = new GetVegetablesView();
+        getVegetablesView.displayGetVegetablesView();
+
+}
 }

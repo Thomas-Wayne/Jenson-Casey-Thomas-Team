@@ -79,7 +79,7 @@ public class GameControl {
 
     }
 
-    public static void gatheringSuccessView(Player player) {
+    public static void getVegetablesView(Player player) {
          
     }
 

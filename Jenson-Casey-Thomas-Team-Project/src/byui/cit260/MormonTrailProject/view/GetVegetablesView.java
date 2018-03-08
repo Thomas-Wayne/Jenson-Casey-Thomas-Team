@@ -5,182 +5,159 @@
  */
 package byui.cit260.MormonTrailProject.view;
 
-import byui.cit260.MormonTrailProject.control.PlayControl;
-import byui.cit260.MormonTrailProject.model.Pace;
 import java.util.Scanner;
-import jenson.casey.thomas.team.project.CIT260.BYUICIT260MormonTrailProject;
+import byui.cit260.MormonTrailProject.control.PlayControl;
 
 /**
  *
- * @author 
+ * @author Isabel Jenson
  */
 public class GetVegetablesView {
 
-        private String weatherMessage;
-        private String locationMessage;
-        private String localResourcesMessage;
-        private String weather;
-        private String location;
-        private String localResources;
-      
+    private String weatherMessage;
+    private String locationMessage;
+    private String localResourcesMessage;
+
+    private String weather;
+    private String location;
+    private String localResources;
 
     public GetVegetablesView() {
-        this.weather = "\nEnter today's weather (bad=-5, poor=-3, good=0, excellent=2): ";
-        this.location = "\nEnter your current location (Town= -5, fort= -2, river= 2, landmark = 5): ";
-        this.localResources = "\nChoose local resources (fruit trees=5, vegetables=5, edible leaves= 1, no vegetation=0): ";
-        this.displayBanner();
 
-    }
-
-    private void displayBanner() {
-        System.out.println(
-                "\n*******************************************************"
-                + "\n*                                                      *"
-                + "\n*         Are you ready to attempt gathering?          *"
-                + "\n*                                                      *"
-                + "\n*Your success will depend on the weather and location! *"
-                + "\n*                                                      *"
-                + "\n*                                                      *"
-                + "\n*******************************************************"
-        );
+        this.weatherMessage = "\nEnter current weather (bad=-5, poor=-3, good=0, excellent=2): ";
+        this.locationMessage = "\nEnter your location (Town= -5, fort= -2, river= 2, landmark = 5): ";
+        this.localResourcesMessage = "\nEnter local resources(fruit trees=5, vegetables=5, edible leaves= 1, no vegetation=0): ";
 
     }
 
     public void displayGetVegetablesView() {
-       
-        boolean endOfView = false;
-
+        boolean done = false;
         do {
-            String inputs = this.getInputs();
 
-            if (inputs.toUpperCase().equals("Q")) {
-
-                return;
-            } else {
-                endOfView = doAction(inputs);
+            this.weather = this.getUserString(this.weatherMessage);
+            if (this.weather.toUpperCase().equals("Q")) // user is quitting
+            {
+                return; // exit the game
             }
+            done = this.doNumericAction(this.weather);
 
-        } while (endOfView != true);
-        /**    boolean endOfView = false;
+        } while (!done);
 
-      do {
-            String inputs = this.getInputs();
+        done = false;
+        do {
 
-            if (inputs == null) {
-
-                System.out.println("Please enter a valid choice to continue.");
-            } else if ("V".equals(inputs)) {
-                System.out.println("Eat your veggies!");
-                break;
-            } else if ("F".equals(inputs)) {
-                System.out.println("Life is sweet, just like fruit!");
-                break;
-
-            } else if ("E".equals(inputs)) {
-                System.out.println("I know you can do better than plants!");
-                break;
-            } else if (inputs.toUpperCase().equals("Q")) {
-                return;
-            } else {
-                endOfView = doAction(inputs);
+            this.location = this.getUserString(this.locationMessage);
+            if (this.location.toUpperCase().equals("Q")) // user is quitting
+            {
+                return; // exit the game
             }
+            done = this.doNumericAction(this.location);
 
-        } while (endOfView != true); **/
+        } while (!done);
+
+        done = false;
+        do {
+
+            this.localResources = this.getUserString(this.localResourcesMessage);
+            if (this.localResources.toUpperCase().equals("Q")) // user is quitting
+            {
+                return; // exit the game
+            }
+            done = this.doNumericAction(this.localResources);
+
+        } while (!done);
+
+        done = false;
+
+        this.displayNextView();
 
     }
 
-    private String getInputs() {
-        System.out.println("\nPlease, make a choice for gathering. Gather fruit(F), veggies(V) or plants(E)");
-        Scanner keyboard = new Scanner(System.in);
-        String inputs = "V";
-        boolean valid = false;
-        while (!valid) {
-            
-            inputs = keyboard.nextLine();
-            inputs = inputs.trim();
-            if (inputs.length() < 1) {
+    private String getUserString(String promptMessage) {
+        Scanner keyboard = new Scanner(System.in); // get infile for keyboard
+        String value = ""; // value to be returned
+        boolean valid = false; // initialize to not valid
 
-                System.out.println("\nInvalid input. Please, choose fruit(F), veggies(V), plants(E).");
+        while (!valid) { // loop while an invalid value is entered
+            System.out.println("\n" + promptMessage);
+
+            value = keyboard.nextLine(); // get next line typed on keyboard
+            value = value.trim(); // trim off leading and trailing blanks
+
+            if (value.length() < 1) { // value is blank
+                System.out.println("\nInvalid value: value cannot be blank");
                 continue;
-
             }
+
             break;
         }
-        return inputs;
 
+        return value; // return the value entered
     }
-    
-    private boolean doAction(String inputs) {
-         
-        inputs = inputs.toUpperCase();
-        switch (inputs) {
 
-            case "V":
-                this.weather();
-                break;
+    private boolean doNumericAction(String userInput) {
 
-            case "L":
-                this.location();
-                break;
-
-            case "F":
-                this.localResources();
-                break;
-                
-            default:
-                System.out.println("\n*** Invalid selection *** Try again.");
-                break;
-
+        if (userInput.contains("[a-zA-Z]+") == true) {
+            System.out.println("\nInvalid Value: "
+                    + "must be numeric only");
+            return false;
         }
 
-        return false;
+        if (userInput.length() < 1) {
+            System.out.println("\nInvalid Value: "
+                    + "value cannot be blank");
+            return false;
+        }
 
+        return true;
     }
 
-    private void localResources() {
-        System.out.println("\nlocalResources() was called");
+    private char getUserChar(String promptMessage) {
+        Scanner keyboard = new Scanner(System.in); // get infile for keyboard
+        String value = ""; // value to be returned
+        boolean valid = false; // initialize to not valid
+
+        while (!valid) { // loop while an invalid value is entered
+            System.out.println("\n" + promptMessage);
+
+            value = keyboard.nextLine(); // get next line typed on keyboard
+            value = value.trim(); // trim off leading and trailing blanks
+
+            if (value.length() < 1) { // value is blank
+                System.out.println("\nInvalid value: value cannot be blank");
+                continue;
+            }
+            if (value.length() > 1) { // value is too long
+                System.out.println("\nInvalid value: value cannot be more than 1 character");
+                continue;
+            }
+
+            break; // end the loop
+        }
+
+        return value.charAt(0); // return the value entered
     }
 
-    private void location() {
-        System.out.println("\nlocation() was called");
-    }
-
-    private void weather() {
-        System.out.println("\nweather() was called");
-    }
-
-   
-        
-
-}
-    
-
-        
-  /**  private getVegetablesView displayNextView() {
+    private RiverCrossingView displayNextView() {
         // display a message showing user input
         System.out.println("\n***************************************"
-                          + "\n* Current weather: " + this.weather
-                          + "\n* Current location: " + this.location
-                          + "\n* Local resources: " + this.localResources
-                          + "\n***************************************"
-                          );
-        
+                + "\n* Weather: " + this.weather
+                + "\n* Location: " + this.location
+                + "\n* Local Resources: " + this.localResources
+                + "\n***************************************"
+        );
+
         int weather = Integer.parseInt(this.weather);
         int location = Integer.parseInt(this.location);
         int localResources = Integer.parseInt(this.localResources);
-        
-      
-       System.out.println(PlayControl.calcGatheringSuccess(weather,location, localResources));
-       
-       return null;
-    }
 
+        System.out.println(PlayControl.calcGatheringSuccess(weather, location, localResources));
+
+        return null;
+    }
 
     public void display() {
 
     }
-    * */
 
-
-   
-    
+}

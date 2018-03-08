@@ -11,14 +11,12 @@ import jenson.casey.thomas.team.project.CIT260.BYUICIT260MormonTrailProject;
 
 /**
  *
- * @author Isabel Jenson 
+ * @author Isabel Jenson
  */
 public class GatheringSuccessMenuView {
-    
+
     private String promptMessage;
     private String menu;
-
-    
 
     public GatheringSuccessMenuView() {
 
@@ -48,6 +46,18 @@ public class GatheringSuccessMenuView {
         do {
             String menuOption = this.getMenuOption();
 
+            if (menuOption.toUpperCase().equals("Q")) {
+
+                return;
+            } else {
+                endOfView = doAction(menuOption);
+            }
+
+        } while (endOfView != true);
+
+        do {
+            String menuOption = this.getMenuOption();
+
             if (menuOption.toUpperCase().equals("V")) {
 
                 return;
@@ -72,18 +82,6 @@ public class GatheringSuccessMenuView {
             String menuOption = this.getMenuOption();
 
             if (menuOption.toUpperCase().equals("E")) {
-
-                return;
-            } else {
-                endOfView = doAction(menuOption);
-            }
-
-        } while (endOfView != true);
-
-        do {
-            String menuOption = this.getMenuOption();
-
-            if (menuOption.toUpperCase().equals("Q")) {
 
                 return;
             } else {
@@ -135,7 +133,7 @@ public class GatheringSuccessMenuView {
 
             case "Q":
                 this.quitGame();
-            
+
             default:
                 System.out.println("\n*** Invalid selection *** Try again.");
                 break;
@@ -146,20 +144,6 @@ public class GatheringSuccessMenuView {
 
     }
 
-  
- 
-
-    public void display() {
-        
-    }
-
-    private void getVegetables() {
-        GetVegetablesView getVegetablesView = new GetVegetablesView();
-        getVegetablesView.displayGetVegetablesView();
-        GameControl.gatheringSuccessMenuView(BYUICIT260MormonTrailProject.getPlayer());
-        
-    }
-
     private void getFruits() {
         System.out.println("\n getFruits() was called.");
     }
@@ -168,10 +152,17 @@ public class GatheringSuccessMenuView {
         System.out.println("\n getEdiblePlants() was called.");
     }
 
+    private void getVegetables() {
+
+        System.out.println("\n getVegetables() was called.");
+    }
+
     private void quitGame() {
         System.exit(0);
     }
 
+    public void display() {
 
+    }
 
 }
