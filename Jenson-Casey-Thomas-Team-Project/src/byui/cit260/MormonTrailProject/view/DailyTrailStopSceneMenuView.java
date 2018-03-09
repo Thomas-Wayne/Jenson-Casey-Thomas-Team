@@ -5,20 +5,18 @@
  */
 package byui.cit260.MormonTrailProject.view;
 
+import byui.cit260.MormonTrailProject.view.ViewInterface.View;
 import java.util.Scanner;
 
 /**
  *
  * @author WThomas
  */
-public class DailyTrailStopSceneMenuView {
-
-    private String promptMessage;
-    private String menu;
+public class DailyTrailStopSceneMenuView extends View {
 
     public DailyTrailStopSceneMenuView() {
-        this.promptMessage = "\nPlease choose an option: ";
-        this.menu = "\n"
+
+        super("\n"
                 + "\n********************************************"
                 + "\n| Daily Trail Stop Scene Menu |"
                 + "\n********************************************"
@@ -29,50 +27,16 @@ public class DailyTrailStopSceneMenuView {
                 + "\nH - Go Hunting"
                 + "\nG - Gather resources"
                 + "\nQ - Quit"
-                + "\n********************************************";
+                + "\n********************************************"
+                + "\nPlease choose an option: ");
     }
 
-    public void displayDailyTrailStopSceneMenuView() {
-        boolean endOfView = false;
+    @Override
 
-        do {
-            String menuOption = this.getMenuOption();
+    public boolean doAction(String value) {
 
-            if (menuOption.toUpperCase().equals("Q")) {
-                return;
-            } else {
-                endOfView = doAction(menuOption);
-            }
-
-        } while (endOfView != true);
-
-    }
-
-    private String getMenuOption() {
-        Scanner keyboard = new Scanner(System.in);
-        String value = "T";
-        boolean valid = false;
-        while (!valid) {
-            System.out.println("\n" + this.menu);
-            System.out.println("\n" + this.promptMessage);
-            value = keyboard.nextLine();
-            value = value.trim();
-            if (value.length() < 1) {
-
-                System.out.println("\nInvalid value: Value cannot be blank");
-                continue;
-
-            }
-            break;
-        }
-        return value;
-
-    }
-
-    private boolean doAction(String menuOption) {
-
-        menuOption = menuOption.toUpperCase();
-        switch (menuOption) {
+        value = value.toUpperCase();
+        switch (value) {
 
             case "T":
                 this.visitTheTown();

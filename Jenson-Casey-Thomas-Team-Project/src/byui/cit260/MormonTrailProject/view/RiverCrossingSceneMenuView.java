@@ -5,33 +5,25 @@
  */
 package byui.cit260.MormonTrailProject.view;
 
+import byui.cit260.MormonTrailProject.view.ViewInterface.View;
 import java.util.Scanner;
 
 /**
  *
  * @author tcasey
  */
-public class RiverCrossingSceneMenuView {
+public class RiverCrossingSceneMenuView extends View {
 
-    private String promptMessage;
-    private String menu;
-
-    /**
-     *
-     */
     public RiverCrossingSceneMenuView() {
 
-        System.out.println(
+        super(
                 "\n*******************************************************"
                 + "\n*                                                     *"
                 + "\n* You are at a rivers edge.  Your team needs to cross *"
                 + "\n* this river in order to continue your journey.       *"
                 + "\n*                                                     *"
                 + "\n*******************************************************"
-        );
-
-        this.promptMessage = "\nPlease choose an option: ";
-        this.menu = "\n"
+                + "\n"
                 + "\n**********************************************"
                 + "\n*          | River Crossing Menu |           *"
                 + "\n**********************************************"
@@ -39,87 +31,16 @@ public class RiverCrossingSceneMenuView {
                 + "\nC - Look around for a place to camp          *"
                 + "\nP - Prepare to cross the river               *"
                 + "\nR - Rest at rivers edge                      *"
-                + "\n**********************************************";
+                + "\n**********************************************"
+        );
     }
 
-    public void displayRiverCrossingSceneMenuView() {
-        boolean endOfView = false;
+    @Override
 
-        do {
-            String menuOption = this.getMenuOption();
+    public boolean doAction(String value) {
 
-            if (menuOption.toUpperCase().equals("A")) {
-
-                return;
-            } else {
-                endOfView = doAction(menuOption);
-            }
-
-        } while (endOfView != true);
-        do {
-            String menuOption = this.getMenuOption();
-
-            if (menuOption.toUpperCase().equals("C")) {
-
-                return;
-            } else {
-                endOfView = doAction(menuOption);
-            }
-
-        } while (endOfView != true);
-
-        do {
-            String menuOption = this.getMenuOption();
-
-            if (menuOption.toUpperCase().equals("P")) {
-
-                return;
-            } else {
-                endOfView = doAction(menuOption);
-            }
-
-        } while (endOfView != true);
-
-        do {
-            String menuOption = this.getMenuOption();
-
-            if (menuOption.toUpperCase().equals("R")) {
-
-                return;
-            } else {
-                endOfView = doAction(menuOption);
-            }
-
-        } while (endOfView != true);
-
-    }
-
-    private String getMenuOption() {
-        Scanner keyboard = new Scanner(System.in);
-        String value = "A";
-        boolean valid = false;
-        while (!valid) {
-
-            System.out.println("\n" + this.menu);
-            System.out.println("\n" + this.promptMessage);
-            value = keyboard.nextLine();
-            value = value.trim();
-            if (value.length() < 1) {
-
-                System.out.println("\nInvalid value: Value cannot be blank");
-                continue;
-
-            }
-            break;
-        }
-        return value;
-
-    }
-
-    private boolean doAction(String menuOption) {
-
-        menuOption = menuOption.toUpperCase();
-        switch (menuOption) {
+        value = value.toUpperCase();
+        switch (value) {
 
             case "A":
                 this.lookForCrossingAid();
@@ -174,13 +95,9 @@ public class RiverCrossingSceneMenuView {
                 + "This is a good time to rebuild your strength, both "
                 + "physically and spiritually.");
     }
+
     private void quitGame() {
         System.exit(0);
     }
-
-    public void display() {
-        
-    }
-
 
 }

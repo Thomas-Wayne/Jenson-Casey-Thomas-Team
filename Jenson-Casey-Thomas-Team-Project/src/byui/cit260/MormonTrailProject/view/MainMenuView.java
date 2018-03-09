@@ -6,22 +6,17 @@
 package byui.cit260.MormonTrailProject.view;
 
 import byui.cit260.MormonTrailProject.control.GameControl;
-import static byui.cit260.MormonTrailProject.control.GameControl.riverCrossingView;
-import java.util.Scanner;
+import byui.cit260.MormonTrailProject.view.ViewInterface.View;
 import jenson.casey.thomas.team.project.CIT260.BYUICIT260MormonTrailProject;
 
 /**
  *
  * @author Jenson, Casey, and Thomas
  */
-class MainMenuView {
-
-    private String promptMessage;
-    private String menu;
+public class MainMenuView extends View {
 
     public MainMenuView() {
-        this.promptMessage = "\nPlease choose an option: ";
-        this.menu = "\n"
+        super("\nPlease choose an option: "
                 + "\n********************************************"
                 + "\n| Main Menu |"
                 + "\n********************************************"
@@ -35,52 +30,14 @@ class MainMenuView {
                 + "\nA - GATHERINGSUCCESSVIEW"
                 + "\nS - Save game"
                 + "\nQ - Quit"
-                + "\n********************************************";
+                + "\n********************************************");
     }
 
-    public void displayMainMenuView() {
-        boolean endOfView = false;
+    @Override
+    public boolean doAction(String value) {
 
-        do {
-            String menuOption = this.getMenuOption();
-
-            if (menuOption.toUpperCase().equals("Q")) {
-                System.out.println("Thanks for playing!");
-                return;
-            } else {
-                endOfView = doAction(menuOption);
-            }
-
-        } while (endOfView != true);
-
-    }
-
-    private String getMenuOption() {
-        Scanner keyboard = new Scanner(System.in);
-        String value = "";
-        boolean valid = false;
-        while (!valid) {
-
-            System.out.println("\n" + this.menu);
-            System.out.println("\n" + this.promptMessage);
-            value = keyboard.nextLine();
-            value = value.trim();
-            if (value.length() < 1) {
-
-                System.out.println("\nInvalid value: Value cannot be blank");
-                continue;
-
-            }
-            break;
-        }
-        return value;
-
-    }
-
-    private boolean doAction(String menuOption) {
-
-        menuOption = menuOption.toUpperCase();
-        switch (menuOption) {
+        value = value.toUpperCase();
+        switch (value) {
 
             case "N":
                 this.startNewGame();
@@ -93,23 +50,23 @@ class MainMenuView {
             case "S":
                 this.saveGame();
                 break;
-            
+
             case "R":
                 this.riverCrossingSceneMenuView();
                 break;
-                
+
             case "C":
                 this.riverCrossingView();
                 break;
-                
+
             case "G":
                 this.gatheringSuccessMenuView();
                 break;
-            
+
             case "A":
                 this.getVegetablesView();
-                break;    
-                                
+                break;
+
             case "H":
                 this.getHelp();
                 break;
@@ -133,7 +90,7 @@ class MainMenuView {
         GameControl.createNewGame(BYUICIT260MormonTrailProject.getPlayer());
         GameControl.GameMenuView(BYUICIT260MormonTrailProject.getPlayer());
         GameMenuView gameMenuView = new GameMenuView();
-        gameMenuView.displayGameMenuView();
+        gameMenuView.display();
     }
 
     private void loadGame() {
@@ -143,46 +100,46 @@ class MainMenuView {
     private void saveGame() {
         System.out.println("\nsaveGame() was called");
     }
-    
-    private void riverCrossingSceneMenuView(){
+
+    private void riverCrossingSceneMenuView() {
         GameControl.riverCrossingSceneMenuView(BYUICIT260MormonTrailProject.getPlayer());
         RiverCrossingSceneMenuView riverCrossingSceneMenuView = new RiverCrossingSceneMenuView();
-        riverCrossingSceneMenuView.displayRiverCrossingSceneMenuView();
+        riverCrossingSceneMenuView.display();
     }
 
-    private void riverCrossingView(){
+    private void riverCrossingView() {
         GameControl.riverCrossingView(BYUICIT260MormonTrailProject.getPlayer());
         RiverCrossingView riverCrossingView = new RiverCrossingView();
         riverCrossingView.displayRiverCrossingView();
     }
+
     private void getHelp() {
         GameControl.getHelp(BYUICIT260MormonTrailProject.getPlayer());
         HelpMenuView helpMenu = new HelpMenuView();
-        helpMenu.displayHelpMenuView();
-     }
+        helpMenu.display();
+    }
 
     private void quitGame() {
         System.exit(0);
     }
 
-
     private void gatheringSuccessMenuView() {
         GameControl.gatheringSuccessMenuView(BYUICIT260MormonTrailProject.getPlayer());
         GatheringSuccessMenuView gatheringSuccessMenuView = new GatheringSuccessMenuView();
-        gatheringSuccessMenuView.displayGatheringSuccessMenuView();
+        gatheringSuccessMenuView.display();
     }
-        
+
     private void DailyTrailStopSceneMenuView() {
         GameControl.DailyTrailStopSceneMenuView(BYUICIT260MormonTrailProject.getPlayer());
         DailyTrailStopSceneMenuView DailytrailStopSceneMenuView = new DailyTrailStopSceneMenuView();
-        DailytrailStopSceneMenuView.displayDailyTrailStopSceneMenuView();
+        DailytrailStopSceneMenuView.display();
 
     }
 
     private void getVegetablesView() {
-         GameControl.getVegetablesView(BYUICIT260MormonTrailProject.getPlayer());
+        GameControl.getVegetablesView(BYUICIT260MormonTrailProject.getPlayer());
         GetVegetablesView getVegetablesView = new GetVegetablesView();
         getVegetablesView.displayGetVegetablesView();
 
-}
+    }
 }
