@@ -4,8 +4,10 @@
  * and open the template in the editor.
  */
 package byui.cit260.MormonTrailProject.view;
+
 import byui.cit260.MormonTrailProject.control.GameControl;
 import byui.cit260.MormonTrailProject.control.PlayControl;
+import byui.cit260.MormonTrailProject.view.ViewInterface.View;
 import java.util.Scanner;
 import jenson.casey.thomas.team.project.CIT260.BYUICIT260MormonTrailProject;
 
@@ -13,10 +15,8 @@ import jenson.casey.thomas.team.project.CIT260.BYUICIT260MormonTrailProject;
  *
  * @author WThomas
  */
-public class GameMenuView {
+public class GameMenuView extends View {
 
-    private String promptMessage;
-    private String menu;
     private String dateDayOfWeek;
     private int distanceTraveled;
     private int distanceRemaining;
@@ -24,11 +24,25 @@ public class GameMenuView {
     private String potentialIssues;
     private String todaysWeather;
     private int distanceRemainingValue;
-    
 
     public GameMenuView() {
+
+        super(
+                "\n"
+                + "\n********************************************"
+                + "\n| Game Play Menu |"
+                + "\n********************************************"
+                + "\nT - View team status"
+                + "\nV - View team supplies"
+                + "\nP - Set Team Pace"
+                + "\nS - Scene menu"
+                + "\nM - View the map"
+                + "\nH - Help menu"
+                + "\nQ - Quit"
+                + "\n********************************************"
+                + "\nPlease choose an option: ");
         this.dateDayOfWeek = "";
-        this.distanceRemaining = 1300; 
+        this.distanceRemaining = 1300;
         this.currentSurroundings = "You are in the middle of nowhere.";
         this.potentialIssues = "A racoon made off with your breakfast. Tough luck!";
         this.todaysWeather = "Partly cloudy skies. High 75 Low 65";
@@ -43,63 +57,13 @@ public class GameMenuView {
                 + "\n Today's weather:\t\t" + this.todaysWeather
                 + "\n*******************************************************"
         );
-
-        this.promptMessage = "\nPlease choose an option: ";
-        this.menu = "\n"
-                + "\n********************************************"
-                + "\n| Game Play Menu |"
-                + "\n********************************************"
-                + "\nT - View team status"
-                + "\nV - View team supplies"
-                + "\nP - Set Team Pace"
-                + "\nS - Scene menu"
-                + "\nM - View the map"
-                + "\nH - Help menu"
-                + "\nQ - Quit"
-                + "\n********************************************";
     }
 
-    public void displayGameMenuView() {
-        boolean endOfView = false;
+    @Override
+    public boolean doAction(String value) {
 
-        do {
-            String menuOption = this.getMenuOption();
-
-            if (menuOption.toUpperCase().equals("Q")) {
-                return;
-            } else {
-                endOfView = doAction(menuOption);
-            }
-
-        } while (endOfView != true);
-
-    }
-
-    private String getMenuOption() {
-        Scanner keyboard = new Scanner(System.in);
-        String value = "T";
-        boolean valid = false;
-        while (!valid) {
-            System.out.println("\n" + this.menu);
-            System.out.println("\n" + this.promptMessage);
-            value = keyboard.nextLine();
-            value = value.trim();
-            if (value.length() < 1) {
-
-                System.out.println("\nInvalid value: Value cannot be blank");
-                continue;
-
-            }
-            break;
-        }
-        return value;
-
-    }
-
-    private boolean doAction(String menuOption) {
-
-        menuOption = menuOption.toUpperCase();
-        switch (menuOption) {
+        value = value.toUpperCase();
+        switch (value) {
 
             case "T":
                 this.viewTeamStatus();
@@ -144,7 +108,7 @@ public class GameMenuView {
     private void getHelp() {
         GameControl.getHelp(BYUICIT260MormonTrailProject.getPlayer());
         HelpMenuView helpMenu = new HelpMenuView();
-        helpMenu.displayHelpMenuView();
+        helpMenu.display();
     }
 
     private void viewMap() {
@@ -157,7 +121,7 @@ public class GameMenuView {
 
     private void TeamPace() {
         SetPaceView view = new SetPaceView();
-        view.displaySetPaceView();
+        view.display();
     }
 
     private void viewTeamSupplies() {
@@ -167,5 +131,5 @@ public class GameMenuView {
     private void viewTeamStatus() {
         System.out.println("viewTeamStatus() has been called");
     }
-      
+
 }

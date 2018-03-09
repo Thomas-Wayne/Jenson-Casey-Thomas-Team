@@ -5,21 +5,17 @@
  */
 package byui.cit260.MormonTrailProject.view;
 
+import byui.cit260.MormonTrailProject.view.ViewInterface.View;
 import java.util.Scanner;
 
 /**
  *
  * @author Jenson, Casey, and Thomas
  */
-public class HelpMenuView {
-
-    private String promptMessage;
-    private String menu;
+public class HelpMenuView extends View {
 
     public HelpMenuView() {
-
-        this.promptMessage = "\nPlease choose an option: ";
-        this.menu = "\n"
+        super("\n"
                 + "\n*******************************************"
                 + "\n| Help Menu |"
                 + "\n*******************************************"
@@ -29,52 +25,14 @@ public class HelpMenuView {
                 + "\nH - Harvest resources"
                 + "\nD - Delivering resources to warehouse"
                 + "\nQ - Quit"
-                + "\n*******************************************";
+                + "\n*******************************************");
     }
 
-    public void displayHelpMenuView() {
-        boolean endOfView = false;
+    @Override
+    public boolean doAction(String value) {
 
-        do {
-            String menuOption = this.getMenuOption();
-
-            if (menuOption.toUpperCase().equals("Q")) {
-
-                return;
-            } else {
-                endOfView = doAction(menuOption);
-            }
-
-        } while (endOfView != true);
-
-    }
-
-    private String getMenuOption() {
-        Scanner keyboard = new Scanner(System.in);
-        String value = "";
-        boolean valid = false;
-        while (!valid) {
-
-            System.out.println("\n" + this.menu);
-            System.out.println("\n" + this.promptMessage);
-            value = keyboard.nextLine();
-            value = value.trim();
-            if (value.length() < 1) {
-
-                System.out.println("\nInvalid value: Value cannot be blank");
-                continue;
-
-            }
-            break;
-        }
-        return value;
-
-    }
-
-    private boolean doAction(String menuOption) {
-
-        menuOption = menuOption.toUpperCase();
-        switch (menuOption) {
+        value = value.toUpperCase();
+        switch (value) {
 
             case "G":
                 this.goalHelp();
