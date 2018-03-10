@@ -28,6 +28,7 @@ public class MainMenuView extends View {
                 + "\nC - RIVERCROSSINGVIEW"
                 + "\nG - GATHERINGSUCCESSMENUVIEW"
                 + "\nA - GATHERINGSUCCESSVIEW"
+                + "\nT - General Store"
                 + "\nS - Save game"
                 + "\nQ - Quit"
                 + "\n********************************************");
@@ -63,19 +64,22 @@ public class MainMenuView extends View {
                 this.gatheringSuccessMenuView();
                 break;
 
-            case "A":
-                this.getVegetablesView();
-                break;
-
             case "H":
                 this.getHelp();
                 break;
+                
             case "D":
                 this.DailyTrailStopSceneMenuView();
                 break;
+                
+            case "T":
+                this.GeneralStoreMenuView();
+                break;
+                
             case "Q":
                 this.quitGame();
                 break;
+                
             default:
                 System.out.println("\n*** Invalid selection *** Try again.");
                 break;
@@ -136,10 +140,11 @@ public class MainMenuView extends View {
 
     }
 
-    private void getVegetablesView() {
-        GameControl.getVegetablesView(BYUICIT260MormonTrailProject.getPlayer());
-        GetVegetablesView getVegetablesView = new GetVegetablesView();
-        getVegetablesView.displayGetVegetablesView();
+    
 
+    private void GeneralStoreMenuView() {
+        GameControl.generalStoreMenuView(BYUICIT260MormonTrailProject.getPlayer());
+        GeneralStoreMenuView generalStoreMenuView = new GeneralStoreMenuView();
+        generalStoreMenuView.display();
     }
 }
