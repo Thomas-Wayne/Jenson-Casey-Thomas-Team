@@ -138,7 +138,7 @@ public class GetVegetablesView {
         return value.charAt(0); // return the value entered
     }
 
-    private RiverCrossingView displayNextView() {
+    private GetVegetablesView displayNextView() {
         // display a message showing user input
         System.out.println("\n***************************************"
                 + "\n* Weather: " + this.weather
