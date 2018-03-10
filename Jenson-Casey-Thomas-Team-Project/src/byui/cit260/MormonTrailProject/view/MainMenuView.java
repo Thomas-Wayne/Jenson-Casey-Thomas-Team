@@ -23,11 +23,6 @@ public class MainMenuView extends View {
                 + "\nN - Start new game"
                 + "\nL - Load and start a saved game"
                 + "\nH - Get help on how to play the game"
-                + "\nD - DailyTrailStopSceneMenuView"
-                + "\nR - RIVERCROSSINGSCENEMENUVIEW"
-                + "\nC - RIVERCROSSINGVIEW"
-                + "\nG - GATHERINGSUCCESSMENUVIEW"
-                + "\nA - GATHERINGSUCCESSVIEW"
                 + "\nS - Save game"
                 + "\nQ - Quit"
                 + "\n********************************************");
@@ -84,18 +79,6 @@ public class MainMenuView extends View {
         System.out.println("\nsaveGame() was called");
     }
 
-    private void riverCrossingSceneMenuView() {
-        GameControl.riverCrossingSceneMenuView(BYUICIT260MormonTrailProject.getPlayer());
-        RiverCrossingSceneMenuView riverCrossingSceneMenuView = new RiverCrossingSceneMenuView();
-        riverCrossingSceneMenuView.display();
-    }
-
-    private void riverCrossingView() {
-        GameControl.riverCrossingView(BYUICIT260MormonTrailProject.getPlayer());
-        RiverCrossingView riverCrossingView = new RiverCrossingView();
-        riverCrossingView.displayRiverCrossingView();
-    }
-
     private void getHelp() {
         GameControl.getHelp(BYUICIT260MormonTrailProject.getPlayer());
         HelpMenuView helpMenu = new HelpMenuView();
@@ -105,24 +88,5 @@ public class MainMenuView extends View {
     private void quitGame() {
         System.exit(0);
     }
-
-    private void gatheringSuccessMenuView() {
-        GameControl.gatheringSuccessMenuView(BYUICIT260MormonTrailProject.getPlayer());
-        GatheringSuccessMenuView gatheringSuccessMenuView = new GatheringSuccessMenuView();
-        gatheringSuccessMenuView.display();
-    }
-
-    private void DailyTrailStopSceneMenuView() {
-        GameControl.DailyTrailStopSceneMenuView(BYUICIT260MormonTrailProject.getPlayer());
-        DailyTrailStopSceneMenuView DailytrailStopSceneMenuView = new DailyTrailStopSceneMenuView();
-        DailytrailStopSceneMenuView.display();
-
-    }
-
-    private void getVegetablesView() {
-        GameControl.getVegetablesView(BYUICIT260MormonTrailProject.getPlayer());
-        GetVegetablesView getVegetablesView = new GetVegetablesView();
-        getVegetablesView.displayGetVegetablesView();
-
-    }
+  
 }
