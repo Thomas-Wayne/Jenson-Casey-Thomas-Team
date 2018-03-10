@@ -80,11 +80,11 @@ public class GameControl {
     }
 
     public static void getVegetablesView(Player player) {
-         
+
     }
 
     public static void gatheringSuccessMenuView(Player player) {
-        
+
     }
 
 }

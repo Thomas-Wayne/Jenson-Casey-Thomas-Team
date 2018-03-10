@@ -119,7 +119,6 @@ public class GameMenuView extends View {
         DailyTrailStopSceneMenuView view = new DailyTrailStopSceneMenuView();
         view.display();
     }
-            
 
     private void TeamPace() {
         SetPaceView view = new SetPaceView();

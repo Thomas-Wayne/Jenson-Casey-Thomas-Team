@@ -46,9 +46,11 @@ public class Game implements Serializable {
     public int getMilesTraveled() {
         return milesTraveled;
     }
-    public void addMilesTraveled(int miles){
-        milesTraveled+= miles;    
+
+    public void addMilesTraveled(int miles) {
+        milesTraveled += miles;
     }
+
     public void setMilesTraveled(int milesTraveled) {
         this.milesTraveled = milesTraveled;
     }

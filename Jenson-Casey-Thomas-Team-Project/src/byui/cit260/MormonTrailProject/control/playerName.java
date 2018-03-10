@@ -13,7 +13,7 @@ class playerName {
 
     static int length() {
         return 0;
-        
-   }
-    
+
+    }
+
 }

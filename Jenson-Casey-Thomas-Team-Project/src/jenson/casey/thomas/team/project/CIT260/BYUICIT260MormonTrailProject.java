@@ -42,7 +42,6 @@ public class BYUICIT260MormonTrailProject {
 
         StartProgramView startProgramView = new StartProgramView();
         startProgramView.display();
-              
 
     }
 

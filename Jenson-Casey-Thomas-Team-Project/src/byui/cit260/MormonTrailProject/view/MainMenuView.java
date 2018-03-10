@@ -51,31 +51,14 @@ public class MainMenuView extends View {
                 this.saveGame();
                 break;
 
-            case "R":
-                this.riverCrossingSceneMenuView();
-                break;
-
-            case "C":
-                this.riverCrossingView();
-                break;
-
-            case "G":
-                this.gatheringSuccessMenuView();
-                break;
-
-            case "A":
-                this.getVegetablesView();
-                break;
-
             case "H":
                 this.getHelp();
                 break;
-            case "D":
-                this.DailyTrailStopSceneMenuView();
-                break;
+
             case "Q":
                 this.quitGame();
                 break;
+
             default:
                 System.out.println("\n*** Invalid selection *** Try again.");
                 break;
