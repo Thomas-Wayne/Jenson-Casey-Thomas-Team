@@ -7,17 +7,16 @@ package byui.cit260.MormonTrailProject.view;
 
 /**
  *
- * @author Thomas'
+ * @author Wayne Thomas
  */
 public class FortSceneMenuView extends ViewInterface.View {
 
-    
     public FortSceneMenuView() {
         super("\nPlease choose an option: "
                 + "\n********************************************"
                 + "\n| Fort Scene |"
                 + "\n********************************************"
-                + "\nG - Visit the General Store"   
+                + "\nG - Visit the General Store"
                 + "\nQ - Return to the Trail"
                 + "\n********************************************");
     }
@@ -31,7 +30,7 @@ public class FortSceneMenuView extends ViewInterface.View {
             case "G":
                 this.generalStore();
                 break;
-  
+
             case "Q":
                 this.quitGame();
                 break;
@@ -47,12 +46,11 @@ public class FortSceneMenuView extends ViewInterface.View {
     }
 
     private void generalStore() {
-       GeneralStoreMenuView view = new GeneralStoreMenuView();
-        view.display(); 
+        GeneralStoreMenuView view = new GeneralStoreMenuView();
+        view.display();
     }
 
     private void quitGame() {
-       
+
     }
 }
-

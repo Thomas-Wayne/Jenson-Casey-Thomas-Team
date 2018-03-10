@@ -88,5 +88,5 @@ public class MainMenuView extends View {
     private void quitGame() {
         System.exit(0);
     }
-  
+
 }

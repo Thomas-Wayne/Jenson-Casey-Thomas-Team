@@ -12,7 +12,7 @@ import jenson.casey.thomas.team.project.CIT260.BYUICIT260MormonTrailProject;
 
 /**
  *
- * @author Isabel Jenson
+ * @author Wayne Thomas
  */
 public class GoHuntingSceneMenuView extends View {
 

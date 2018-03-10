@@ -37,7 +37,7 @@ public class GameControl {
     }
 
     public static void generalStoreMenuView(Player player) {
-        
+
     }
 
     public void dailyMiles() {
@@ -86,8 +86,16 @@ public class GameControl {
     public static void getVegetablesView(Player player) {
 
     }
-
+    
     public static void gatheringSuccessMenuView(Player player) {
+
+    }
+    
+    public static void goHuntingView(Player player) {
+
+    }
+    
+    public static void goHuntingSceneMenuView(Player player) {
 
     }
 

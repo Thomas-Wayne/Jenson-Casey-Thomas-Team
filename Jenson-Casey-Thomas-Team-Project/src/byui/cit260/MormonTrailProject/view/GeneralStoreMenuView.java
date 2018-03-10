@@ -16,7 +16,7 @@ public class GeneralStoreMenuView extends View {
     public GeneralStoreMenuView() {
 
         super(
-                  "\n*******************************************************"
+                "\n*******************************************************"
                 + "\n*                                                     *"
                 + "\n*                     Welcome!                        *"
                 + "\n*                                                     *"
@@ -80,7 +80,5 @@ public class GeneralStoreMenuView extends View {
     private void quitGame() {
         System.exit(0);
     }
-
-    
 
 }

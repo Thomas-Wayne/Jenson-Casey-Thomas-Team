@@ -10,7 +10,7 @@ import java.util.Scanner;
 
 /**
  *
- * @author WThomas
+ * @author Wayne Thomas
  */
 public class DailyTrailStopSceneMenuView extends View {
 
@@ -94,11 +94,13 @@ public class DailyTrailStopSceneMenuView extends View {
     }
 
     private void visitTheFort() {
-        System.out.println("\n visitTheFort() has been called");
+        FortSceneMenuView view = new FortSceneMenuView();
+        view.display();
     }
 
     private void visitTheTown() {
-        System.out.println("\n visitTheTown() has been called");
+        TownSceneMenuView view = new TownSceneMenuView();
+        view.display();
     }
 
     private void quitGame() {

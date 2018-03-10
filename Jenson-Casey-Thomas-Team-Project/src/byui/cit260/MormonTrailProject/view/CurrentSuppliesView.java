@@ -11,9 +11,7 @@ import java.util.Scanner;
  *
  * @author Isabel Jenson
  */
-
 public class CurrentSuppliesView extends ViewInterface.View {
-    
 
     public CurrentSuppliesView() {
         super(
@@ -71,6 +69,7 @@ public class CurrentSuppliesView extends ViewInterface.View {
     private void buyOxen() {
         System.out.println("buyOxen() was called");
     }
+
     private void buyWagon() {
         System.out.println("buyWagon() was called");
     }
@@ -90,10 +89,6 @@ public class CurrentSuppliesView extends ViewInterface.View {
     private void quitGame() {
         System.exit(0);
     }
-    
-    
-    
-    
 
     private boolean doNumericAction(String userInput) {
 
@@ -138,8 +133,4 @@ public class CurrentSuppliesView extends ViewInterface.View {
         return value.charAt(0); // return the value entered
     }
 
-    
-    
-} 
-
-
+}

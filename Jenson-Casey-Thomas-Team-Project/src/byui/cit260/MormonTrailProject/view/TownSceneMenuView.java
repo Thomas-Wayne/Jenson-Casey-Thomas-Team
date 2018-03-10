@@ -7,16 +7,16 @@ package byui.cit260.MormonTrailProject.view;
 
 /**
  *
- * @author Thomas
+ * @author Wayne Thomas
  */
 public class TownSceneMenuView extends ViewInterface.View {
-    
+
     public TownSceneMenuView() {
         super("\nPlease choose an option: "
                 + "\n********************************************"
                 + "\n| Town Scene |"
                 + "\n********************************************"
-                + "\nG - Visit the General Store"   
+                + "\nG - Visit the General Store"
                 + "\nH - Visit the Hotel"
                 + "\nQ - Return to the Trail"
                 + "\n********************************************");
@@ -35,7 +35,7 @@ public class TownSceneMenuView extends ViewInterface.View {
             case "L":
                 this.hotel();
                 break;
-   
+
             case "Q":
                 this.quitGame();
                 break;
@@ -56,10 +56,10 @@ public class TownSceneMenuView extends ViewInterface.View {
     }
 
     private void hotel() {
-        
+        System.out.println("hotelScene() has been called");
     }
 
     private void quitGame() {
-       
+
     }
 }

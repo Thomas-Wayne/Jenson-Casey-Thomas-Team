@@ -10,7 +10,7 @@ import byui.cit260.MormonTrailProject.control.PlayControl;
 
 /**
  *
- * @author Thomas'
+ * @author Wayne Thomas
  */
 public class GoHuntingView {
 
