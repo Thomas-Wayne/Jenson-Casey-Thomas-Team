@@ -14,9 +14,9 @@ import jenson.casey.thomas.team.project.CIT260.BYUICIT260MormonTrailProject;
  *
  * @author Isabel Jenson
  */
-public class GatheringSuccessMenuView extends View {
+public class GoHuntingSceneMenuView extends View {
 
-    public GatheringSuccessMenuView() {
+    public GoHuntingSceneMenuView() {
 
         super(
                 "\n*******************************************************"
@@ -26,11 +26,11 @@ public class GatheringSuccessMenuView extends View {
                 + "\n*******************************************************"
                 + "\n"
                 + "\n**********************************************"
-                + "\n*                 Gather:                    *"
+                + "\n*                 Hunt menu:                 *"
                 + "\n**********************************************"
-                + "\nV - Vegetables                               *"
-                + "\nF - Fruits                                   *"
-                + "\nE - Edible plants                            *"
+                + "\nB - Big Game(buffalo,mountain lion, ram, etc)*"
+                + "\nS - Small Game (varmints, rabbit, etc)       *"
+                + "\nF - Fish                                     *"
                 + "\nQ - Go back to previous menu                 *"
                 + "\n**********************************************");
     }
@@ -41,16 +41,16 @@ public class GatheringSuccessMenuView extends View {
         value = value.toUpperCase();
         switch (value) {
 
-            case "V":
-                this.getVegetables();
+            case "B":
+                this.getBigGame();
+                break;
+
+            case "S":
+                this.getSmallGame();
                 break;
 
             case "F":
-                this.getFruits();
-                break;
-
-            case "E":
-                this.getEdiblePlants();
+                this.getFish();
                 break;
 
             case "Q":
@@ -66,18 +66,18 @@ public class GatheringSuccessMenuView extends View {
 
     }
 
-    private void getFruits() {
-        GetVegetablesView view = new GetVegetablesView();
+    private void getBigGame() {
+        GoHuntingView view = new GoHuntingView();
         view.display();
     }
 
-    private void getEdiblePlants() {
-        GetVegetablesView view = new GetVegetablesView();
+    private void getSmallGame() {
+        GoHuntingView view = new GoHuntingView();
         view.display();
     }
 
-    private void getVegetables() {
-        GetVegetablesView view = new GetVegetablesView();
+    private void getFish() {
+        GoHuntingView view = new GoHuntingView();
         view.display();
     }
 

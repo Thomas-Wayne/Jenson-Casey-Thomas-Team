@@ -116,8 +116,10 @@ public class GameMenuView extends View {
     }
 
     private void sceneMenu() {
-        System.out.println("sceneMenu() has been called");
+        DailyTrailStopSceneMenuView view = new DailyTrailStopSceneMenuView();
+        view.display();
     }
+            
 
     private void TeamPace() {
         SetPaceView view = new SetPaceView();

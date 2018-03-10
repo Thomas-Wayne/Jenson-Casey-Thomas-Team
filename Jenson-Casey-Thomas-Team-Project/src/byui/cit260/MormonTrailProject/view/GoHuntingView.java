@@ -37,7 +37,7 @@ public class GoHuntingView {
 
         this.weatherMessage = "\nEnter current weather (bad=-5, poor=-3, good=0, excellent=2): ";
         this.locationMessage = "\nEnter your location (Town= -5, fort= -2, river= 2, landmark = 5): ";
-        this.localResourcesMessage = "\nEnter local resources(deer=5, fish=5, rabbit= 1, no vegetation=0): ";
+        this.localResourcesMessage = "\nEnter local resources(biggame=5, smallgame=5, fish= 1, no vegetation=0): ";
 
     }
 

@@ -75,11 +75,13 @@ public class DailyTrailStopSceneMenuView extends View {
     }
 
     private void gatherResources() {
-        System.out.println("\n gatheringResources() has been called");
+        GatheringSuccessMenuView view = new GatheringSuccessMenuView();
+        view.display();
     }
 
     private void goHunting() {
-        System.out.println("\n goHunting() has been called");
+        GoHuntingSceneMenuView view = new GoHuntingSceneMenuView();
+        view.display();
     }
 
     private void restForTheDay() {
@@ -87,7 +89,8 @@ public class DailyTrailStopSceneMenuView extends View {
     }
 
     private void crossTheRiver() {
-        System.out.println("\n crossTheRiver() has been called");
+        RiverCrossingSceneMenuView view = new RiverCrossingSceneMenuView();
+        view.display();
     }
 
     private void visitTheFort() {

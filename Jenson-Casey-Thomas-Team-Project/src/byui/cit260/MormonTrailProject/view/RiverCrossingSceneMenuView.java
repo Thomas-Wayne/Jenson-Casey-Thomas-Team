@@ -31,6 +31,7 @@ public class RiverCrossingSceneMenuView extends View {
                 + "\nC - Look around for a place to camp          *"
                 + "\nP - Prepare to cross the river               *"
                 + "\nR - Rest at rivers edge                      *"
+                + "\nQ - Return to previous menu                  *" 
                 + "\n**********************************************"
         );
     }
@@ -76,10 +77,8 @@ public class RiverCrossingSceneMenuView extends View {
     }
 
     private void prepareCrossing() {
-        System.out.println(
-                "\nCheck your wagon weight, the weather conditions, "
-                + "the swiftness and depth of the river to see if you "
-                + "can safely cross at this time.");
+         RiverCrossingView view = new RiverCrossingView();
+         view.display();
     }
 
     private void lookForCampsite() {
@@ -99,5 +98,5 @@ public class RiverCrossingSceneMenuView extends View {
     private void quitGame() {
         System.exit(0);
     }
-
+    
 }
