@@ -13,7 +13,7 @@ import jenson.casey.thomas.team.project.CIT260.BYUICIT260MormonTrailProject;
 
 /**
  *
- * @author WThomas
+ * @author Wayne Thomas
  */
 public class GameMenuView extends View {
 
@@ -126,7 +126,8 @@ public class GameMenuView extends View {
     }
 
     private void viewTeamSupplies() {
-        System.out.println("viewTeamSupplies() has been called");
+        CurrentSuppliesView view = new CurrentSuppliesView();
+        view.display();
     }
 
     private void viewTeamStatus() {
