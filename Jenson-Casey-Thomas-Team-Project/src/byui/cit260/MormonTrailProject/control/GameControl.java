@@ -98,5 +98,8 @@ public class GameControl {
     public static void goHuntingSceneMenuView(Player player) {
 
     }
+    
+    public static void handleObstacleView(Player player){
 
+    }
 }

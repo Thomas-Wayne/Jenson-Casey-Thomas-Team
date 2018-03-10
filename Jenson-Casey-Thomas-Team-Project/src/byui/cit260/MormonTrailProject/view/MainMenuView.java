@@ -23,6 +23,7 @@ public class MainMenuView extends View {
                 + "\nN - Start new game"
                 + "\nL - Load and start a saved game"
                 + "\nH - Get help on how to play the game"
+                + "\nO - HandleObstacleView"
                 + "\nS - Save game"
                 + "\nQ - Quit"
                 + "\n********************************************");
@@ -49,6 +50,10 @@ public class MainMenuView extends View {
             case "H":
                 this.getHelp();
                 break;
+                
+            case "O":
+                this.handleObstacleView();
+                break;    
 
             case "Q":
                 this.quitGame();
@@ -87,6 +92,13 @@ public class MainMenuView extends View {
 
     private void quitGame() {
         System.exit(0);
+    }
+
+    private void handleObstacleView() {
+        GameControl.handleObstacleView(BYUICIT260MormonTrailProject.getPlayer());
+        GameControl.GameMenuView(BYUICIT260MormonTrailProject.getPlayer());
+        HandleObstacleView handleObstacleView = new HandleObstacleView();
+        handleObstacleView.display();
     }
 
 }
