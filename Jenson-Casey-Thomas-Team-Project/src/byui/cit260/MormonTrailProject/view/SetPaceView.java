@@ -25,7 +25,7 @@ public class SetPaceView extends View {
                 + "\nS - Slow "
                 + "\nA - Average"
                 + "\nF - Fast"
-                + "\nQ - Quit"
+                + "\nQ - Return to Previous Menu"
                 + "\n*******************************************"
                 + "\nPlease choose an option: ");
     }

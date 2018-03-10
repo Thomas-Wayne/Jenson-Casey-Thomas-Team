@@ -24,7 +24,7 @@ public class HelpMenuView extends View {
                 + "\nE - Estimate the number of resources"
                 + "\nH - Harvest resources"
                 + "\nD - Delivering resources to warehouse"
-                + "\nQ - Quit"
+                + "\nQ - Return to Previous Menu"
                 + "\n*******************************************");
     }
 

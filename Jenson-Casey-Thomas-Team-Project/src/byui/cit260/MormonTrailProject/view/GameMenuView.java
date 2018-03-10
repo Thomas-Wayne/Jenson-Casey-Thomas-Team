@@ -38,7 +38,7 @@ public class GameMenuView extends View {
                 + "\nS - Scene menu"
                 + "\nM - View the map"
                 + "\nH - Help menu"
-                + "\nQ - Quit"
+                + "\nQ - Return to Previous Menu"
                 + "\n********************************************"
                 + "\nPlease choose an option: ");
         this.dateDayOfWeek = "";

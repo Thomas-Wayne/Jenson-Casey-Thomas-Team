@@ -28,7 +28,7 @@ public class GeneralStoreMenuView extends View {
                 + "\nC - View current supplies                    *"
                 + "\nB - Buy                                      *"
                 + "\nS - Sell                                     *"
-                + "\nQ - Exit                                     *"
+                + "\nQ - Leave General Store                      *"
                 + "\n**********************************************");
     }
 

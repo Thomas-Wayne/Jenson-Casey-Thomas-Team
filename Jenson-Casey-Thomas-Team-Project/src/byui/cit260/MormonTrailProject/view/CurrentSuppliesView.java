@@ -23,7 +23,7 @@ public class CurrentSuppliesView extends ViewInterface.View {
                 + "\nF - Food                                     *"
                 + "\nS - Spare Wagon Wheels                       *"
                 + "\nA - Ammunition                               *"
-                + "\nQ - Quit                                     *"
+                + "\nQ - Return to Previous Menu                  *"
                 + "\n**********************************************");
     }
 
