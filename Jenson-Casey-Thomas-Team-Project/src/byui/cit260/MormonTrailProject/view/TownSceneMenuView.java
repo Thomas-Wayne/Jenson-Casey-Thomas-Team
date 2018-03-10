@@ -32,7 +32,7 @@ public class TownSceneMenuView extends ViewInterface.View {
                 this.generalStore();
                 break;
 
-            case "L":
+            case "H":
                 this.hotel();
                 break;
 
