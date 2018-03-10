@@ -36,6 +36,10 @@ public class GameControl {
         return true;
     }
 
+    public static void generalStoreMenuView(Player player) {
+        
+    }
+
     public void dailyMiles() {
         int distance = PlayControl.calcDistanceTravelDay(BYUICIT260MormonTrailProject.getCurrentGame().getPace().ordinal());
         BYUICIT260MormonTrailProject.getCurrentGame().addMilesTraveled(distance);

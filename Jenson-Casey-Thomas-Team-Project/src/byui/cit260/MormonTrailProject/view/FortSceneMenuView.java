@@ -47,7 +47,8 @@ public class FortSceneMenuView extends ViewInterface.View {
     }
 
     private void generalStore() {
-        
+       GeneralStoreMenuView view = new GeneralStoreMenuView();
+        view.display(); 
     }
 
     private void quitGame() {
