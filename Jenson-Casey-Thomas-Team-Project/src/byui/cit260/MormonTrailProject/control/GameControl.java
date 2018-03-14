@@ -6,6 +6,7 @@
 package byui.cit260.MormonTrailProject.control;
 
 import byui.cit260.MormonTrailProject.model.Game;
+import byui.cit260.MormonTrailProject.model.Map;
 import byui.cit260.MormonTrailProject.model.Player;
 import jenson.casey.thomas.team.project.CIT260.BYUICIT260MormonTrailProject;
 
@@ -45,10 +46,45 @@ public class GameControl {
         BYUICIT260MormonTrailProject.getCurrentGame().addMilesTraveled(distance);
     }
 
-    public static void createNewGame(Player player) {
+    public static int createNewGame(Player player) {
+        if (player == null) {
+            return -1;
+        }
         Game game = new Game();
         game.setPlayer(player);
         BYUICIT260MormonTrailProject.setCurrentGame(game);
+        
+        private static Actor [] createActorList() {
+            Actor[] actor = new Actor[];
+        }
+        //actors = new Actors();
+        //Save the list of actors in the Game object
+        //Assign an actor the player
+                
+        public static InventoryItem[] createItems(){
+            System.out.println("InventoryItem[] called");
+        }
+        
+                
+        public static Map createMap(int noOfRows, int noOfColumns){
+            if (map == null){
+                return -1;
+            }
+            
+                return 1;
+        }
+
+    private static class InventoryItem {
+
+        public InventoryItem() {
+        }
+    }
+        
+        
+    }
+    
+    public static void createItems(Player player) {
+        
     }
 
     public static void loadGame(Player player) {
@@ -103,3 +139,4 @@ public class GameControl {
 
     }
 }
+ 

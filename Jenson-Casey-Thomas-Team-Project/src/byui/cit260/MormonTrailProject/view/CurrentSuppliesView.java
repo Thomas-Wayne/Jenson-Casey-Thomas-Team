@@ -15,7 +15,7 @@ public class CurrentSuppliesView extends ViewInterface.View {
 
     public CurrentSuppliesView() {
         super(
-                "\n**********************************************"
+                  "\n**********************************************"
                 + "\n*          Current Supplies Menu             *"
                 + "\n**********************************************"
                 + "\nO - Oxen                                     *"
@@ -75,7 +75,7 @@ public class CurrentSuppliesView extends ViewInterface.View {
     }
 
     private void buyFood() {
-        System.out.println("buFood() was called");
+        System.out.println("buyFood() was called");
     }
 
     private void buySpareWagonWheel() {
