@@ -5,8 +5,8 @@
  */
 package byui.cit260.MormonTrailProject.control;
 
-import byui.cit260.MormonTrailProject.model.Actor;
 import byui.cit260.MormonTrailProject.model.Game;
+import byui.cit260.MormonTrailProject.model.Location;
 import byui.cit260.MormonTrailProject.model.Map;
 import byui.cit260.MormonTrailProject.model.Player;
 import jenson.casey.thomas.team.project.CIT260.BYUICIT260MormonTrailProject;
@@ -42,6 +42,17 @@ public class GameControl {
 
     }
 
+    private static void assignScenesToLocations() {
+
+    }
+
+    private static void assignInventoryToScenes() {
+    }
+
+    private static void assignQuestionsToScenes() {
+
+    }
+
     public void dailyMiles() {
         int distance = PlayControl.calcDistanceTravelDay(BYUICIT260MormonTrailProject.getCurrentGame().getPace().ordinal());
         BYUICIT260MormonTrailProject.getCurrentGame().addMilesTraveled(distance);
@@ -54,6 +65,13 @@ public class GameControl {
         Game game = new Game();
         game.setPlayer(player);
         BYUICIT260MormonTrailProject.setCurrentGame(game);
+        /*actor = createActor();
+        items = createItems();
+        map = createMap(int noOfRows, int noOfColumns, InventoryItem[] inventory);
+        
+        if (map == null){
+        return null;
+        }*/
         return player;
     }
 
@@ -94,11 +112,23 @@ public class GameControl {
         return null;
     }
 
-    public static Map createMap(int noOfRows, int noOfColumns) {
- //       if (map == null) {
+    public static Map createMap(int noOfRows, int noOfColumns, InventoryItem[] inventory) {
+        if (noOfRows < 0 | noOfColumns < 0) {
+            return null;
+        }
+        if (inventory == null | inventory.length < 1) {
+        }
+        Map map = new Map();
+        noOfRows = 8;
+        noOfColumns = 10;
+        Location[][] locationsInMap = new Location[noOfRows][noOfColumns];
+        //scenes = createScenes();
+        //questions = createQuestions();
+        assignQuestionsToScenes();
+        assignInventoryToScenes();
+        assignScenesToLocations();
 
-  //      }
-        return null;
+        return map;
     }
 
     private static class InventoryItem {
@@ -109,7 +139,7 @@ public class GameControl {
     }
 
     public static void createItems(Player player) {
-
+        System.out.println("*** createItems()called ***");
     }
 
     public static void loadGame(Player player) {
@@ -162,5 +192,11 @@ public class GameControl {
 
     public static void handleObstacleView(Player player) {
 
+    }
+
+    private static class Question {
+
+        public Question() {
+        }
     }
 }

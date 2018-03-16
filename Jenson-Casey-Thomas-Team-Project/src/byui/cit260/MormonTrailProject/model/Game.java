@@ -7,7 +7,6 @@ package byui.cit260.MormonTrailProject.model;
 
 import java.io.Serializable;
 import java.util.Objects;
-import static javax.swing.text.html.HTML.Tag.HEAD;
 
 /**
  *
@@ -20,13 +19,12 @@ public class Game implements Serializable {
     private int milesTraveled;
     private int currentMoneyBalance;
     private Player player;
-    private String Map;
-
-    private String inventory;
+    private Map map;
+    private InventoryItem[] inventory;
 
     public Game() {
     }
-
+    
     public int getDaysOnTrail() {
         return daysOnTrail;
     }
@@ -71,12 +69,20 @@ public class Game implements Serializable {
         this.player = player;
     }
 
-    public String getMap() {
-        return Map;
+    public Map getMap() {
+        return map;
     }
 
-    public void setMap(String Map) {
-        this.Map = Map;
+    public void setMap(Map map) {
+        this.map = map;
+    }
+
+    public InventoryItem[] getInventory() {
+        return inventory;
+    }
+
+    public void setInventory(InventoryItem[] inventory) {
+        this.inventory = inventory;
     }
 
     @Override

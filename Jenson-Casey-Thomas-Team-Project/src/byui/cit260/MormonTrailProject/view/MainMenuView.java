@@ -72,6 +72,7 @@ public class MainMenuView extends View {
     private void startNewGame() {
         GameControl.createNewGame(BYUICIT260MormonTrailProject.getPlayer());
         GameControl.GameMenuView(BYUICIT260MormonTrailProject.getPlayer());
+        
         GameMenuView gameMenuView = new GameMenuView();
         gameMenuView.display();
     }
