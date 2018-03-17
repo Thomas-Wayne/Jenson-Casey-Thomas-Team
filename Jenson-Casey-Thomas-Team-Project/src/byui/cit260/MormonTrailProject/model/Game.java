@@ -5,6 +5,7 @@
  */
 package byui.cit260.MormonTrailProject.model;
 
+import byui.cit260.MormonTrailProject.control.GameControl;
 import java.io.Serializable;
 import java.util.Objects;
 
@@ -131,4 +132,12 @@ public class Game implements Serializable {
         return true;
     }
 
+    public void setActor(GameControl.Actor[] actor) {
+        
+    }
+
+    public void setInventory(GameControl.InventoryItem[] inventory) {
+        
+    }
 }
+    

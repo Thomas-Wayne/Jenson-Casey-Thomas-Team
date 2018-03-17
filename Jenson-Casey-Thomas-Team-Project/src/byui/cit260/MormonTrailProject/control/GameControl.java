@@ -9,6 +9,7 @@ import byui.cit260.MormonTrailProject.model.Game;
 import byui.cit260.MormonTrailProject.model.Location;
 import byui.cit260.MormonTrailProject.model.Map;
 import byui.cit260.MormonTrailProject.model.Player;
+import byui.cit260.MormonTrailProject.model.Scene;
 import jenson.casey.thomas.team.project.CIT260.BYUICIT260MormonTrailProject;
 
 /**
@@ -53,29 +54,48 @@ public class GameControl {
 
     }
 
+    public static void createActorList(Player player) {
+           System.out.println("*** createActorList()called ***");
+    }
+
+    public static void createInventoryItem(Player player) {
+        System.out.println("*** InventoryItem()called ***");
+    }
+
+    public static void createMap(Player player) {
+        System.out.println("*** createMap()called ***");
+    }
+
+    private static Scene createScenes() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
     public void dailyMiles() {
         int distance = PlayControl.calcDistanceTravelDay(BYUICIT260MormonTrailProject.getCurrentGame().getPace().ordinal());
         BYUICIT260MormonTrailProject.getCurrentGame().addMilesTraveled(distance);
     }
 
-    public static Player createNewGame(Player player) {
+    public static int createNewGame(Player player) {
         if (player == null) {
-            return null;
+            return -1;
         }
         Game game = new Game();
         game.setPlayer(player);
         BYUICIT260MormonTrailProject.setCurrentGame(game);
-        /*actor = createActor();
-        items = createItems();
-        map = createMap(int noOfRows, int noOfColumns, InventoryItem[] inventory);
-        
-        if (map == null){
-        return null;
-        }*/
-        return player;
+
+        Actor[] actor = GameControl.createActorList();
+        game.setActor(actor);
+        InventoryItem[] inventory = GameControl.createInventoryItem();
+        game.setInventory(inventory);
+        Map map = MapControl.createMap();
+        game.setMap(map);
+        if (map == null) {
+            return -1;
+        }
+        return 1;
     }
 
-    private static class Actor {
+    public static class Actor {
 
         private Actor(String name, int stamina, String ability) {
         }
@@ -93,10 +113,10 @@ public class GameControl {
         actor[6] = new Actor("Mary", 5, "Seamstress");
         actor[7] = new Actor("Laura", 6, "Chef");
 
-        return null;
+        return actor;
     }
 
-    public static InventoryItem[] createItems() {
+    public static InventoryItem[] createInventoryItem() {
         InventoryItem[] inventory = new InventoryItem[9];
 
         inventory[0] = new InventoryItem("lumber", 0);
@@ -109,7 +129,7 @@ public class GameControl {
         inventory[7] = new InventoryItem("clothes", 0);
         inventory[8] = new InventoryItem("rope", 0);
 
-        return null;
+        return inventory;
     }
 
     public static Map createMap(int noOfRows, int noOfColumns, InventoryItem[] inventory) {
@@ -122,7 +142,7 @@ public class GameControl {
         noOfRows = 8;
         noOfColumns = 10;
         Location[][] locationsInMap = new Location[noOfRows][noOfColumns];
-        //scenes = createScenes();
+        Scene scenes = createScenes();
         //questions = createQuestions();
         assignQuestionsToScenes();
         assignInventoryToScenes();
@@ -131,7 +151,7 @@ public class GameControl {
         return map;
     }
 
-    private static class InventoryItem {
+    public static class InventoryItem {
 
         private InventoryItem(String description, int quantity) {
 

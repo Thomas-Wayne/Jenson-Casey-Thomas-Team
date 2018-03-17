@@ -6,6 +6,7 @@
 package byui.cit260.MormonTrailProject.view;
 
 import byui.cit260.MormonTrailProject.control.GameControl;
+import byui.cit260.MormonTrailProject.control.MapControl;
 import byui.cit260.MormonTrailProject.view.ViewInterface.View;
 import jenson.casey.thomas.team.project.CIT260.BYUICIT260MormonTrailProject;
 
@@ -71,8 +72,16 @@ public class MainMenuView extends View {
 
     private void startNewGame() {
         GameControl.createNewGame(BYUICIT260MormonTrailProject.getPlayer());
+        GameControl.createMap(BYUICIT260MormonTrailProject.getPlayer());
+        GameControl.createInventoryItem(BYUICIT260MormonTrailProject.getPlayer());
+        GameControl.createActorList(BYUICIT260MormonTrailProject.getPlayer());
+        MapControl.createLocations(0, 0);
+        MapControl.createScenes();
+        MapControl.assignInventoryToScenes();
+        MapControl.assignQuestionsToScenes();
+        MapControl.assignScenesToLocations();
+        MapControl.createQuestions();
         GameControl.GameMenuView(BYUICIT260MormonTrailProject.getPlayer());
-        
         GameMenuView gameMenuView = new GameMenuView();
         gameMenuView.display();
     }
