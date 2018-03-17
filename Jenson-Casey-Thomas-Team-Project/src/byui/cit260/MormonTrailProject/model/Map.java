@@ -15,7 +15,7 @@ import java.io.Serializable;
 public class Map implements Serializable {
 
     private String currentLocation;
-    private String location;
+    private Location[][] locations;
 
     public Map() {
     }
@@ -28,12 +28,12 @@ public class Map implements Serializable {
         this.currentLocation = currentLocation;
     }
 
-    public String getLocation() {
-        return location;
+    public Location[][] getLocations() {
+        return locations;
     }
 
-    public void setLocation(String location) {
-        this.location = location;
+    public void setLocations(Location[][] locations) {
+        this.locations = locations;
     }
 
     @Override

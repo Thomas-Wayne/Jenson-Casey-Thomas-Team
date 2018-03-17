@@ -11,6 +11,6 @@ package byui.cit260.MormonTrailProject.model;
  */
 public enum LocationType {
 
-    town, fort, river, landmark;
+    town, fort, river, landmark, trailStop;
 
 }

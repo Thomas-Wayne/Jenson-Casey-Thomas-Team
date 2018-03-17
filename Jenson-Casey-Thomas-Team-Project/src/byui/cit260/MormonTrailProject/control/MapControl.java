@@ -7,67 +7,162 @@ package byui.cit260.MormonTrailProject.control;
 
 import byui.cit260.MormonTrailProject.model.InventoryItem;
 import byui.cit260.MormonTrailProject.model.Location;
+import byui.cit260.MormonTrailProject.model.LocationType;
 import byui.cit260.MormonTrailProject.model.Map;
 import byui.cit260.MormonTrailProject.model.Scene;
+import byui.cit260.MormonTrailProject.model.SceneType;
+import byui.cit260.MormonTrailProject.model.TrailStopScene;
 
 /**
  *
  * @author tcasey
  */
 public class MapControl {
-  public static Location[][] createLocations(int rows, int columns){
-        /*public static Location[][] createLocations(int rows,
-                                                        int columns) {
-        IF rows < 1 OR columns < 1 THEN
-            RETURN null
-        ENDIF
-      
-        locations = new two-dimensional Location array
-        FOR every row in the locations array
-            FOR every column in the locations array
-            location = create a new Location object
-            set the row, and column attributes in the location
-            set visited attribute to false
-            Assign location to the row, and column in array
-        ENDFOR
-      
-        RETURN locations
-}*/
-        if (rows < 1 | columns < 1){
-          return null;  
+
+    public static Location[][] createLocations(int rows, int columns) {
+
+        if ((rows < 1) || (columns < 1)) {
+            return null;
         }
-      
-       
-        Location[][] locations = new Location[noOfRows][noOfColumns];
-        for (int i = 0; i < noOfRows.length; i++){
-            
-            for (int j = 0; j < noOfColumns[i].length; j++){
-                locations += Location[i][j];
+
+        Location[][] locations = new Location[rows][columns];
+        for (int i = 0; i < rows; i++) {
+
+            for (int j = 0; j < columns; j++) {
+                String milepost = new Integer((i + 1) * (j + 1)).toString();
+                locations[i][j] = new Location(
+                        LocationType.trailStop, milepost,
+                        new TrailStopScene("TrailStop " + milepost,
+                                true, "SomeTown", true, "SomeFort"));
             }
         }
+
+        //locations[2][5].setScene(new TownScene());
         return locations;
     }
-    public static Scene[] createScenes(){
-        System.out.println("*** createScenes()called ***");
-        return null;
+
+    public static Scene[] createScenes() {
+        Scene[] scenes = new Scene[SceneType.values().length];
+
+        // Starting - Nauvoo
+        Scene startingScene = new Scene();
+        startingScene.setName("Nauvoo");
+        startingScene.setDescription(
+                "");
+        startingScene.setMapSymbol("ST");
+        startingScene.setDistanceFromNauvoo(0);
+        scenes[SceneType.start.ordinal()] = startingScene;
+
+        // Mount Pisgah, Iowa
+        Scene pisgahScene = new Scene();
+        pisgahScene.setName("Mount Pisgah");
+        pisgahScene.setDescription(
+                "");
+        pisgahScene.setMapSymbol("MP");
+        pisgahScene.setDistanceFromNauvoo(153);
+        scenes[SceneType.pisgah.ordinal()] = pisgahScene;
+
+        // Kanesville (Council Bluffs), Iowa
+        Scene kanesvilleScene = new Scene();
+        kanesvilleScene.setName("Kanesville (Council Bluffs)");
+        kanesvilleScene.setDescription(
+                " ");
+        kanesvilleScene.setMapSymbol("MP");
+        kanesvilleScene.setDistanceFromNauvoo(300);
+        scenes[SceneType.pisgah.ordinal()] = kanesvilleScene;
+
+        // Chimney Rock, Nebraska
+        Scene chimneyScene = new Scene();
+        chimneyScene.setName("Chimney Rock");
+        chimneyScene.setDescription(
+                "");
+        chimneyScene.setMapSymbol("CR");
+        chimneyScene.setDistanceFromNauvoo(718);
+        scenes[SceneType.chimney.ordinal()] = chimneyScene;
+
+        // Fort Laramie, Wyoming. 
+        Scene fortLaramieScene = new Scene();
+        fortLaramieScene.setName("Fort Laramie");
+        fortLaramieScene.setDescription(
+                "");
+        fortLaramieScene.setMapSymbol("FL");
+        fortLaramieScene.setDistanceFromNauvoo(788);
+        scenes[SceneType.laramie.ordinal()] = fortLaramieScene;
+
+        // Martin's Cove, Wyoming. 
+        Scene martinsCoveScene = new Scene();
+        martinsCoveScene.setName("Martin's Cove");
+        martinsCoveScene.setDescription(
+                "");
+        martinsCoveScene.setMapSymbol("MC");
+        martinsCoveScene.setDistanceFromNauvoo(964);
+        scenes[SceneType.martins.ordinal()] = martinsCoveScene;
+
+        // Independence Rock
+        Scene independenceRockScene = new Scene();
+        independenceRockScene.setName("Independence Rock");
+        independenceRockScene.setDescription(
+                "");
+        independenceRockScene.setMapSymbol("IR");
+        independenceRockScene.setDistanceFromNauvoo(1236);
+        scenes[SceneType.rock.ordinal()] = independenceRockScene;
+
+        // Fort Bridger, Wyoming. 
+        Scene fortBridgerScene = new Scene();
+        fortBridgerScene.setName("Fort Bridger");
+        fortBridgerScene.setDescription(
+                "");
+        fortBridgerScene.setMapSymbol("FB");
+        fortBridgerScene.setDistanceFromNauvoo(1183);
+        scenes[SceneType.bridger.ordinal()] = fortBridgerScene;
+
+        // Finish Point - The Great Salt Lake Valley
+        Scene saltLakeValleyScene = new Scene();
+        saltLakeValleyScene.setName("Salt Lake Valley");
+        saltLakeValleyScene.setDescription(
+                "");
+        saltLakeValleyScene.setMapSymbol("SL");
+        saltLakeValleyScene.setDistanceFromNauvoo(1302);
+        scenes[SceneType.salt.ordinal()] = saltLakeValleyScene;
+
+        return scenes;
     }
-    public static Question[] createQuestions(){
+
+    /*public static Question[] createQuestions() {
         System.out.println("*** createQuestions()called ***");
         return null;
     }
-    public static void assignQuestionsToScenes(){
+
+    public static void assignQuestionsToScenes() {
         System.out.println("*** assignQuestionsToScenes()called ***");
-    }
-    public static void assignInventoryToScenes(){
-        System.out.println("*** assignInventoryToScenes()called ***");
-    }
-    public static void assignScenesToLocations(){
-        System.out.println("*** assignScenesToLocations()called ***");
+    }*/
+
+ /* private static void assignInventoryToScenes(InventoryItem[][]inventory) {
+        itemsInScene.add(inventory[InventoryItem.lumber.ordinal()]);
+        itemsInScene.add(inventory[InventoryItem.wheel.ordinal()]);
+        itemsInScene.add(inventory[InventoryItem.food.ordinal()]);
+        itemsInScene.add(inventory[InventoryItem.water.ordinal()]);
+        itemsInScene.add(inventory[InventoryItem.tools.ordinal()]);
+        itemsInScene.add(inventory[InventoryItem.ammunition.ordinal()]);
+        itemsInScene.add(inventory[InventoryItem.grain.ordinal()]);
+        itemsInScene.add(inventory[InventoryItem.clothes.ordinal()]);
+        itemsInScene.add(inventory[InventoryItem.rope.ordinal()]);
+        
+    }*/
+    static Map createMap() {
+        Map map = new Map();
+        Location[][] locations = createLocations(8, 10);
+        map.setLocations(locations);
+        MapControl.createScenes();
+        MapControl.assignInventoryToScenes();
+        //MapControl.assignQuestionsToScenes();
+
+        return map;
+
     }
 
-    static Map createMap() {
-      return null;
-        
+    private static void assignInventoryToScenes() {
+        System.out.println("*** assignInventoryToScenes()called ***");
     }
 
     private static class Question {
@@ -75,4 +170,5 @@ public class MapControl {
         public Question() {
         }
     }
+
 }

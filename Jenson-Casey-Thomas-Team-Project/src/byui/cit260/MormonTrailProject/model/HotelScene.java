@@ -12,7 +12,7 @@ import java.util.Objects;
  *
  * @author Wayne Thomas
  */
-public class HotelScene implements Serializable {
+public class HotelScene extends Scene implements Serializable {
 
     private Player player;
 

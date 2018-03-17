@@ -51,10 +51,10 @@ public class MainMenuView extends View {
             case "H":
                 this.getHelp();
                 break;
-                
+
             case "O":
                 this.handleObstacleView();
-                break;    
+                break;
 
             case "Q":
                 this.quitGame();
@@ -72,15 +72,7 @@ public class MainMenuView extends View {
 
     private void startNewGame() {
         GameControl.createNewGame(BYUICIT260MormonTrailProject.getPlayer());
-        GameControl.createMap(BYUICIT260MormonTrailProject.getPlayer());
-        GameControl.createInventoryItem(BYUICIT260MormonTrailProject.getPlayer());
-        GameControl.createActorList(BYUICIT260MormonTrailProject.getPlayer());
-        MapControl.createLocations(0, 0);
-        MapControl.createScenes();
-        MapControl.assignInventoryToScenes();
-        MapControl.assignQuestionsToScenes();
-        MapControl.assignScenesToLocations();
-        MapControl.createQuestions();
+
         GameControl.GameMenuView(BYUICIT260MormonTrailProject.getPlayer());
         GameMenuView gameMenuView = new GameMenuView();
         gameMenuView.display();

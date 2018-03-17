@@ -12,12 +12,21 @@ import java.util.Objects;
  *
  * @author Wayne Thomas
  */
-public class TrailStopScene implements Serializable {
+public class TrailStopScene extends Scene implements Serializable {
 
     private boolean hasNearByTown;
     private String nearbyTownName;
     private boolean hasNearbyFort;
     private String nearbyFortName;
+
+    public TrailStopScene(String description, boolean hasNearByTown,
+            String nearbyTownName, boolean hasNearbyFort, String nearbyFortName) {
+        setDescription(description);
+        this.hasNearByTown = hasNearByTown;
+        this.nearbyTownName = nearbyTownName;
+        this.hasNearbyFort = hasNearbyFort;
+        this.nearbyFortName = nearbyFortName;
+    }
 
     public TrailStopScene() {
     }
@@ -66,7 +75,7 @@ public class TrailStopScene implements Serializable {
 
     @Override
     public String toString() {
-        return "TrailStopScene{" + "hasNearByTown=" + hasNearByTown + ", nearbyTownName=" + nearbyTownName + ", hasNearbyFort=" + hasNearbyFort + ", nearbyFortName=" + nearbyFortName + '}';
+        return getDescription();
     }
 
     @Override

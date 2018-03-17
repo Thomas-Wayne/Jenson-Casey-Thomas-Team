@@ -12,7 +12,7 @@ import java.util.Objects;
  *
  * @author Wayne Thomas
  */
-public class TownScene implements Serializable {
+public class TownScene extends Scene implements Serializable {
 
     private String hotelScene;
     private String generalStoreScene;

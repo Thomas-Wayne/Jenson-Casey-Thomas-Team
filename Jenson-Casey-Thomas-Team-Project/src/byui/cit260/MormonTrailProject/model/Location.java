@@ -14,18 +14,24 @@ import java.util.Objects;
  */
 public class Location implements Serializable {
 
-    private String type;
+    private LocationType type;
     private String milepost;
-    private String scene;
+    private Scene scene;
 
     public Location() {
     }
 
-    public String getType() {
+    public Location(LocationType type, String milepost, Scene scene) {
+        this.type = type;
+        this.milepost = milepost;
+        this.scene = scene;
+    }
+
+    public LocationType getType() {
         return type;
     }
 
-    public void setType(String type) {
+    public void setType(LocationType type) {
         this.type = type;
     }
 
@@ -37,11 +43,11 @@ public class Location implements Serializable {
         this.milepost = milepost;
     }
 
-    public String getScene() {
+    public Scene getScene() {
         return scene;
     }
 
-    public void setScene(String scene) {
+    public void setScene(Scene scene) {
         this.scene = scene;
     }
 

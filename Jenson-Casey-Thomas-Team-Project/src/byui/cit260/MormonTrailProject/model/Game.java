@@ -25,7 +25,7 @@ public class Game implements Serializable {
 
     public Game() {
     }
-    
+
     public int getDaysOnTrail() {
         return daysOnTrail;
     }
@@ -133,11 +133,10 @@ public class Game implements Serializable {
     }
 
     public void setActor(GameControl.Actor[] actor) {
-        
+
     }
 
     public void setInventory(GameControl.InventoryItem[] inventory) {
-        
+
     }
 }
-    

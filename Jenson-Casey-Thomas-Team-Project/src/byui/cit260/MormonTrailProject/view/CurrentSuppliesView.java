@@ -15,7 +15,7 @@ public class CurrentSuppliesView extends ViewInterface.View {
 
     public CurrentSuppliesView() {
         super(
-                  "\n**********************************************"
+                "\n**********************************************"
                 + "\n*          Current Supplies Menu             *"
                 + "\n**********************************************"
                 + "\nO - Oxen                                     *"

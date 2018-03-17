@@ -14,35 +14,29 @@ import java.util.Objects;
  */
 public class Scene implements Serializable {
 
-    private String discription;
-    private String riverCrossingScene;
-    private String fortScene;
-    private String townScene;
-    private String hotelScene;
-    private String generalStoreScene;
-    private String trailStopScene;
+    private String description;
 
     public Scene() {
     }
 
-    public String getDiscription() {
-        return discription;
+    public String getDescription() {
+        return description;
     }
 
-    public void setDiscription(String discription) {
-        this.discription = discription;
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     @Override
     public int hashCode() {
         int hash = 3;
-        hash = 97 * hash + Objects.hashCode(this.discription);
+        hash = 97 * hash + Objects.hashCode(this.description);
         return hash;
     }
 
     @Override
     public String toString() {
-        return "Scene{" + "discription=" + discription + ", riverCrossingScene=" + riverCrossingScene + ", fortScene=" + fortScene + ", townScene=" + townScene + ", hotelScene=" + hotelScene + ", generalStoreScene=" + generalStoreScene + ", trailStopScene=" + trailStopScene + '}';
+        return "Scene{" + "discription=" + description;
     }
 
     @Override
@@ -57,57 +51,22 @@ public class Scene implements Serializable {
             return false;
         }
         final Scene other = (Scene) obj;
-        if (!Objects.equals(this.discription, other.discription)) {
+        if (!Objects.equals(this.description, other.description)) {
             return false;
         }
         return true;
     }
 
-    public String getRiverCrossingScene() {
-        return riverCrossingScene;
+    public void setMapSymbol(String st) {
+
     }
 
-    public void setRiverCrossingScene(String riverCrossingScene) {
-        this.riverCrossingScene = riverCrossingScene;
+    public void setDistanceFromNauvoo(int i) {
+
     }
 
-    public String getTrailStopScene() {
-        return trailStopScene;
+    public void setName(String nauvoo) {
+
     }
 
-    public void setTrailStopScene(String trailStopScene) {
-        this.trailStopScene = trailStopScene;
-    }
-
-    public String getFortScene() {
-        return fortScene;
-    }
-
-    public void setFortScene(String fortScene) {
-        this.fortScene = fortScene;
-    }
-
-    public String getTownScene() {
-        return townScene;
-    }
-
-    public void setTownScene(String townScene) {
-        this.townScene = townScene;
-    }
-
-    public String getHotelScene() {
-        return hotelScene;
-    }
-
-    public void setHotelScene(String hotelScene) {
-        this.hotelScene = hotelScene;
-    }
-
-    public String getGeneralStoreScene() {
-        return generalStoreScene;
-    }
-
-    public void setGeneralStoreScene(String generalStoreScene) {
-        this.generalStoreScene = generalStoreScene;
-    }
 }

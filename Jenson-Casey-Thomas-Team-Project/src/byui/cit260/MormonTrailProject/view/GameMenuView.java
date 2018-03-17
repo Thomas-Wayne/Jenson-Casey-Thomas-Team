@@ -7,6 +7,8 @@ package byui.cit260.MormonTrailProject.view;
 
 import byui.cit260.MormonTrailProject.control.GameControl;
 import byui.cit260.MormonTrailProject.control.PlayControl;
+import byui.cit260.MormonTrailProject.model.Location;
+import byui.cit260.MormonTrailProject.model.Map;
 import byui.cit260.MormonTrailProject.view.ViewInterface.View;
 import java.util.Scanner;
 import jenson.casey.thomas.team.project.CIT260.BYUICIT260MormonTrailProject;
@@ -112,7 +114,15 @@ public class GameMenuView extends View {
     }
 
     private void viewMap() {
-        System.out.println("viewMap() has been called");
+        Map map = BYUICIT260MormonTrailProject.getCurrentGame().getMap();
+        Location[][] locations = map.getLocations();
+
+        for (int row = 0; row < locations.length; row++) {
+            for (int column = 0; column < locations[row].length; column++) {
+                System.out.print(String.format("%3s ", locations[row][column].getMilepost()));
+            }
+            System.out.println();
+        }
     }
 
     private void sceneMenu() {

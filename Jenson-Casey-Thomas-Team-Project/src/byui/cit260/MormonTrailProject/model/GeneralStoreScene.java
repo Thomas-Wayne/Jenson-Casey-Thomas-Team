@@ -12,7 +12,7 @@ import java.util.Objects;
  *
  * @author Wayne Thomas
  */
-public class GeneralStoreScene implements Serializable {
+public class GeneralStoreScene extends Scene implements Serializable {
 
     private String inventory;
 

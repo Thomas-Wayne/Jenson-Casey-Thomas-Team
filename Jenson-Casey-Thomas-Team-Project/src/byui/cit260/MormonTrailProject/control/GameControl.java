@@ -55,7 +55,7 @@ public class GameControl {
     }
 
     public static void createActorList(Player player) {
-           System.out.println("*** createActorList()called ***");
+        System.out.println("*** createActorList()called ***");
     }
 
     public static void createInventoryItem(Player player) {
@@ -85,8 +85,10 @@ public class GameControl {
 
         Actor[] actor = GameControl.createActorList();
         game.setActor(actor);
+
         InventoryItem[] inventory = GameControl.createInventoryItem();
         game.setInventory(inventory);
+
         Map map = MapControl.createMap();
         game.setMap(map);
         if (map == null) {
@@ -144,7 +146,7 @@ public class GameControl {
         Location[][] locationsInMap = new Location[noOfRows][noOfColumns];
         Scene scenes = createScenes();
         //questions = createQuestions();
-        assignQuestionsToScenes();
+        //assignQuestionsToScenes();
         assignInventoryToScenes();
         assignScenesToLocations();
 

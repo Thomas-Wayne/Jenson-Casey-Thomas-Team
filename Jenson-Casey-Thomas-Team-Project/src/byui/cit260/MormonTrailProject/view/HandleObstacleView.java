@@ -13,7 +13,7 @@ import java.util.Random;
  * @author tcasey
  */
 public class HandleObstacleView extends View {
-    
+
     public HandleObstacleView() {
         super("\n"
                 + "\n************************************************"
@@ -88,6 +88,6 @@ public class HandleObstacleView extends View {
     }
 
     void displayHandleObstacleView() {
-        
+
     }
 }

@@ -9,14 +9,17 @@ package byui.cit260.MormonTrailProject.model;
  *
  * @author Thomas'
  */
-public enum InventoryItem {
-    lumber,
-    wheel,
-    food,
-    water,
-    tools,
-    ammunition,
-    grain,
-    clothes,
-    rope;
+public enum SceneType {
+    start,
+    grove,
+    pisgah,
+    kanesville,
+    quarters,
+    kearny,
+    chimney,
+    laramie,
+    martins,
+    rock,
+    bridger,
+    salt;
 }

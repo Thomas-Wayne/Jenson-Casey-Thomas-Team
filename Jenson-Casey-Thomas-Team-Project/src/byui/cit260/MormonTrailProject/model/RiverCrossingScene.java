@@ -11,7 +11,7 @@ import java.io.Serializable;
  *
  * @author Wayne Thomas
  */
-public class RiverCrossingScene implements Serializable {
+public class RiverCrossingScene extends Scene implements Serializable {
 
     public RiverCrossingScene() {
     }

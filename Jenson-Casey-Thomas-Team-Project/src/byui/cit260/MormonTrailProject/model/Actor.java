@@ -5,24 +5,19 @@
  */
 package byui.cit260.MormonTrailProject.model;
 
-
 /**
  *
  * @author Jenson, Casey, Thomas
  */
+public enum Actor {
 
- public enum Actor {
+    William,
+    Joseph,
+    Willford,
+    Samuel,
+    Rebecca,
+    Eliza,
+    Mary,
+    Laura;
 
-        William,
-        Joseph,
-        Willford,
-        Samuel,
-        Rebecca,
-        Eliza,
-        Mary,
-        Laura;
-
-    }
-
-
-
+}
