@@ -67,7 +67,8 @@ public class GameControl {
     }
 
     private static Scene createScenes() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        System.out.println("*** createScenes()called ***");
+        return null;
     }
 
     public void dailyMiles() {
