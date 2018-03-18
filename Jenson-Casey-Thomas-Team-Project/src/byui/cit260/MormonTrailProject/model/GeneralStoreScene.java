@@ -33,7 +33,7 @@ public class GeneralStoreScene extends Scene implements Serializable {
     }
 
     public void setGeneralStoreScene(String inventory) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        
     }
 
 }
