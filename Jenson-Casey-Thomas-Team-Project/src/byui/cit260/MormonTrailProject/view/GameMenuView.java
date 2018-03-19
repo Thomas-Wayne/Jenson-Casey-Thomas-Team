@@ -158,7 +158,6 @@ public class GameMenuView extends View {
         return total;
 
     }*/
-
     private void getRemainingDistance() {
         DistanceRemainingView view;
         view = new DistanceRemainingView();

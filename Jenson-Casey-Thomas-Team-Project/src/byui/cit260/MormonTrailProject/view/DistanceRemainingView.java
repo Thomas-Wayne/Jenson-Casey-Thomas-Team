@@ -11,8 +11,8 @@ import byui.cit260.MormonTrailProject.view.ViewInterface.View;
  *
  * @author tcasey
  */
-public class DistanceRemainingView extends View{
-    
+public class DistanceRemainingView extends View {
+
     public DistanceRemainingView() {
 
         super(
@@ -31,6 +31,7 @@ public class DistanceRemainingView extends View{
                 + "\n**********************************************"
         );
     }
+
     @Override
 
     public boolean doAction(String value) {
@@ -44,7 +45,7 @@ public class DistanceRemainingView extends View{
 
             case "Q":
                 this.quitGame();
-                
+
             default:
                 System.out.println("\n*** Invalid selection *** Try again.");
                 break;
@@ -63,14 +64,14 @@ public class DistanceRemainingView extends View{
         }
         return total;
 
-  
     }
+
     private void quitGame() {
         System.exit(0);
     }
 
     private void calcRemainingDistance() {
-        
+
     }
-    
+
 }

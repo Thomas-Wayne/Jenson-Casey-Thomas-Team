@@ -9,8 +9,9 @@ package byui.cit260.MormonTrailProject.model;
  *
  * @author tcasey
  */
-public class Distance{
-    public static void distance(String args[]){
+public class Distance {
+
+    public static void distance(String args[]) {
         double distance[];
         distance = new double[11];
         distance[0] = 130;
@@ -24,6 +25,6 @@ public class Distance{
         distance[8] = 1183;
         distance[9] = 1236;
         distance[10] = 1302;
-        
+
     }
 }

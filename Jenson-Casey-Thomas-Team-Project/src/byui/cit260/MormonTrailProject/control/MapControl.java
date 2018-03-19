@@ -40,10 +40,11 @@ public class MapControl {
         //locations[2][5].setScene(new TownScene());
         return locations;
     }
-    public long getRemainingDistance(int[] distance){
+
+    public long getRemainingDistance(int[] distance) {
         long total = 0;
-        
-        for (int i = 0; i < distance.length; i++){
+
+        for (int i = 0; i < distance.length; i++) {
             total += -distance[i];
         }
         return total;
