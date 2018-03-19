@@ -221,4 +221,8 @@ public class GameControl {
         public Question() {
         }
     }
+    
+    private static void BuyMenuView (Player player){
+    
+    }
 }

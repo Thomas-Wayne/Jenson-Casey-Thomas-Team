@@ -6,7 +6,6 @@
 package byui.cit260.MormonTrailProject.model;
 
 import java.io.Serializable;
-import java.util.Objects;
 
 /**
  *
@@ -33,7 +32,7 @@ public class GeneralStoreScene extends Scene implements Serializable {
     }
 
     public void setGeneralStoreScene(String inventory) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        
     }
 
 }
