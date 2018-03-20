@@ -16,7 +16,7 @@ import jenson.casey.thomas.team.project.CIT260.BYUICIT260MormonTrailProject;
  * @author Jenson, Casey, and Thomas
  */
 public class StartProgramView extends View {
-    
+
     public StartProgramView() {
         super(
                 "\n*******************************************************"
@@ -28,17 +28,17 @@ public class StartProgramView extends View {
                 + "\n*                                                     *"
                 + "\n*******************************************************"
                 + "\nPlease, enter your name: ");
-        
+
     }
-    
+
     @Override
-    
+
     public boolean doAction(String value) {
         if (value.length() < 2) {
             System.out.println("\nInvalid player name: " + "The name must be more than one character.");
             return false;
         }
-        
+
         Player player = GameControl.createPlayer(value);
         if (player == null) {
             System.out.println("\nError creating the player");
@@ -47,18 +47,18 @@ public class StartProgramView extends View {
         BYUICIT260MormonTrailProject.setPlayer(player);
         this.displayNextView(player);
         return true;
-        
+
     }
-    
+
     private void displayNextView(Player player) {
-        
+
         System.out.println("\n***************************************************"
                 + "\nWelcome to the game " + player.getName()
                 + "\n***************************************************");
-        
+
         MainMenuView mainMenuView = new MainMenuView();
         mainMenuView.display();
-        
+
     }
-    
+
 }

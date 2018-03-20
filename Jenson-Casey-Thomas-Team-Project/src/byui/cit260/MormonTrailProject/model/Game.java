@@ -7,6 +7,7 @@ package byui.cit260.MormonTrailProject.model;
 
 import byui.cit260.MormonTrailProject.control.GameControl;
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Objects;
 
 /**
@@ -21,7 +22,8 @@ public class Game implements Serializable {
     private int currentMoneyBalance;
     private Player player;
     private Map map;
-    private InventoryItem[] inventory;
+    private Inventory[] inventory;
+    private ArrayList<Actor> actors;
 
     public Game() {
     }
@@ -78,14 +80,6 @@ public class Game implements Serializable {
         this.map = map;
     }
 
-    public InventoryItem[] getInventory() {
-        return inventory;
-    }
-
-    public void setInventory(InventoryItem[] inventory) {
-        this.inventory = inventory;
-    }
-
     @Override
     public int hashCode() {
         int hash = 7;
@@ -132,11 +126,24 @@ public class Game implements Serializable {
         return true;
     }
 
-    public void setActor(GameControl.Actor[] actor) {
+    public Inventory[] getInventory() {
+
+        return inventory;
 
     }
 
-    public void setInventory(GameControl.InventoryItem[] inventory) {
+    public void setInventory(Inventory[] inventory) {
+        this.inventory = inventory;
+    }
 
+    public ArrayList<Actor> getActors() {
+
+        return actors;
+
+    }
+
+    public void setActor(ArrayList<Actor> actors) {
+
+        this.actors = actors;
     }
 }

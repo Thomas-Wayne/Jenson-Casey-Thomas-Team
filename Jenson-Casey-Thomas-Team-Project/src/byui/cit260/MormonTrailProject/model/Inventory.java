@@ -14,18 +14,24 @@ import java.util.Objects;
  */
 public class Inventory implements Serializable {
 
-    private String itemType;
+    private InventoryItem itemType;
     private int currentWeight;
     private int currentStrength;
 
     public Inventory() {
     }
 
-    public String getItemType() {
+    public Inventory(InventoryItem itemType, int currentWeight, int currentStrength) {
+        this.itemType = itemType;
+        this.currentWeight = currentWeight;
+        this.currentStrength = currentStrength;
+    }
+
+    public InventoryItem getItemType() {
         return itemType;
     }
 
-    public void setItemType(String itemType) {
+    public void setItemType(InventoryItem itemType) {
         this.itemType = itemType;
     }
 
