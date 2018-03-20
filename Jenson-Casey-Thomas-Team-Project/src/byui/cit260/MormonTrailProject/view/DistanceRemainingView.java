@@ -8,6 +8,7 @@ package byui.cit260.MormonTrailProject.view;
 import byui.cit260.MormonTrailProject.control.MapControl;
 import byui.cit260.MormonTrailProject.model.Distance;
 import byui.cit260.MormonTrailProject.model.Scene;
+import byui.cit260.MormonTrailProject.model.SceneType;
 import byui.cit260.MormonTrailProject.view.ViewInterface.View;
 
 /**
@@ -33,8 +34,6 @@ public class DistanceRemainingView extends View {
         );
         
        Scene[] scenes = MapControl.createScenes();
-       String str = null;
-       int n = Integer.parseInt(str);
         for (int i = 0 ; i < scenes.length; i ++){
             if (scenes[i] == null){
                 continue;
@@ -51,55 +50,63 @@ public class DistanceRemainingView extends View {
         value = value.toUpperCase();
         switch (value) {
 
-            case "N":
+            case "1":
                 this.calcRemainingDistance(0);
                 break;
 
-            case "G":
+            case "2":
                 this.calcRemainingDistance(1);
                 break;
 
-            case "P":
+            case "3":
                 this.calcRemainingDistance(2);
                 break;
 
-            case "K":
+            case "4":
                 this.calcRemainingDistance(3);
                 break;
 
-            case "W":
+            case "5":
                 this.calcRemainingDistance(4);
                 break;
 
-            case "C":
+            case "6":
                 this.calcRemainingDistance(5);
                 break;
 
-            case "L":
+            case "7":
                 this.calcRemainingDistance(6);
                 break;
 
-            case "M":
+            case "8":
                 this.calcRemainingDistance(7);
                 break;
 
-            case "F":
+            case "9":
                 this.calcRemainingDistance(8);
                 break;
 
-            case "I":
+            case "10":
                 this.calcRemainingDistance(9);
                 break;
 
-            case "B":
+            case "11":
                 this.calcRemainingDistance(10);
+                break;
+                
+            case "12":
+                this.calcRemainingDistance(11);
                 break;
                 
             case "Q":
                 this.quitGame();
 
             default:
-                int n = Integer.parseInt(Scene.name);
+                Scene[] str = MapControl.createScenes();
+        {
+            String Scene = null;
+            int n = Integer.parseInt(Scene);
+        }
                 System.out.println("\n*** Invalid selection *** Try again.");
                 break;
 
