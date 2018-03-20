@@ -69,7 +69,8 @@ public class GeneralStoreMenuView extends View {
     }
 
     private void buy() {
-        System.out.println("\n buy() was called.");
+        BuyMenuView view = new BuyMenuView();
+        view.display();
     }
 
     private void sell() {

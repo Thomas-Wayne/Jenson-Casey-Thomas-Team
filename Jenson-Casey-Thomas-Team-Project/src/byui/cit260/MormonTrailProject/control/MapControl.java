@@ -41,6 +41,15 @@ public class MapControl {
         return locations;
     }
 
+    public long getRemainingDistance(int[] distance) {
+        long total = 0;
+
+        for (int i = 0; i < distance.length; i++) {
+            total += -distance[i];
+        }
+        return total;
+    }
+
     public static Scene[] createScenes() {
         Scene[] scenes = new Scene[SceneType.values().length];
 

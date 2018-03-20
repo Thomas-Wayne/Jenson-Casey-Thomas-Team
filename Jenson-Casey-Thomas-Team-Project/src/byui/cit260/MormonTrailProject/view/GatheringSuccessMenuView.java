@@ -5,10 +5,7 @@
  */
 package byui.cit260.MormonTrailProject.view;
 
-import byui.cit260.MormonTrailProject.control.GameControl;
 import byui.cit260.MormonTrailProject.view.ViewInterface.View;
-import java.util.Scanner;
-import jenson.casey.thomas.team.project.CIT260.BYUICIT260MormonTrailProject;
 
 /**
  *

@@ -15,10 +15,10 @@ public enum SceneType {
     pisgah,
     kanesville,
     quarters,
-    kearny,
     chimney,
     laramie,
     martins,
+    kearny,
     rock,
     bridger,
     salt;

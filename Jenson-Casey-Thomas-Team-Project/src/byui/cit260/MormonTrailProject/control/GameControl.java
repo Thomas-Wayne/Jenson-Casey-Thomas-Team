@@ -214,4 +214,8 @@ public class GameControl {
         }
     }
 
+    private static void BuyMenuView(Player player) {
+
+    }
+
 }

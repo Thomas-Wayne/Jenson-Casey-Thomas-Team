@@ -39,6 +39,7 @@ public class GameMenuView extends View {
                 + "\nP - Set Team Pace"
                 + "\nS - Scene menu"
                 + "\nM - View the map"
+                + "\nD - Distance to Salt Lake Valley"
                 + "\nH - Help menu"
                 + "\nQ - Return to Previous Menu"
                 + "\n********************************************"
@@ -49,7 +50,7 @@ public class GameMenuView extends View {
         this.potentialIssues = "A racoon made off with your breakfast. Tough luck!";
         this.todaysWeather = "Partly cloudy skies. High 75 Low 65";
 
-        System.out.println(
+        /* System.out.println(
                 "\n*******************************************************"
                 + "\n Today's date is:\t\t" + this.dateDayOfWeek
                 + "\n Distance traveled from Nauvoo:\t" + 0
@@ -58,7 +59,7 @@ public class GameMenuView extends View {
                 + "\n Potential issues:\t\t" + this.potentialIssues
                 + "\n Today's weather:\t\t" + this.todaysWeather
                 + "\n*******************************************************"
-        );
+        );*/
     }
 
     @Override
@@ -85,6 +86,10 @@ public class GameMenuView extends View {
 
             case "M":
                 this.viewMap();
+                break;
+
+            case "D":
+                this.getRemainingDistance();
                 break;
 
             case "H":
@@ -146,4 +151,18 @@ public class GameMenuView extends View {
 
     }
 
+    /*private long getRemainingDistance(int[] distance) {
+        long total = 0;
+
+        for (int i = 0; i < distance.length; i++) {
+            total += -distance[i];
+        }
+        return total;
+
+    }*/
+    private void getRemainingDistance() {
+        DistanceRemainingView view;
+        view = new DistanceRemainingView();
+        view.display();
+    }
 }
