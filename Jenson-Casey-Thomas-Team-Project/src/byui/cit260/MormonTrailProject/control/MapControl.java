@@ -61,6 +61,15 @@ public class MapControl {
         startingScene.setMapSymbol("ST");
         startingScene.setDistanceFromNauvoo(0);
         scenes[SceneType.start.ordinal()] = startingScene;
+        
+        // Garden Grove, Iowa
+        Scene groveScene = new Scene();
+        groveScene.setName("Garden Grove");
+        groveScene.setDescription(
+                "");
+        groveScene.setMapSymbol("GG");
+        groveScene.setDistanceFromNauvoo(130);
+        scenes[SceneType.grove.ordinal()] = groveScene;
 
         // Mount Pisgah, Iowa
         Scene pisgahScene = new Scene();
@@ -75,10 +84,19 @@ public class MapControl {
         Scene kanesvilleScene = new Scene();
         kanesvilleScene.setName("Kanesville (Council Bluffs)");
         kanesvilleScene.setDescription(
-                " ");
-        kanesvilleScene.setMapSymbol("MP");
+                "");
+        kanesvilleScene.setMapSymbol("KV");
         kanesvilleScene.setDistanceFromNauvoo(300);
-        scenes[SceneType.pisgah.ordinal()] = kanesvilleScene;
+        scenes[SceneType.kanesville.ordinal()] = kanesvilleScene;
+        
+        // Winter Quarters (Omaha), Nebraska
+        Scene winterQuartersScene = new Scene();
+        winterQuartersScene.setName("Winter Quarters");
+        winterQuartersScene.setDescription(
+                "");
+        winterQuartersScene.setMapSymbol("WQ");
+        winterQuartersScene.setDistanceFromNauvoo(318);
+        scenes[SceneType.quarters.ordinal()] = kanesvilleScene;
 
         // Chimney Rock, Nebraska
         Scene chimneyScene = new Scene();
@@ -107,13 +125,22 @@ public class MapControl {
         martinsCoveScene.setDistanceFromNauvoo(964);
         scenes[SceneType.martins.ordinal()] = martinsCoveScene;
 
+        // Fort Kearny, Wyoming. 
+        Scene fortKearnyScene = new Scene();
+        fortKearnyScene.setName("Fort Kearny");
+        fortKearnyScene.setDescription(
+                "");
+        fortKearnyScene.setMapSymbol("FK");
+        fortKearnyScene.setDistanceFromNauvoo(1083);
+        scenes[SceneType.kearny.ordinal()] = fortKearnyScene;
+        
         // Independence Rock
         Scene independenceRockScene = new Scene();
         independenceRockScene.setName("Independence Rock");
         independenceRockScene.setDescription(
                 "");
         independenceRockScene.setMapSymbol("IR");
-        independenceRockScene.setDistanceFromNauvoo(1236);
+        independenceRockScene.setDistanceFromNauvoo(1183);
         scenes[SceneType.rock.ordinal()] = independenceRockScene;
 
         // Fort Bridger, Wyoming. 
@@ -122,7 +149,7 @@ public class MapControl {
         fortBridgerScene.setDescription(
                 "");
         fortBridgerScene.setMapSymbol("FB");
-        fortBridgerScene.setDistanceFromNauvoo(1183);
+        fortBridgerScene.setDistanceFromNauvoo(1236);
         scenes[SceneType.bridger.ordinal()] = fortBridgerScene;
 
         // Finish Point - The Great Salt Lake Valley

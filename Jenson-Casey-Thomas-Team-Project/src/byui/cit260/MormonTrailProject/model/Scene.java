@@ -15,6 +15,9 @@ import java.util.Objects;
 public class Scene implements Serializable {
 
     private String description;
+    private String mapSymbol;
+    public String name;
+    private int distanceFromNauvoo;
 
     public Scene() {
     }
@@ -36,7 +39,7 @@ public class Scene implements Serializable {
 
     @Override
     public String toString() {
-        return "Scene{" + "discription=" + description;
+        return "Scene{" + "description=" + description;
     }
 
     @Override
@@ -58,15 +61,28 @@ public class Scene implements Serializable {
     }
 
     public void setMapSymbol(String st) {
+        mapSymbol = st;
 
     }
 
     public void setDistanceFromNauvoo(int i) {
-
+        distanceFromNauvoo = i;
     }
 
-    public void setName(String nauvoo) {
+    public void setName(String name) {
+        this.name = name;
+    }
 
+    public String getMapSymbol() {
+        return mapSymbol;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public int getDistanceFromNauvoo() {
+        return distanceFromNauvoo;
     }
 
 }
