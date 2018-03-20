@@ -146,7 +146,9 @@ public class GameMenuView extends View {
     }
 
     private void viewTeamStatus() {
-        System.out.println("viewTeamStatus() has been called");
+        TeamStatus teamStatus = new TeamStatus();
+        teamStatus.display();
+
     }
 
     /*private long getRemainingDistance(int[] distance) {

@@ -32,7 +32,7 @@ public class GeneralStoreScene extends Scene implements Serializable {
     }
 
     public void setGeneralStoreScene(String inventory) {
-        
+
     }
 
 }

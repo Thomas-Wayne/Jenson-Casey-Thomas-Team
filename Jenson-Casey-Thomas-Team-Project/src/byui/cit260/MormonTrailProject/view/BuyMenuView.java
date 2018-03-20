@@ -3,13 +3,11 @@ package byui.cit260.MormonTrailProject.view;
 import java.util.Scanner;
 
 public class BuyMenuView {
-    
-   
 
     static int totalItems;
-    static String [] items;
-    static double [] prices;
-    static int [] quantity;
+    static String[] items;
+    static double[] prices;
+    static int[] quantity;
 
     public static void main(String[] args) {
 
@@ -20,7 +18,7 @@ public class BuyMenuView {
         quantity = new int[totalItems];
 
         int count = 0;
-        while (count < totalItems){
+        while (count < totalItems) {
 
             getItemDetails(count);
             count++;
@@ -28,25 +26,21 @@ public class BuyMenuView {
 
         displayCart();
 
-
-
     }
-
-
 
     private static void getItemDetails(int index) {
 
-        items[index] = getItemName("What is the name of item # " + (index+1) + "? ");
-        prices[index] = getItemPrice("What is the price of item # " + (index+1) + "? ");
-        quantity[index] = getItemQuantity(( "How many of item # " + (index+1)) + "? ");
+        items[index] = getItemName("What is the name of item # " + (index + 1) + "? ");
+        prices[index] = getItemPrice("What is the price of item # " + (index + 1) + "? ");
+        quantity[index] = getItemQuantity(("How many of item # " + (index + 1)) + "? ");
     }
 
-    private static void displayCart(){
+    private static void displayCart() {
 
         System.out.println("**************************************************************");
         System.out.println("                     Your Purchase Details                    ");
         System.out.println("**************************************************************");
-        for (int i = 0; i < totalItems; i++){
+        for (int i = 0; i < totalItems; i++) {
 
             showLineItem(i);
 
@@ -58,29 +52,28 @@ public class BuyMenuView {
         System.out.println("Your Total is: " + total);
     }
 
-
-    private static void showLineItem(int index){
+    private static void showLineItem(int index) {
 
         String quantityText = quantity[index] + "\t--\t"; // 3 -- Pencils
-        String itemText =  items[index] + "............"; // Pencils
+        String itemText = items[index] + "............"; // Pencils
         String priceText = prices[index] + " = " + prices[index] * quantity[index];
 
         System.out.println(quantityText + itemText + priceText);
 
     }
-    private static double getItemPrice( String m){
+
+    private static double getItemPrice(String m) {
 
         System.out.println(m);
 
-        Scanner scan = new Scanner (System.in);
+        Scanner scan = new Scanner(System.in);
         return scan.nextDouble();
-
 
     }
 
-    private static double calculateTotal( ){
+    private static double calculateTotal() {
         double total = 0;
-        for (int i=0; i < totalItems; i++){
+        for (int i = 0; i < totalItems; i++) {
             total += prices[i] * quantity[i];
 
         }
@@ -89,36 +82,32 @@ public class BuyMenuView {
 
     }
 
-    private static String getItemName( String m){
+    private static String getItemName(String m) {
 
         System.out.println(m);
-        Scanner scan = new Scanner (System.in);
+        Scanner scan = new Scanner(System.in);
         return scan.nextLine();
-
 
     }
 
-    private static int getItemQuantity( String m){
+    private static int getItemQuantity(String m) {
 
         System.out.println(m);
-        Scanner scan = new Scanner (System.in);
+        Scanner scan = new Scanner(System.in);
         return scan.nextInt();
 
     }
 
-    private static int getNumberOfItems( String m){
+    private static int getNumberOfItems(String m) {
 
         System.out.println(m);
-        Scanner scan = new Scanner (System.in);
+        Scanner scan = new Scanner(System.in);
         return scan.nextInt();
 
     }
 
     void display() {
-        
+
     }
 
 }
-
-
-  

@@ -5,11 +5,15 @@
  */
 package byui.cit260.MormonTrailProject.control;
 
+import byui.cit260.MormonTrailProject.model.Actor;
 import byui.cit260.MormonTrailProject.model.Game;
+import byui.cit260.MormonTrailProject.model.Inventory;
+import byui.cit260.MormonTrailProject.model.InventoryItem;
 import byui.cit260.MormonTrailProject.model.Location;
 import byui.cit260.MormonTrailProject.model.Map;
 import byui.cit260.MormonTrailProject.model.Player;
 import byui.cit260.MormonTrailProject.model.Scene;
+import java.util.ArrayList;
 import jenson.casey.thomas.team.project.CIT260.BYUICIT260MormonTrailProject;
 
 /**
@@ -58,8 +62,8 @@ public class GameControl {
         System.out.println("*** createActorList()called ***");
     }
 
-    public static void createInventoryItem(Player player) {
-        System.out.println("*** InventoryItem()called ***");
+    public static void createInventory(Player player) {
+        System.out.println("*** Inventory()called ***");
     }
 
     public static void createMap(Player player) {
@@ -67,7 +71,8 @@ public class GameControl {
     }
 
     private static Scene createScenes() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        System.out.println("*** createScenes()called ***");
+        return null;
     }
 
     public void dailyMiles() {
@@ -83,10 +88,10 @@ public class GameControl {
         game.setPlayer(player);
         BYUICIT260MormonTrailProject.setCurrentGame(game);
 
-        Actor[] actor = GameControl.createActorList();
-        game.setActor(actor);
+        ArrayList<Actor> actors = GameControl.createActorList();
+        game.setActor(actors);
 
-        InventoryItem[] inventory = GameControl.createInventoryItem();
+        Inventory[] inventory = GameControl.createInventory();
         game.setInventory(inventory);
 
         Map map = MapControl.createMap();
@@ -97,44 +102,38 @@ public class GameControl {
         return 1;
     }
 
-    public static class Actor {
+    public static ArrayList<Actor> createActorList() {
+        ArrayList<Actor> actors = new ArrayList();
 
-        private Actor(String name, int stamina, String ability) {
-        }
+        actors.add(new Actor("William", 96, 8, "Carpenter"));
+        actors.add(new Actor("Joseph", 92, 9, "Mason"));
+        actors.add(new Actor("Willford", 95, 5, "Scribe"));
+        actors.add(new Actor("Samuel", 93, 7, "Marshall"));
+        actors.add(new Actor("Rebecca", 97, 6, "Nurse"));
+        actors.add(new Actor("Eliza", 90, 8, "Metalsmith"));
+        actors.add(new Actor("Mary", 97, 5, "Seamstress"));
+        actors.add(new Actor("Laura", 99, 6, "Chef"));
+
+        return actors;
     }
 
-    public static Actor[] createActorList() {
-        Actor[] actor = new Actor[8];
+    public static Inventory[] createInventory() {
+        Inventory[] inventory = new Inventory[9];
 
-        actor[0] = new Actor("William", 8, "Carpenter");
-        actor[1] = new Actor("Joseph", 9, "Mason");
-        actor[2] = new Actor("Willford", 5, "Scribe");
-        actor[3] = new Actor("Samuel", 7, "Marshall");
-        actor[4] = new Actor("Rebecca", 6, "Nurse");
-        actor[5] = new Actor("Eliza", 8, "Metalsmith");
-        actor[6] = new Actor("Mary", 5, "Seamstress");
-        actor[7] = new Actor("Laura", 6, "Chef");
-
-        return actor;
-    }
-
-    public static InventoryItem[] createInventoryItem() {
-        InventoryItem[] inventory = new InventoryItem[9];
-
-        inventory[0] = new InventoryItem("lumber", 0);
-        inventory[1] = new InventoryItem("wheel", 0);
-        inventory[2] = new InventoryItem("food", 0);
-        inventory[3] = new InventoryItem("water", 0);
-        inventory[4] = new InventoryItem("tools", 0);
-        inventory[5] = new InventoryItem("ammunition", 0);
-        inventory[6] = new InventoryItem("grain", 0);
-        inventory[7] = new InventoryItem("clothes", 0);
-        inventory[8] = new InventoryItem("rope", 0);
+        inventory[0] = new Inventory(InventoryItem.lumber, 0, 0);
+        inventory[1] = new Inventory(InventoryItem.wheel, 0, 0);
+        inventory[2] = new Inventory(InventoryItem.food, 0, 0);
+        inventory[3] = new Inventory(InventoryItem.water, 0, 0);
+        inventory[4] = new Inventory(InventoryItem.tools, 0, 0);
+        inventory[5] = new Inventory(InventoryItem.ammunition, 0, 0);
+        inventory[6] = new Inventory(InventoryItem.grain, 0, 0);
+        inventory[7] = new Inventory(InventoryItem.clothes, 0, 0);
+        inventory[8] = new Inventory(InventoryItem.rope, 0, 0);
 
         return inventory;
     }
 
-    public static Map createMap(int noOfRows, int noOfColumns, InventoryItem[] inventory) {
+    public static Map createMap(int noOfRows, int noOfColumns, Inventory[] inventory) {
         if (noOfRows < 0 | noOfColumns < 0) {
             return null;
         }
@@ -151,13 +150,6 @@ public class GameControl {
         assignScenesToLocations();
 
         return map;
-    }
-
-    public static class InventoryItem {
-
-        private InventoryItem(String description, int quantity) {
-
-        }
     }
 
     public static void createItems(Player player) {
@@ -221,8 +213,9 @@ public class GameControl {
         public Question() {
         }
     }
-    
-    private static void BuyMenuView (Player player){
-    
+
+    private static void BuyMenuView(Player player) {
+
     }
+
 }
