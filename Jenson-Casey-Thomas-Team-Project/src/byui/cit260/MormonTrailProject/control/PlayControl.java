@@ -12,7 +12,7 @@ public class PlayControl {
             int pace, int terrain, int weather) {
 
         if (playerHealth > 100 || playerHealth < 15) { //playerHealth out of range
-            return -1;
+            throw new PlayControlException("playerHealth out of range.");
         }
         if (playerStamina <= 0) { // playerStamina must be higher than 0
             return -2;
