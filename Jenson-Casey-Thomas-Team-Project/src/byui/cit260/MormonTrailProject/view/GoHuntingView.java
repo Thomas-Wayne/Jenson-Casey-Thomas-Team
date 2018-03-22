@@ -7,6 +7,7 @@ package byui.cit260.MormonTrailProject.view;
 
 import java.util.Scanner;
 import byui.cit260.MormonTrailProject.control.PlayControl;
+import byui.cit260.MormonTrailProject.exceptions.PlayControlException;
 
 /**
  *
@@ -36,7 +37,7 @@ public class GoHuntingView {
 
     }
 
-    public void displayGoHuntingView() {
+    public void displayGoHuntingView() throws PlayControlException {
         boolean done = false;
         do {
 
@@ -144,7 +145,7 @@ public class GoHuntingView {
         return value.charAt(0); // return the value entered
     }
 
-    private GoHuntingView displayNextView() {
+    private GoHuntingView displayNextView() throws PlayControlException {
         // display a message showing user input
         System.out.println("\n***************************************"
                 + "\n* Weather: " + this.weather

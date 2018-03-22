@@ -1,5 +1,6 @@
 package byui.cit260.MormonTrailProject.control;
 
+import byui.cit260.MormonTrailProject.exceptions.PlayControlException;
 import byui.cit260.MormonTrailProject.model.Pace;
 
 /**
@@ -9,18 +10,18 @@ import byui.cit260.MormonTrailProject.model.Pace;
 public class PlayControl {
 
     public static double calcDailyHealthDraw(int playerHealth, int playerStamina,
-            int pace, int terrain, int weather) {
+            int pace, int terrain, int weather) throws PlayControlException {
 
         if (playerHealth > 100 || playerHealth < 15) { //playerHealth out of range
             throw new PlayControlException("playerHealth out of range.");
         }
         if (playerStamina <= 0) { // playerStamina must be higher than 0
-            return -2;
+            throw new PlayControlException("playerStamina must be higher than 0.");
         }
         if (playerHealth + playerStamina + pace + weather + terrain > 100) { //healthResult cannot exceed 100
-            return -3;
+            throw new PlayControlException("healthResult cannot exceed 100.");
         }
-
+            
         double dailyHealthDraw = (playerHealth + playerStamina + pace + weather + terrain);
         return dailyHealthDraw;
 
@@ -59,13 +60,13 @@ public class PlayControl {
     }
 
     // Isabel Jenson
-    public static double calcGatheringSuccess(int weather, int location, int localResources) {
+    public static double calcGatheringSuccess(int weather, int location, int localResources) throws PlayControlException {
 
         if (weather + location + localResources > 0) {
             return 2;
         }
         if (weather + location + localResources < 0) {
-            return -2;
+            throw new PlayControlException("Gathering was unsuccessful.");
         }
         double calcGatheringSuccess = (weather + location + localResources);
         return calcGatheringSuccess;

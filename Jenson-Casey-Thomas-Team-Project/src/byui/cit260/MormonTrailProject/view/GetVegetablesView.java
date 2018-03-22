@@ -7,6 +7,7 @@ package byui.cit260.MormonTrailProject.view;
 
 import java.util.Scanner;
 import byui.cit260.MormonTrailProject.control.PlayControl;
+import byui.cit260.MormonTrailProject.exceptions.PlayControlException;
 
 /**
  *
@@ -30,7 +31,7 @@ public class GetVegetablesView {
 
     }
 
-    public void displayGetVegetablesView() {
+    public void displayGetVegetablesView() throws PlayControlException {
         boolean done = false;
         do {
 
@@ -138,7 +139,7 @@ public class GetVegetablesView {
         return value.charAt(0); // return the value entered
     }
 
-    private GetVegetablesView displayNextView() {
+    private GetVegetablesView displayNextView() throws PlayControlException {
         // display a message showing user input
         System.out.println("\n***************************************"
                 + "\n* Weather: " + this.weather

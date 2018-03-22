@@ -5,7 +5,12 @@
  */
 package byui.cit260.MormonTrailProject.view;
 
+import byui.cit260.MormonTrailProject.control.PlayControl;
+import byui.cit260.MormonTrailProject.view.GetVegetablesView;
+import byui.cit260.MormonTrailProject.exceptions.PlayControlException;
 import byui.cit260.MormonTrailProject.view.ViewInterface.View;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -33,13 +38,22 @@ public class GatheringSuccessMenuView extends View {
     }
 
     @Override
-    public boolean doAction(String value) {
+    public boolean doAction(String value)  {
+        try {
+            PlayControl.calcGatheringSuccess(0, 0, 0);
+            
 
+        } catch (PlayControlException e) {
+            //Logger.getLogger(GatheringSuccessMenuView.class.getName()).log(Level.SEVERE, null, e);
+            System.out.println(e.getMessage());
+            return false;
+        }
         value = value.toUpperCase();
         switch (value) {
 
             case "V":
                 this.getVegetables();
+                
                 break;
 
             case "F":
@@ -54,8 +68,8 @@ public class GatheringSuccessMenuView extends View {
                 this.quitGame();
 
             default:
-                System.out.println("\n*** Invalid selection *** Try again.");
-                break;
+                throw new PlayControlException("Please, choose an option from the menu...");
+               
 
         }
 
