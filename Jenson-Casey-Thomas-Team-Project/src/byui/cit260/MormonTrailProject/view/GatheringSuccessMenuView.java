@@ -44,8 +44,7 @@ public class GatheringSuccessMenuView extends View {
             
 
         } catch (PlayControlException e) {
-            //Logger.getLogger(GatheringSuccessMenuView.class.getName()).log(Level.SEVERE, null, e);
-            System.out.println(e.getMessage());
+              System.out.println(e.getMessage());
             return false;
         }
         value = value.toUpperCase();
@@ -68,7 +67,7 @@ public class GatheringSuccessMenuView extends View {
                 this.quitGame();
 
             default:
-                throw new PlayControlException("Please, choose an option from the menu...");
+                System.out.println("Please, choose an option from the menu...");
                
 
         }

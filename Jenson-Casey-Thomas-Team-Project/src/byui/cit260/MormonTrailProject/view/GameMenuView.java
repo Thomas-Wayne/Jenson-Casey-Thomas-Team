@@ -39,6 +39,7 @@ public class GameMenuView extends View {
                 + "\nP - Set Team Pace"
                 + "\nS - Scene menu"
                 + "\nM - View the map"
+                + "\nX - Daily Health Draw"      
                 + "\nD - Distance to Salt Lake Valley"
                 + "\nH - Help menu"
                 + "\nQ - Return to Previous Menu"
@@ -87,6 +88,10 @@ public class GameMenuView extends View {
             case "M":
                 this.viewMap();
                 break;
+                
+            case "X":
+                this.viewDailyHealthDraw();
+                break;  
 
             case "D":
                 this.getRemainingDistance();
@@ -148,6 +153,12 @@ public class GameMenuView extends View {
     private void viewTeamStatus() {
         TeamStatus teamStatus = new TeamStatus();
         teamStatus.display();
+
+    }
+    
+    private void viewDailyHealthDraw() {
+        CalcDailyHealthDrawView calcDailyHealthDrawView = new CalcDailyHealthDrawView();
+        calcDailyHealthDrawView.display();
 
     }
 
