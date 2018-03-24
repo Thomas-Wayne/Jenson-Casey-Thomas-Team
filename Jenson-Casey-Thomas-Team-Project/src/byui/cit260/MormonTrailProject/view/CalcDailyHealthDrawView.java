@@ -12,6 +12,8 @@ import byui.cit260.MormonTrailProject.model.Game;
 import byui.cit260.MormonTrailProject.view.ViewInterface.View;
 import java.util.InputMismatchException;
 import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import jenson.casey.thomas.team.project.CIT260.BYUICIT260MormonTrailProject;
 
 /**
@@ -39,16 +41,19 @@ public class CalcDailyHealthDrawView extends View {
         switch (value) {
 
             case "H":
+        {
+            try {
                 this.health();
+            } catch (PlayControlException ex) {
+                
+            }
+        }
                 break;
 
             case "S":
                 this.stamina();
                 break;
-
-            case "Q":
-                this.quitGame();
-
+            
             default:
                 System.out.println("\n*** Invalid selection *** Try again.");
                 break;
@@ -110,24 +115,39 @@ public class CalcDailyHealthDrawView extends View {
         return false;
 
     }*/
-    private int health() {
-               
+    private int health() throws PlayControlException {
+        
         System.out.println("\nEnter current health (1-100): ");
-        Scanner playerHealth = new Scanner(System.in);
+        Scanner health = new Scanner(System.in);
+        int playerHealth = health.nextInt(); 
+        double result = PlayControl.calcDailyHealthDraw(playerHealth, 9, 0, 0, 0);
+      
+        
         try {
-            return playerHealth.nextInt();
+            System.out.println("Test message");
+            return playerHealth;
+                          
         } catch(InputMismatchException e){
-            return 0;
+            System.out.println("Error message");         
+            //System.out.println(e.getMessage() );
+        }   System.out.println("Test message after catch");      
+        return playerHealth;
+               
+    }
+
+    private int stamina() {
+        System.out.println("\nEnter current stamina (1-15): ");
+        Scanner playerStamina = new Scanner(System.in);
+        int playerStaminaInt = playerStamina.nextInt();
+      
+        try {
+           if (playerStaminaInt < 1);   
+            return playerStamina.nextInt();
+        } catch(InputMismatchException e){
+                     
+            System.out.println(e.getMessage() );
         }        
-       
-    }
-
-    private void stamina() {
-    }
-
-    private void quitGame() {
-        System.exit(0);
-    }
-
-   
+        return playerStaminaInt;
+    
+    }   
 }
