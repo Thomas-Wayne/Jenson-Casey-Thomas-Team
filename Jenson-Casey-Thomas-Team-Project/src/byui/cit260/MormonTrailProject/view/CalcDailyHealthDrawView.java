@@ -40,20 +40,26 @@ public class CalcDailyHealthDrawView extends View {
         value = value.toUpperCase();
         switch (value) {
 
-            case "H":
-        {
-            try {
-                this.health();
-            } catch (PlayControlException ex) {
-                
-            }
-        }
-                break;
+            case "H": {
 
-            case "S":
-                this.stamina();
-                break;
-            
+                try {
+                    this.health();
+                } catch (PlayControlException e) {
+
+                }
+
+            }
+            break;
+
+            case "S": {
+                try {
+                    this.stamina();
+                } catch (PlayControlException e) {
+
+                }
+            }
+            break;
+
             default:
                 System.out.println("\n*** Invalid selection *** Try again.");
                 break;
@@ -61,93 +67,39 @@ public class CalcDailyHealthDrawView extends View {
         }
         return false;
     }
-    //private String playerHealthMessage;
-    //private String playerStaminaMessage;
-
-    // public CalcDailyHealthDrawView(String message) {
-    //     super(message);
-    //     this.playerHealthMessage = "\nEnter current health (1-100): ";
-    //     this.playerStaminaMessage = "\nEnter your stamina (0-5): ";
-    // }
-
-    /*@Override
-    public boolean doAction(String value) {
-
-        try {
-
-            int pace = 0;
-            int terrain = -2;
-            int weather = -3;
-            int playerStamina = 1;
-            int playerHealth = 0;
-
-            double result = PlayControl.calcDailyHealthDraw(playerHealth, playerStamina, pace, terrain, weather);
-
-            try {
-                if (playerHealth > 100);
-                throw new PlayControlException("Player health cannot be less that 100%");
-            } catch (PlayControlException e) {
-                System.out.println(e.getMessage());
-                e.printStackTrace();
-
-                try {
-                    if (playerHealth < 15);
-                    throw new PlayControlException("Player health cannot be less that 15%");
-                } catch (PlayControlException ex) {
-                    System.out.println(ex.getMessage());
-                    ex.printStackTrace();
-
-                }
-                try {
-                    if (playerStamina < 1);
-                    throw new PlayControlException("Player stamina cannot be 0");
-                } catch (PlayControlException exc) {
-                    System.out.println(exc.getMessage());
-                    exc.printStackTrace();
-                }
-
-                return false;
-            }
-
-        } catch (PlayControlException except) {
-
-        }
-        return false;
-
-    }*/
+    
     private int health() throws PlayControlException {
-        
+
         System.out.println("\nEnter current health (1-100): ");
         Scanner health = new Scanner(System.in);
-        int playerHealth = health.nextInt(); 
-        double result = PlayControl.calcDailyHealthDraw(playerHealth, 9, 0, 0, 0);
-      
+        int playerHealth = health.nextInt();
         
         try {
-            System.out.println("Test message");
+            double result = PlayControl.calcDailyHealthDraw(playerHealth, 9, 0, 0, 0);            
+            System.out.println("Good");
             return playerHealth;
-                          
-        } catch(InputMismatchException e){
-            System.out.println("Error message");         
-            //System.out.println(e.getMessage() );
-        }   System.out.println("Test message after catch");      
+
+        } catch (PlayControlException e) {
+            System.out.println(e.getMessage());
+        }
         return playerHealth;
-               
+
     }
 
-    private int stamina() {
+    private int stamina() throws PlayControlException {
         System.out.println("\nEnter current stamina (1-15): ");
-        Scanner playerStamina = new Scanner(System.in);
-        int playerStaminaInt = playerStamina.nextInt();
-      
+        Scanner stamina = new Scanner(System.in);
+        int playerStamina = stamina.nextInt();
+        
+
         try {
-           if (playerStaminaInt < 1);   
-            return playerStamina.nextInt();
-        } catch(InputMismatchException e){
-                     
-            System.out.println(e.getMessage() );
-        }        
-        return playerStaminaInt;
-    
-    }   
+            double result = PlayControl.calcDailyHealthDraw(90, playerStamina, 0, 0, 0);
+            System.out.println("Good");
+            return playerStamina;
+        } catch (PlayControlException e) {
+            System.out.println(e.getMessage());
+        }
+        return playerStamina;
+
+    }
 }
