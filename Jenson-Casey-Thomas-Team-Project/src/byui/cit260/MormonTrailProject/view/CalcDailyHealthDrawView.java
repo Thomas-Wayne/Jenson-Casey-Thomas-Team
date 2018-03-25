@@ -7,18 +7,12 @@ package byui.cit260.MormonTrailProject.view;
 
 import byui.cit260.MormonTrailProject.control.PlayControl;
 import byui.cit260.MormonTrailProject.exceptions.PlayControlException;
-import byui.cit260.MormonTrailProject.model.Actor;
-import byui.cit260.MormonTrailProject.model.Game;
 import byui.cit260.MormonTrailProject.view.ViewInterface.View;
-import java.util.InputMismatchException;
 import java.util.Scanner;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import jenson.casey.thomas.team.project.CIT260.BYUICIT260MormonTrailProject;
 
 /**
  *
- * @author Thomas'
+ * @author Jenson, Casey, Thomas
  */
 public class CalcDailyHealthDrawView extends View {
 
@@ -67,15 +61,25 @@ public class CalcDailyHealthDrawView extends View {
         }
         return false;
     }
-    
+
     private int health() throws PlayControlException {
 
         System.out.println("\nEnter current health (1-100): ");
         Scanner health = new Scanner(System.in);
-        int playerHealth = health.nextInt();
-        
+        String strHealth = health.next();
+        int playerHealth = Integer.parseInt(strHealth);
+
         try {
-            double result = PlayControl.calcDailyHealthDraw(playerHealth, 9, 0, 0, 0);            
+
+        } catch (NumberFormatException e) {
+            
+        System.out.println("Please enter a numerical value...");
+
+        }
+
+        try {
+            double result = PlayControl.calcDailyHealthDraw(playerHealth, 9, 0, 0, 0);
+            //result cannot exceed 100 (playerHealth and playStamina combined) or it will throw an exception. 
             System.out.println("Good");
             return playerHealth;
 
@@ -85,15 +89,23 @@ public class CalcDailyHealthDrawView extends View {
         return playerHealth;
 
     }
+// author Thomas
 
     private int stamina() throws PlayControlException {
         System.out.println("\nEnter current stamina (1-15): ");
         Scanner stamina = new Scanner(System.in);
-        int playerStamina = stamina.nextInt();
-        
+        String strStamina = stamina.next();
+        int playerStamina = Integer.parseInt(strStamina);
+        try {
 
+        } catch (NumberFormatException e) {
+
+            System.out.println("Please enter a numerical value...");
+
+        }
         try {
             double result = PlayControl.calcDailyHealthDraw(90, playerStamina, 0, 0, 0);
+            // Result cannot exceed 100 (playerHealth and playStamina combined)or it will throw an exception  
             System.out.println("Good");
             return playerStamina;
         } catch (PlayControlException e) {
