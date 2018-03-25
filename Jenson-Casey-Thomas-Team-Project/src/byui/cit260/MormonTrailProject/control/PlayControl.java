@@ -51,9 +51,9 @@ public class PlayControl {
     }
 
 //Author Wayne Thomas
-    public static double calcDailyFoodSupplyDraw(int noPlayers, int weather, int pace, int waterSupply, int foodSupply) {
+    public static double calcDailyFoodSupplyDraw(int noPlayers, int weather, int pace, int waterSupply, int foodSupply) throws PlayControlException {
         if (noPlayers <= 0) { //noPlayers cannot be less than or equal to zero (0)
-            return -999;
+            throw new PlayControlException("noPlayers cannot be less than 1.");
         }
         double dailyFoodSupplyDraw = (weather + pace + (waterSupply * noPlayers) + (foodSupply * noPlayers));
         return dailyFoodSupplyDraw;
