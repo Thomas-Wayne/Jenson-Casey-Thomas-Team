@@ -39,10 +39,13 @@ public class BYUICIT260MormonTrailProject {
     }
 
     public static void main(String[] args) {
-
-        StartProgramView startProgramView = new StartProgramView();
-        startProgramView.display();
-
+        try{
+            StartProgramView startProgramView = new StartProgramView();
+            startProgramView.display();
+        } catch (Exception e) {
+          
+        System.out.println("Message from main() Exception occurred");
+        }
     }
 
 }

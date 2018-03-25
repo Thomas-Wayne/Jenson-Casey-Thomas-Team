@@ -7,34 +7,32 @@ package byui.cit260.MormonTrailProject.exceptions;
 
 /**
  *
- * @author Jenson, Casey, Thomas
+ * @author Thomas
  */
-public class PlayControlException extends Exception {
+public class TrailStopSceneException extends Exception {
 
-    public PlayControlException() {
+    public TrailStopSceneException() {
     }
 
-    public PlayControlException(String message) {
+    public TrailStopSceneException(String message) {
         super(message);
     }
 
-    public PlayControlException(String message, Throwable cause) {
+    public TrailStopSceneException(String message, Throwable cause) {
         super(message, cause);
     }
 
-    public PlayControlException(Throwable cause) {
+    public TrailStopSceneException(Throwable cause) {
         super(cause);
     }
 
-    public PlayControlException(String message, Throwable cause,
+    public TrailStopSceneException(String message, Throwable cause,
                                                 boolean enableSuppression,
                                                 boolean writableStackTrace) {
         super(message, cause, enableSuppression, writableStackTrace);
     }
-    
+
    
     
     
 }
-
-

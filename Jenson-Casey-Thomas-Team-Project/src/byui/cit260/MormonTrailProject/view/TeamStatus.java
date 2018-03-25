@@ -14,7 +14,7 @@ import jenson.casey.thomas.team.project.CIT260.BYUICIT260MormonTrailProject;
 
 /**
  *
- * @author Thomas'
+ * @author Thomas
  */
 public class TeamStatus extends View {
 
