@@ -8,6 +8,7 @@ package jenson.casey.thomas.team.project.CIT260;
 import byui.cit260.MormonTrailProject.model.Game;
 import byui.cit260.MormonTrailProject.model.Player;
 import byui.cit260.MormonTrailProject.view.StartProgramView;
+import java.io.PrintStream;
 
 /**
  *
@@ -45,6 +46,7 @@ public class BYUICIT260MormonTrailProject {
         } catch (Exception e) {
           
         System.out.println("Message from main() Exception occurred");
+        e.printStackTrace(System.out);
         }
     }
 
