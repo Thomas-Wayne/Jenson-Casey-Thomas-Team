@@ -62,12 +62,14 @@ public class PlayControl {
     // Isabel Jenson
     public static double calcGatheringSuccess(int weather, int location, int localResources) throws PlayControlException {
 
-        if (weather + location + localResources > 0) {
-            return 2;
-        }
-        if (weather + location + localResources < 0) {
+        if (weather + location + localResources < 0){
             throw new PlayControlException("Sorry, no luck this time...");
         }
+        
+        if (weather + location + localResources > 10) {
+            throw new PlayControlException("You gathered too much...");
+        }
+       
         double calcGatheringSuccess = (weather + location + localResources);
         return calcGatheringSuccess;
     }

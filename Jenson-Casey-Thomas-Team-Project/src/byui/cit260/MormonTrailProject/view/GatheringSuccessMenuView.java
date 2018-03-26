@@ -1,82 +1,56 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package byui.cit260.MormonTrailProject.view;
 
-import byui.cit260.MormonTrailProject.control.PlayControl;
 import byui.cit260.MormonTrailProject.exceptions.GetFruitsException;
-import byui.cit260.MormonTrailProject.exceptions.PlayControlException;
 import byui.cit260.MormonTrailProject.view.ViewInterface.View;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-/**
- *
- * @author Isabel Jenson
- */
 public class GatheringSuccessMenuView extends View {
 
     public GatheringSuccessMenuView() {
 
-        super(
-                "\n*******************************************************"
-                + "\n*                                                     *"
-                + "\n* You are about to go gather some stuff to eat,       *"
-                + "\n*                  good luck!                         *"
-                + "\n*******************************************************"
-                + "\n"
-                + "\n**********************************************"
-                + "\n*                 Gather:                    *"
-                + "\n**********************************************"
-                + "\nV - Vegetables                               *"
-                + "\nF - Fruits                                   *"
-                + "\nE - Edible plants                            *"
-                + "\nQ - Go back to previous menu                 *"
-                + "\n**********************************************");
+        super("\n"
+                + "\n*************************************************"
+                + "\n| You are about to gather some stuff, good luck!|"
+                + "\n*************************************************"
+                + "\nF - Get Fruits"
+                + "\nV - Get vegetables"
+                + "\nE - Get edible plants"
+                + "\nQ - Go back to previous menu"
+                + "\n*************************************************"
+        );
+
     }
 
     @Override
-    public boolean doAction(String value)  {
-        try {
-            PlayControl.calcGatheringSuccess(0, 0, 0);
-            
+    public boolean doAction(String value) {
 
-        } catch (PlayControlException e) {
-              System.out.println(e.getMessage());
-            return false;
-        }
         value = value.toUpperCase();
         switch (value) {
 
             case "V":
                 this.getVegetables();
-                
                 break;
 
             case "F": {
+
                 try {
                     this.getFruits();
                 } catch (GetFruitsException ex) {
                     Logger.getLogger(GatheringSuccessMenuView.class.getName()).log(Level.SEVERE, null, ex);
                 }
+                break;
             }
-            break;
 
             case "E":
                 this.getEdiblePlants();
                 break;
 
-            case "Q":
-                this.quitGame();
-
             default:
                 System.out.println("Please, choose an option from the menu...");
-               
-
+                break;
         }
 
         return false;
@@ -91,7 +65,6 @@ public class GatheringSuccessMenuView extends View {
             try {
 
                 System.out.print("Enter the pounds of fruit you gathered: ");
-
                 String whatYouGathered = poundsGathered.next();
                 int youCanCarry = Integer.parseInt(whatYouGathered);
 
@@ -101,8 +74,8 @@ public class GatheringSuccessMenuView extends View {
                     success = true;
                 }
 
-                if (youCanCarry > 1 && youCanCarry < 100) {
-                    System.out.println("Excellent job!");
+                if (youCanCarry >= 1 && youCanCarry < 100) {
+                    System.out.println("Excellent job, you gather some fruit for your team!");
                     success = true;
                 } else if (youCanCarry > 100) {
 
@@ -110,13 +83,13 @@ public class GatheringSuccessMenuView extends View {
                     success = true;
                 }
 
-            } catch (NumberFormatException ex) {
+            } catch (NumberFormatException | InputMismatchException ex) {
                 poundsGathered.next();
                 System.out.println("Wrong input. Try a whole number...");
-            }
-            
-        }
 
+            }
+
+        }
     }
 
     private void getEdiblePlants() {
@@ -124,7 +97,8 @@ public class GatheringSuccessMenuView extends View {
     }
 
     private void getVegetables() {
-        System.out.println("getVegetables() was called");
+        System.out.println("getVegetables() called");
+
     }
 
     private void quitGame() {
