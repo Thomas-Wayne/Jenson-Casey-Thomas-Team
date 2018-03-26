@@ -66,7 +66,7 @@ public class PlayControl {
             return 2;
         }
         if (weather + location + localResources < 0) {
-            throw new PlayControlException("Gathering was unsuccessful.");
+            throw new PlayControlException("Sorry, no luck this time...");
         }
         double calcGatheringSuccess = (weather + location + localResources);
         return calcGatheringSuccess;
