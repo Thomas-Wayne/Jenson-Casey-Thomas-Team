@@ -6,9 +6,11 @@
 package byui.cit260.MormonTrailProject.view;
 
 import byui.cit260.MormonTrailProject.control.PlayControl;
-import byui.cit260.MormonTrailProject.view.GetVegetablesView;
+import byui.cit260.MormonTrailProject.exceptions.GetFruitsException;
 import byui.cit260.MormonTrailProject.exceptions.PlayControlException;
 import byui.cit260.MormonTrailProject.view.ViewInterface.View;
+import java.util.InputMismatchException;
+import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -17,6 +19,8 @@ import java.util.logging.Logger;
  * @author Isabel Jenson
  */
 public class GatheringSuccessMenuView extends View {
+
+    private String gatherTotal;
 
     public GatheringSuccessMenuView() {
 
@@ -38,26 +42,24 @@ public class GatheringSuccessMenuView extends View {
     }
 
     @Override
-    public boolean doAction(String value)  {
-        try {
-            PlayControl.calcGatheringSuccess(0, 0, 0);
-            
+    public boolean doAction(String value) {
 
-        } catch (PlayControlException e) {
-              System.out.println(e.getMessage());
-            return false;
-        }
         value = value.toUpperCase();
         switch (value) {
 
             case "V":
                 this.getVegetables();
-                
+
                 break;
 
-            case "F":
-                this.getFruits();
-                break;
+            case "F": {
+                try {
+                    this.getFruits();
+                } catch (GetFruitsException ex) {
+                    Logger.getLogger(GatheringSuccessMenuView.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
+            break;
 
             case "E":
                 this.getEdiblePlants();
@@ -68,7 +70,6 @@ public class GatheringSuccessMenuView extends View {
 
             default:
                 System.out.println("Please, choose an option from the menu...");
-               
 
         }
 
@@ -76,19 +77,47 @@ public class GatheringSuccessMenuView extends View {
 
     }
 
-    private void getFruits() {
-        GetVegetablesView view = new GetVegetablesView();
-        view.display();
+    private void getFruits() throws GetFruitsException {
+
+        Scanner poundsGathered = new Scanner(System.in);
+        boolean success = false;
+        while (!success) {
+            try {
+
+                System.out.print("Enter the pounds of fruit you gathered: ");
+
+                String whatYouGathered = poundsGathered.next();
+                int youCanCarry = Integer.parseInt(whatYouGathered);
+
+                if (youCanCarry < 1) {
+
+                    System.out.println("That's not good. Better luck next time!");
+                    success = true;
+                }
+
+                if (youCanCarry > 1 && youCanCarry < 100) {
+                    System.out.println("Excellent job!");
+                    success = true;
+                } else if (youCanCarry > 100) {
+
+                    System.out.println("You are only able to carry 100 punds...");
+                    success = true;
+                }
+
+            } catch (NumberFormatException | InputMismatchException e) {
+                poundsGathered.next();
+                System.out.println("Wrong input. Try a whole number...");
+            }
+        }
+
     }
 
     private void getEdiblePlants() {
-        GetVegetablesView view = new GetVegetablesView();
-        view.display();
+        System.out.println("getEdiblePlats() called");
     }
 
     private void getVegetables() {
-        GetVegetablesView view = new GetVegetablesView();
-        view.display();
+        System.out.println("getVegetables() called");
     }
 
     private void quitGame() {
