@@ -7,6 +7,7 @@ package byui.cit260.MormonTrailProject.view;
 
 import java.util.Scanner;
 import byui.cit260.MormonTrailProject.control.PlayControl;
+import byui.cit260.MormonTrailProject.exceptions.PlayControlException;
 
 /**
  *
@@ -54,7 +55,7 @@ public class RiverCrossingView {
         );
     }
 
-    public void displayRiverCrossingView() {
+    public void displayRiverCrossingView() throws PlayControlException {
         boolean done = false;
         do {
 
@@ -173,7 +174,7 @@ public class RiverCrossingView {
         return value.charAt(0); // return the value entered
     }
 
-    private RiverCrossingView displayNextView() {
+    private RiverCrossingView displayNextView() throws PlayControlException {
         // display a message showing user input
         System.out.println("\n***************************************"
                 + "\n* Weight of the Wagon: " + this.wagonWeight

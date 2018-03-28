@@ -10,7 +10,6 @@ package byui.cit260.MormonTrailProject.exceptions;
  * @author Jenson, Casey, Thomas
  */
 public class TeamStatusException extends Exception {
-     
 
     public TeamStatusException() {
     }
@@ -28,8 +27,8 @@ public class TeamStatusException extends Exception {
     }
 
     public TeamStatusException(String message, Throwable cause,
-                                                boolean enableSuppression,
-                                                boolean writableStackTrace) {
+            boolean enableSuppression,
+            boolean writableStackTrace) {
         super(message, cause, enableSuppression, writableStackTrace);
     }
 }
