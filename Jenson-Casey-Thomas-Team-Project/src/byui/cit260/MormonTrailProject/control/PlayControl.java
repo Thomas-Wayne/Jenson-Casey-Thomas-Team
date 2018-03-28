@@ -32,16 +32,16 @@ public class PlayControl {
             int riverFlow, int oxenHealth, int weather) throws PlayControlException {
 
         if (wagonWeight > 3000) { // wagonWeight too heavy, must be less than 3001
-           throw new PlayControlException("wagonWeight too heavy, must be less than 3001.");
+           throw new PlayControlException("Your wagon weighs too much, must be less than 3001.");
         }
         if (riverFlow > 6) { // riverFlow too swift, must be less than 6
-            throw new PlayControlException("riverFlow too swift, must be less than 6.");
+            throw new PlayControlException("The river is too swift, must be less than 6.");
         }
         if (riverHeight > 24) { // riverHeight too high, must not be hight than 24"
-            throw new PlayControlException("riverHeight too high, must not be hight than 24.");
+            throw new PlayControlException("The river is too high, must not be hight than 24.");
         }
         if (oxenHealth < 3) { // oxenHealth too low, oven must be 3 or higher
-            throw new PlayControlException("oxenHealth too low, oven must be 3 or higher.");
+            throw new PlayControlException("Your oxen aren't healthy enough, oven must be 3 or higher.");
         }
         if (riverHeight + wagonWeight + riverFlow + oxenHealth + weather >= 1300) {
             return 1;
