@@ -70,7 +70,7 @@ public class CalcDailyHealthDrawView extends View {
         int playerHealth = Integer.parseInt(strHealth);
 
         try {
-            int input = Integer.parseInt(strHealth);
+           
         } catch (NumberFormatException e) {
 
             System.out.println("Please enter a numerical value...");

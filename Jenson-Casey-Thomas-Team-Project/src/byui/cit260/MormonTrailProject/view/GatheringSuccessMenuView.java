@@ -7,6 +7,12 @@ import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+
+/* @author Isabel Jenson
+
+
+*/
+
 public class GatheringSuccessMenuView extends View {
 
     public GatheringSuccessMenuView() {
@@ -48,10 +54,18 @@ public class GatheringSuccessMenuView extends View {
                 this.getEdiblePlants();
                 break;
 
+            case "Q":
+                
+              System.exit(0);
+
             default:
                 System.out.println("Please, choose an option from the menu...");
                 break;
+           
+      
+        
         }
+        
 
         return false;
 
@@ -79,7 +93,7 @@ public class GatheringSuccessMenuView extends View {
                     success = true;
                 } else if (youCanCarry > 100) {
 
-                    System.out.println("You are only able to carry 100 punds...");
+                    System.out.println("You are only able to carry 100 pounds...");
                     success = true;
                 }
 

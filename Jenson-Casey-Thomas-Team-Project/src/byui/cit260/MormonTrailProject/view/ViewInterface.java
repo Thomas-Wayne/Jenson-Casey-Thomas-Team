@@ -5,7 +5,13 @@
  */
 package byui.cit260.MormonTrailProject.view;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import jenson.casey.thomas.team.project.CIT260.BYUICIT260MormonTrailProject;
 
 /**
  *
@@ -22,6 +28,9 @@ public interface ViewInterface {
     public abstract class View implements ViewInterface {
 
         protected String displayMessage;
+
+        protected final BufferedReader keyboard = BYUICIT260MormonTrailProject.getInFile();
+        protected final PrintWriter console = BYUICIT260MormonTrailProject.getOutFile();
 
         public View() {
 
@@ -50,26 +59,33 @@ public interface ViewInterface {
 
         @Override
         public String getInput() {
-
-            Scanner keyboard = new Scanner(System.in);
             String value = null;
             boolean valid = false;
-            while (!valid) {
 
-                System.out.println("\n" + this.displayMessage);
-                value = keyboard.nextLine();
-                value = value.trim();
-                if (value.length() < 1) {
+            try {
 
-                    System.out.println("\nInvalid value: Value cannot be blank");
-                    continue;
+                while (!valid) {
+
+                    value = this.keyboard.readLine();
+                    value = value.trim();
+
+                    if (value.length() < 1) {
+
+                        System.out.println("\nInvalid value: Value cannot be blank");
+                        continue;
+                    }
+
+                    break;
+
                 }
 
-                break;
+            } catch (Exception e) {
+                System.out.println("Error reading input: " + e.getMessage());
             }
+
             return value;
 
         }
-    }
 
+    }
 }

@@ -2,17 +2,17 @@
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
- */
+ 
 package byui.cit260.MormonTrailProject.view;
 
 import java.util.Scanner;
 import byui.cit260.MormonTrailProject.control.PlayControl;
 import byui.cit260.MormonTrailProject.exceptions.PlayControlException;
 
-/**
- *
- * @author Isabel Jenson
- */
+
+ 
+  @author Isabel Jenson
+ 
 public class GetVegetablesView {
 
     private String weatherMessage;
@@ -139,7 +139,7 @@ public class GetVegetablesView {
         return value.charAt(0); // return the value entered
     }
 
-    private GetVegetablesView displayNextView() throws PlayControlException {
+    private GetVegetablesView displayNextView() {
         // display a message showing user input
         System.out.println("\n***************************************"
                 + "\n* Weather: " + this.weather
@@ -152,7 +152,7 @@ public class GetVegetablesView {
         int location = Integer.parseInt(this.location);
         int localResources = Integer.parseInt(this.localResources);
 
-        System.out.println(PlayControl.calcGatheringSuccess(weather, location, localResources));
+        
 
         return null;
     }
@@ -162,3 +162,4 @@ public class GetVegetablesView {
     }
 
 }
+*/

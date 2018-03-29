@@ -66,7 +66,7 @@ public class BuyMenuView {
 
         System.out.println(m);
 
-        Scanner scan = new Scanner(System.in);
+        value = this.keyboard.readLine();
         return scan.nextDouble();
 
     }
@@ -85,7 +85,7 @@ public class BuyMenuView {
     private static String getItemName(String m) {
 
         System.out.println(m);
-        Scanner scan = new Scanner(System.in);
+        value = this.keyboard.readLine();
         return scan.nextLine();
 
     }
@@ -93,7 +93,7 @@ public class BuyMenuView {
     private static int getItemQuantity(String m) {
 
         System.out.println(m);
-        Scanner scan = new Scanner(System.in);
+        value = this.keyboard.readLine();
         return scan.nextInt();
 
     }
@@ -101,7 +101,7 @@ public class BuyMenuView {
     private static int getNumberOfItems(String m) {
 
         System.out.println(m);
-        Scanner scan = new Scanner(System.in);
+        value = this.keyboard.readLine();
         return scan.nextInt();
 
     }
