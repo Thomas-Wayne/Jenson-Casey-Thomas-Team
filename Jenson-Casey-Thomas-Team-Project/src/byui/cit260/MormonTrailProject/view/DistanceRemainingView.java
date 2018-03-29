@@ -30,16 +30,15 @@ public class DistanceRemainingView extends View {
                 + "\n**********************************************"
                 + "\n     | Type the number of your location |"
                 + "\n**********************************************"
-
         );
-        
-       Scene[] scenes = MapControl.createScenes();
-        for (int i = 0 ; i < scenes.length; i ++){
-            if (scenes[i] == null){
+
+        Scene[] scenes = MapControl.createScenes();
+        for (int i = 0; i < scenes.length; i++) {
+            if (scenes[i] == null) {
                 continue;
             }
             displayMessage += "\n" + (i + 1) + " " + scenes[i].getName();
-            
+
         }
     }
 
@@ -93,20 +92,20 @@ public class DistanceRemainingView extends View {
             case "11":
                 this.calcRemainingDistance(10);
                 break;
-                
+
             case "12":
                 this.calcRemainingDistance(11);
                 break;
-                
+
             case "Q":
                 this.quitGame();
 
             default:
                 Scene[] str = MapControl.createScenes();
-        {
-            String Scene = null;
-            int n = Integer.parseInt(Scene);
-        }
+                 {
+                    String Scene = null;
+                    int n = Integer.parseInt(Scene);
+                }
                 System.out.println("\n*** Invalid selection *** Try again.");
                 break;
 
@@ -119,7 +118,6 @@ public class DistanceRemainingView extends View {
     private void quitGame() {
         System.exit(0);
     }
-
 
     private void calcRemainingDistance(int i) {
         Distance distance = new Distance();

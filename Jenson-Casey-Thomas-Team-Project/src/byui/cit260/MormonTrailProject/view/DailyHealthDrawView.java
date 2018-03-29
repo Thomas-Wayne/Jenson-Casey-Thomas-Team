@@ -11,9 +11,6 @@ import java.util.Random;
  *
  * @author Jenson, Casey, Thomas
  */
-
-
-
 public class DailyHealthDrawView extends ViewInterface.View {
 
     public DailyHealthDrawView() {
@@ -92,6 +89,5 @@ public class DailyHealthDrawView extends ViewInterface.View {
     void displayHandleObstacleView() {
 
     }
-
 
 }

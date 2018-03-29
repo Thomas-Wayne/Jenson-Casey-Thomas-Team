@@ -2,6 +2,7 @@ package byui.cit260.MormonTrailProject.view;
 
 import byui.cit260.MormonTrailProject.exceptions.GetFruitsException;
 import byui.cit260.MormonTrailProject.view.ViewInterface.View;
+import java.io.IOException;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 import java.util.logging.Level;
@@ -11,8 +12,7 @@ import java.util.logging.Logger;
 /* @author Isabel Jenson
 
 
-*/
-
+ */
 public class GatheringSuccessMenuView extends View {
 
     public GatheringSuccessMenuView() {
@@ -45,7 +45,7 @@ public class GatheringSuccessMenuView extends View {
                 try {
                     this.getFruits();
                 } catch (GetFruitsException ex) {
-                    Logger.getLogger(GatheringSuccessMenuView.class.getName()).log(Level.SEVERE, null, ex);
+
                 }
                 break;
             }
@@ -55,32 +55,32 @@ public class GatheringSuccessMenuView extends View {
                 break;
 
             case "Q":
-                
-              System.exit(0);
+
+                System.exit(0);
 
             default:
                 System.out.println("Please, choose an option from the menu...");
                 break;
-           
-      
-        
+
         }
-        
 
         return false;
 
     }
 
     private void getFruits() throws GetFruitsException {
+        String poundsGathered = null;
+        try {
+            poundsGathered = this.keyboard.readLine();
+        } catch (Exception e) {
 
-        Scanner poundsGathered = new Scanner(System.in);
+        }
         boolean success = false;
         while (!success) {
             try {
 
                 System.out.print("Enter the pounds of fruit you gathered: ");
-                String whatYouGathered = poundsGathered.next();
-                int youCanCarry = Integer.parseInt(whatYouGathered);
+                int youCanCarry = Integer.parseInt(poundsGathered);
 
                 if (youCanCarry < 1) {
 
@@ -97,8 +97,8 @@ public class GatheringSuccessMenuView extends View {
                     success = true;
                 }
 
-            } catch (NumberFormatException | InputMismatchException ex) {
-                poundsGathered.next();
+            } catch (NumberFormatException | InputMismatchException e) {
+
                 System.out.println("Wrong input. Try a whole number...");
 
             }

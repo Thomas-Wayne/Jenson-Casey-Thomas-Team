@@ -8,7 +8,10 @@ package byui.cit260.MormonTrailProject.view;
 import byui.cit260.MormonTrailProject.control.PlayControl;
 import byui.cit260.MormonTrailProject.exceptions.PlayControlException;
 import byui.cit260.MormonTrailProject.view.ViewInterface.View;
+import java.io.IOException;
 import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -65,12 +68,32 @@ public class CalcDailyHealthDrawView extends View {
     private int health() throws PlayControlException {
 
         System.out.println("\nEnter current health (1-100): ");
-        Scanner health = new Scanner(System.in);
-        String strHealth = health.next();
-        int playerHealth = Integer.parseInt(strHealth);
+        String health = null;
+        int playerHealth = Integer.parseInt(health);
+        boolean valid = false;
+        try {
+
+            while (!valid) {
+
+                health = this.keyboard.readLine();
+                health = health.trim();
+
+                if (health.length() < 1) {
+
+                    System.out.println("\nInvalid value: Value cannot be blank");
+                    continue;
+                }
+
+                break;
+
+            }
+        } catch (Exception e) {
+
+            System.out.println("Error reading input: " + e.getMessage());
+        }
 
         try {
-           
+
         } catch (NumberFormatException e) {
 
             System.out.println("Please enter a numerical value...");
@@ -93,9 +116,29 @@ public class CalcDailyHealthDrawView extends View {
 
     private int stamina() throws PlayControlException {
         System.out.println("\nEnter current stamina (1-15): ");
-        Scanner stamina = new Scanner(System.in);
-        String strStamina = stamina.next();
-        int playerStamina = Integer.parseInt(strStamina);
+        String stamina = null;
+        int playerStamina = Integer.parseInt(stamina);
+        boolean valid = false;
+        try {
+
+            while (!valid) {
+
+                stamina = this.keyboard.readLine();
+                stamina = stamina.trim();
+
+                if (stamina.length() < 1) {
+
+                    System.out.println("\nInvalid value: Value cannot be blank");
+                    continue;
+                }
+
+                break;
+
+            }
+        } catch (Exception e) {
+
+            System.out.println("Error reading input: " + e.getMessage());
+        }
         try {
 
         } catch (NumberFormatException e) {

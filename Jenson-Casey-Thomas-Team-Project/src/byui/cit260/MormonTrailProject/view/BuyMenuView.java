@@ -1,15 +1,15 @@
 package byui.cit260.MormonTrailProject.view;
 
-import java.util.Scanner;
+import byui.cit260.MormonTrailProject.view.ViewInterface.View;
 
-public class BuyMenuView {
+public class BuyMenuView extends View {
 
     static int totalItems;
     static String[] items;
     static double[] prices;
     static int[] quantity;
 
-    public static void main(String[] args) {
+    public void main(String[] args) {
 
         System.out.println("Welcome to the General Store");
         totalItems = getNumberOfItems("How many items do you want to buy? ");
@@ -28,7 +28,7 @@ public class BuyMenuView {
 
     }
 
-    private static void getItemDetails(int index) {
+    private void getItemDetails(int index) {
 
         items[index] = getItemName("What is the name of item # " + (index + 1) + "? ");
         prices[index] = getItemPrice("What is the price of item # " + (index + 1) + "? ");
@@ -62,13 +62,41 @@ public class BuyMenuView {
 
     }
 
-    private static double getItemPrice(String m) {
+    private double getItemPrice(String m) {
+        String value = ""; // value to be returned
+        boolean valid = false; // initialize to not valid
+        double input = Double.parseDouble(value);
+        while (!valid) { // loop while an invalid value is entered
+            System.out.println("\n" + m);
 
-        System.out.println(m);
+            try {
+                value = keyboard.readLine(); // get next line typed on keyboard
+                value = value.trim(); // trim off leading and trailing blanks
 
-        value = this.keyboard.readLine();
-        return scan.nextDouble();
+                if (value.length() < 1) {
 
+                    System.out.println("\nInvalid value: Value cannot be blank");
+                    continue;
+                }
+
+                break;
+            } catch (Exception e) {
+                System.out.println("Error reading input: " + e.getMessage());
+            }
+
+            try {
+                if (value.length() > 1) { // value is too long
+                    System.out.println("\nInvalid value: value cannot be more than 1 character");
+                    continue;
+                }
+            } catch (Exception e) {
+                System.out.println("Error reading input: " + e.getMessage());
+            }
+
+            break; // end the loop
+        }
+
+        return input; // return the value entered
     }
 
     private static double calculateTotal() {
@@ -82,32 +110,120 @@ public class BuyMenuView {
 
     }
 
-    private static String getItemName(String m) {
+    private String getItemName(String m) {
+        String value = ""; // value to be returned
+        boolean valid = false; // initialize to not valid
 
-        System.out.println(m);
-        value = this.keyboard.readLine();
-        return scan.nextLine();
+        while (!valid) { // loop while an invalid value is entered
+            System.out.println("\n" + m);
 
+            try {
+                value = keyboard.readLine(); // get next line typed on keyboard
+                value = value.trim(); // trim off leading and trailing blanks
+
+                if (value.length() < 1) {
+
+                    System.out.println("\nInvalid value: Value cannot be blank");
+                    continue;
+                }
+
+                break;
+            } catch (Exception e) {
+                System.out.println("Error reading input: " + e.getMessage());
+            }
+
+            try {
+                if (value.length() > 1) { // value is too long
+                    System.out.println("\nInvalid value: value cannot be more than 1 character");
+                    continue;
+                }
+            } catch (Exception e) {
+                System.out.println("Error reading input: " + e.getMessage());
+            }
+
+            break; // end the loop
+        }
+
+        return value; // return the value entered
     }
 
-    private static int getItemQuantity(String m) {
+    private int getItemQuantity(String m) {
+        String value = ""; // value to be returned
+        boolean valid = false; // initialize to not valid
+        int input = Integer.parseInt(value);
+        while (!valid) { // loop while an invalid value is entered
+            System.out.println("\n" + m);
 
-        System.out.println(m);
-        value = this.keyboard.readLine();
-        return scan.nextInt();
+            try {
+                value = keyboard.readLine(); // get next line typed on keyboard
+                value = value.trim(); // trim off leading and trailing blanks
 
+                if (value.length() < 1) {
+
+                    System.out.println("\nInvalid value: Value cannot be blank");
+                    continue;
+                }
+
+                break;
+            } catch (Exception e) {
+                System.out.println("Error reading input: " + e.getMessage());
+            }
+
+            try {
+                if (value.length() > 1) { // value is too long
+                    System.out.println("\nInvalid value: value cannot be more than 1 character");
+                    continue;
+                }
+            } catch (Exception e) {
+                System.out.println("Error reading input: " + e.getMessage());
+            }
+
+            break; // end the loop
+        }
+
+        return input; // return the value entered
     }
 
-    private static int getNumberOfItems(String m) {
+    private int getNumberOfItems(String m) {
+        String value = ""; // value to be returned
+        boolean valid = false; // initialize to not valid
+        int input = Integer.parseInt(value);
+        while (!valid) { // loop while an invalid value is entered
+            System.out.println("\n" + m);
 
-        System.out.println(m);
-        value = this.keyboard.readLine();
-        return scan.nextInt();
+            try {
+                value = keyboard.readLine(); // get next line typed on keyboard
+                value = value.trim(); // trim off leading and trailing blanks
 
+                if (value.length() < 1) {
+
+                    System.out.println("\nInvalid value: Value cannot be blank");
+                    continue;
+                }
+
+                break;
+            } catch (Exception e) {
+                System.out.println("Error reading input: " + e.getMessage());
+            }
+
+            try {
+                if (value.length() > 1) { // value is too long
+                    System.out.println("\nInvalid value: value cannot be more than 1 character");
+                    continue;
+                }
+            } catch (Exception e) {
+                System.out.println("Error reading input: " + e.getMessage());
+            }
+
+            break; // end the loop
+        }
+
+        return input; // return the value entered
     }
 
-    void display() {
-
+    @Override
+    public boolean doAction(String value) {
+        return false;
     }
 
 }

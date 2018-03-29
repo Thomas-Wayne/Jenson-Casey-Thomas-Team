@@ -1,19 +1,14 @@
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- 
+ * and open the template in the editor.*/
 package byui.cit260.MormonTrailProject.view;
 
-import java.util.Scanner;
-import byui.cit260.MormonTrailProject.control.PlayControl;
 import byui.cit260.MormonTrailProject.exceptions.PlayControlException;
+import byui.cit260.MormonTrailProject.view.ViewInterface.View;
 
-
- 
-  @author Isabel Jenson
- 
-public class GetVegetablesView {
+// @author Isabel Jenson
+public class GetVegetablesView extends View {
 
     private String weatherMessage;
     private String locationMessage;
@@ -75,22 +70,36 @@ public class GetVegetablesView {
     }
 
     private String getUserString(String promptMessage) {
-        Scanner keyboard = new Scanner(System.in); // get infile for keyboard
         String value = ""; // value to be returned
         boolean valid = false; // initialize to not valid
 
         while (!valid) { // loop while an invalid value is entered
             System.out.println("\n" + promptMessage);
 
-            value = keyboard.nextLine(); // get next line typed on keyboard
-            value = value.trim(); // trim off leading and trailing blanks
+            try {
+                value = keyboard.readLine(); // get next line typed on keyboard
+                value = value.trim(); // trim off leading and trailing blanks
+                if (value.length() < 1) {
 
-            if (value.length() < 1) { // value is blank
-                System.out.println("\nInvalid value: value cannot be blank");
-                continue;
+                    System.out.println("\nInvalid value: Value cannot be blank");
+                    continue;
+                }
+
+                break;
+            } catch (Exception e) {
+                System.out.println("Error reading input: " + e.getMessage());
             }
 
-            break;
+            try {
+                if (value.length() > 1) { // value is too long
+                    System.out.println("\nInvalid value: value cannot be more than 1 character");
+                    continue;
+                }
+            } catch (Exception e) {
+                System.out.println("Error reading input: " + e.getMessage());
+            }
+
+            break; // end the loop
         }
 
         return value; // return the value entered
@@ -114,23 +123,33 @@ public class GetVegetablesView {
     }
 
     private char getUserChar(String promptMessage) {
-        Scanner keyboard = new Scanner(System.in); // get infile for keyboard
         String value = ""; // value to be returned
         boolean valid = false; // initialize to not valid
 
         while (!valid) { // loop while an invalid value is entered
             System.out.println("\n" + promptMessage);
 
-            value = keyboard.nextLine(); // get next line typed on keyboard
-            value = value.trim(); // trim off leading and trailing blanks
+            try {
+                value = keyboard.readLine(); // get next line typed on keyboard
+                value = value.trim(); // trim off leading and trailing blanks
+                if (value.length() < 1) {
 
-            if (value.length() < 1) { // value is blank
-                System.out.println("\nInvalid value: value cannot be blank");
-                continue;
+                    System.out.println("\nInvalid value: Value cannot be blank");
+                    continue;
+                }
+
+                break;
+            } catch (Exception e) {
+                System.out.println("Error reading input: " + e.getMessage());
             }
-            if (value.length() > 1) { // value is too long
-                System.out.println("\nInvalid value: value cannot be more than 1 character");
-                continue;
+
+            try {
+                if (value.length() > 1) { // value is too long
+                    System.out.println("\nInvalid value: value cannot be more than 1 character");
+                    continue;
+                }
+            } catch (Exception e) {
+                System.out.println("Error reading input: " + e.getMessage());
             }
 
             break; // end the loop
@@ -152,8 +171,6 @@ public class GetVegetablesView {
         int location = Integer.parseInt(this.location);
         int localResources = Integer.parseInt(this.localResources);
 
-        
-
         return null;
     }
 
@@ -161,5 +178,9 @@ public class GetVegetablesView {
 
     }
 
+    @Override
+    public boolean doAction(String value) {
+        return false;
+    }
+
 }
-*/

@@ -61,7 +61,7 @@ public class MapControl {
         startingScene.setMapSymbol("ST");
         startingScene.setDistanceFromNauvoo(0);
         scenes[SceneType.start.ordinal()] = startingScene;
-        
+
         // Garden Grove, Iowa
         Scene groveScene = new Scene();
         groveScene.setName("Garden Grove");
@@ -88,7 +88,7 @@ public class MapControl {
         kanesvilleScene.setMapSymbol("KV");
         kanesvilleScene.setDistanceFromNauvoo(300);
         scenes[SceneType.kanesville.ordinal()] = kanesvilleScene;
-        
+
         // Winter Quarters (Omaha), Nebraska
         Scene winterQuartersScene = new Scene();
         winterQuartersScene.setName("Winter Quarters");
@@ -133,7 +133,7 @@ public class MapControl {
         fortKearnyScene.setMapSymbol("FK");
         fortKearnyScene.setDistanceFromNauvoo(1083);
         scenes[SceneType.kearny.ordinal()] = fortKearnyScene;
-        
+
         // Independence Rock
         Scene independenceRockScene = new Scene();
         independenceRockScene.setName("Independence Rock");

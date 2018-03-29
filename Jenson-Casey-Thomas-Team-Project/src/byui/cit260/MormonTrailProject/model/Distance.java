@@ -27,6 +27,7 @@ public class Distance {
         distance[10] = 1236;
 
     }
+
     public long calcRemainingDistance(int[] distance) {
         long total = 1302;
 
@@ -38,6 +39,6 @@ public class Distance {
     }
 
     public void display() {
-        
+
     }
 }

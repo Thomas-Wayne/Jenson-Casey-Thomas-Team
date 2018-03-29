@@ -21,7 +21,7 @@ public class PlayControl {
         if (playerHealth + playerStamina + pace + weather + terrain > 100) { //healthResult cannot exceed 100
             throw new PlayControlException("healthResult cannot exceed 100.");
         }
-            
+
         double dailyHealthDraw = (playerHealth + playerStamina + pace + weather + terrain);
         return dailyHealthDraw;
 
@@ -32,7 +32,7 @@ public class PlayControl {
             int riverFlow, int oxenHealth, int weather) throws PlayControlException {
 
         if (wagonWeight > 3000) { // wagonWeight too heavy, must be less than 3001
-           throw new PlayControlException("Your wagon weighs too much, must be less than 3001.");
+            throw new PlayControlException("Your wagon weighs too much, must be less than 3001.");
         }
         if (riverFlow > 6) { // riverFlow too swift, must be less than 6
             throw new PlayControlException("The river is too swift, must be less than 6.");
@@ -62,14 +62,14 @@ public class PlayControl {
     // Isabel Jenson
     public static double calcGatheringSuccess(int weather, int location, int localResources) throws PlayControlException {
 
-        if (weather + location + localResources < 0){
+        if (weather + location + localResources < 0) {
             throw new PlayControlException("Sorry, no luck this time...");
         }
-        
+
         if (weather + location + localResources > 10) {
             throw new PlayControlException("You gathered too much...");
         }
-       
+
         double calcGatheringSuccess = (weather + location + localResources);
         return calcGatheringSuccess;
     }

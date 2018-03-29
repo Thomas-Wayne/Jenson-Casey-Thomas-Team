@@ -27,11 +27,10 @@ public class BYUICIT260MormonTrailProject {
      */
     private static Player player = null;
     private static Game currentGame = null;
-    
+
     private static PrintWriter outFile = null;
     private static BufferedReader inFile = null;
 
-    
     public static Player getPlayer() {
         return player;
     }
@@ -47,41 +46,50 @@ public class BYUICIT260MormonTrailProject {
     public static void setCurrentGame(Game currentGame) {
         BYUICIT260MormonTrailProject.currentGame = currentGame;
     }
+    private static PrintWriter logFile = null;
+
+    public static PrintWriter getLogFile() {
+        return logFile;
+    }
+
+    public static void setLogfile(PrintWriter logFile) {
+        BYUICIT260MormonTrailProject.logFile = logFile;
+    }
 
     public static void main(String[] args) {
-        
-       
-        
-        try{
-            BYUICIT260MormonTrailProject.inFile =
-                    new BufferedReader(new InputStreamReader(System.in));
-            BYUICIT260MormonTrailProject.outFile = new PrintWriter(System.out, true);
-            
+
+        try {
+            inFile = new BufferedReader(new InputStreamReader(System.in));
+            outFile = new PrintWriter(System.out, true);
+            logFile = new PrintWriter("logFile.txt");
+
             StartProgramView startProgramView = new StartProgramView();
             startProgramView.display();
         } catch (Exception e) {
-          
-        System.out.println("Exception: " + e.toString() + 
-                          "\nCause:" + e.getCause() +
-                          "\nMessage:" + e.getMessage());
-        e.printStackTrace();;
-        }
-        
-        finally {
+
+            System.out.println("Exception: " + e.toString()
+                    + "\nCause:" + e.getCause()
+                    + "\nMessage:" + e.getMessage());
+            e.printStackTrace();;
+        } finally {
             try {
-                
-                if (BYUICIT260MormonTrailProject.inFile != null)
-                    BYUICIT260MormonTrailProject.inFile.close();
-                
-                if (BYUICIT260MormonTrailProject.outFile != null)
-                    BYUICIT260MormonTrailProject.outFile.close();
-                
+
+                if (inFile != null) {
+                    inFile.close();
+                }
+                if (outFile != null) {
+                    outFile.close();
+                }
+                if (logFile != null) {
+                    logFile.close();
+                }
+
             } catch (IOException ex) {
-                    System.out.println("Error closing files");
-                    return;
-                
+                System.out.println("Error closing files");
+                return;
+
             }
-            
+
         }
     }
 
@@ -100,7 +108,5 @@ public class BYUICIT260MormonTrailProject {
     public static void setInFile(BufferedReader inFile) {
         BYUICIT260MormonTrailProject.inFile = inFile;
     }
-    
-    
 
 }
