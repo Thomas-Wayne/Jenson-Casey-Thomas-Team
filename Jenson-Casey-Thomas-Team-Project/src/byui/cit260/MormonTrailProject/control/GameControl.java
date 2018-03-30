@@ -161,8 +161,9 @@ public class GameControl {
     }
 
     public static void saveGame(Game game, String filePath) {
-    }        
-        public void saveGameTryWithResources(){
+    }
+
+    public void saveGameTryWithResources() {
         //String fileLocation = "c:\game.txt";
     }
 

@@ -6,7 +6,10 @@
 package byui.cit260.MormonTrailProject.view;
 
 import byui.cit260.MormonTrailProject.control.GameControl;
+import byui.cit260.MormonTrailProject.exceptions.GameControlException;
 import byui.cit260.MormonTrailProject.view.ViewInterface.View;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import jenson.casey.thomas.team.project.CIT260.BYUICIT260MormonTrailProject;
 
 /**
@@ -43,9 +46,14 @@ public class MainMenuView extends View {
                 this.loadGame();
                 break;
 
-            case "S":
-                this.saveGame();
-                break;
+            case "S": {
+                try {
+                    this.saveGame();
+                } catch (GameControlException ex) {
+
+                }
+            }
+            break;
 
             case "H":
                 this.getHelp();
@@ -80,8 +88,9 @@ public class MainMenuView extends View {
         this.console.println("\nloadGame() was called");
     }
 
-    private void saveGame() {
-        this.console.println("\nsaveGame() was called");
+    private void saveGame() throws GameControlException {
+        SaveGameView saveGameView = new SaveGameView();
+        saveGameView.display();
     }
 
     private void getHelp() {

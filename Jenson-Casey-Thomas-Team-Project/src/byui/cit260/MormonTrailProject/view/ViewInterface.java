@@ -55,6 +55,7 @@ public interface ViewInterface {
 
         @Override
         public String getInput() {
+            this.console.println("\n" + this.displayMessage);
             String value = null;
             boolean valid = false;
 
