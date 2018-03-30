@@ -54,7 +54,7 @@ public class GeneralStoreMenuView extends View {
                 this.quitGame();
 
             default:
-                System.out.println("\n*** Invalid selection *** Try again.");
+                ErrorView.display(this.getClass().getName(), "\n*** Invalid selection *** Try again.");
                 break;
 
         }
@@ -75,7 +75,7 @@ public class GeneralStoreMenuView extends View {
 
     private void sell() {
 
-        System.out.println("\n sell() was called.");
+        this.console.println("\n sell() was called.");
     }
 
     private void quitGame() {

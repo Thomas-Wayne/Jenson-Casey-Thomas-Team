@@ -54,7 +54,7 @@ public class GoHuntingSceneMenuView extends View {
                 this.quitGame();
 
             default:
-                System.out.println("\n*** Invalid selection *** Try again.");
+                ErrorView.display(this.getClass().getName(), "\n*** Invalid selection *** Try again.");
                 break;
 
         }

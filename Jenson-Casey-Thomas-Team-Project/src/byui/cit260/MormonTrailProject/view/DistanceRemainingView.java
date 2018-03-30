@@ -8,7 +8,6 @@ package byui.cit260.MormonTrailProject.view;
 import byui.cit260.MormonTrailProject.control.MapControl;
 import byui.cit260.MormonTrailProject.model.Distance;
 import byui.cit260.MormonTrailProject.model.Scene;
-import byui.cit260.MormonTrailProject.model.SceneType;
 import byui.cit260.MormonTrailProject.view.ViewInterface.View;
 
 /**
@@ -106,7 +105,7 @@ public class DistanceRemainingView extends View {
                     String Scene = null;
                     int n = Integer.parseInt(Scene);
                 }
-                System.out.println("\n*** Invalid selection *** Try again.");
+                ErrorView.display(this.getClass().getName(), "\n*** Invalid selection *** Try again.");
                 break;
 
         }

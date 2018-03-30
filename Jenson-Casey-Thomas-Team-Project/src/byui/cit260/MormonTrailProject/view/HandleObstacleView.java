@@ -51,40 +51,40 @@ public class HandleObstacleView extends View {
                 this.doNothing();
                 break;
             default:
-                System.out.println("\n *** Invalid selection *** Try again.");
+                ErrorView.display(this.getClass().getName(), "\n *** Invalid selection *** Try again.");
                 break;
         }
 
         Random rand = new Random();
         int randomValue = rand.nextInt(10);
         if (randomValue < 4) {
-            System.out.println("\n*** Success!! It worked! *** ");
+            this.console.println("\n*** Success!! It worked! *** ");
             return true;
         } else {
-            System.out.println("\n*** It didn't work. Repent and try again.***");
+            this.console.println("\n*** It didn't work. Repent and try again.***");
         }
 
         return false;
     }
 
     private void seekHelp() {
-        System.out.println("\nAsked fellow pioneer for help");
+        this.console.println("\nAsked fellow pioneer for help");
     }
 
     private void seekSpiritualGuidance() {
-        System.out.println("\nI went to my Bishop, he told me I should go to my Home Teacher.");
+        this.console.println("\nI went to my Bishop, he told me I should go to my Home Teacher.");
     }
 
     private void sleep() {
-        System.out.println("\nNeed to sleep on this. Maybe I will have a better idea in the morning?");
+        this.console.println("\nNeed to sleep on this. Maybe I will have a better idea in the morning?");
     }
 
     private void prayAboutIt() {
-        System.out.println("\nTime to drop to my knees and talk this out with Heavenly Father.");
+        this.console.println("\nTime to drop to my knees and talk this out with Heavenly Father.");
     }
 
     private void doNothing() {
-        System.out.println("\nThat's it!!! I've had it!!! I ain't doin' nothin'.");
+        this.console.println("\nThat's it!!! I've had it!!! I ain't doin' nothin'.");
     }
 
     void displayHandleObstacleView() {

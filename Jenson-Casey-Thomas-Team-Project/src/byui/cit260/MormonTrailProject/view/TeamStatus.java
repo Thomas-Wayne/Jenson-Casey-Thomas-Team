@@ -67,7 +67,7 @@ public class TeamStatus extends View {
     private void name() {
         Game game = BYUICIT260MormonTrailProject.getCurrentGame();
         for (Actor actor : game.getActors()) {
-            System.out.println("\n\tName: " + actor.getName());
+            this.console.println("\n\tName: " + actor.getName());
         }
 
     }
@@ -78,11 +78,11 @@ public class TeamStatus extends View {
         for (Actor actor : game.getActors()) {
             totalHealth += actor.getHealth();
 
-            System.out.println("\n\tName: " + actor.getName()
+            this.console.println("\n\tName: " + actor.getName()
                     + "\n\tHealth: " + actor.getHealth());
         }
         double averageHealth = totalHealth / game.getActors().size();
-        System.out.println("\n\tAverage Team Health = " + averageHealth);
+        this.console.println("\n\tAverage Team Health = " + averageHealth);
     }
 
     private void stamina() {
@@ -90,17 +90,17 @@ public class TeamStatus extends View {
         int totalStamina = 0;
         for (Actor actor : game.getActors()) {
             totalStamina += actor.getStamina();
-            System.out.println("\n\tName: " + actor.getName()
+            this.console.println("\n\tName: " + actor.getName()
                     + "\n\tStamina: " + actor.getStamina());
         }
         double averageStamina = totalStamina / game.getActors().size();
-        System.out.println("\n\tAverage Team Stamina = " + averageStamina);
+        this.console.println("\n\tAverage Team Stamina = " + averageStamina);
     }
 
     private void ability() {
         Game game = BYUICIT260MormonTrailProject.getCurrentGame();
         for (Actor actor : game.getActors()) {
-            System.out.println("\n\tName: " + actor.getName()
+            this.console.println("\n\tName: " + actor.getName()
                     + "\n\tAbility: " + actor.getAbility());
         }
     }

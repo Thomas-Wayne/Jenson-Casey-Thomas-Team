@@ -57,7 +57,7 @@ public class CurrentSuppliesView extends View {
                 this.quitGame();
 
             default:
-                System.out.println("\n*** Invalid selection *** Try again.");
+                ErrorView.display(this.getClass().getName(), "\n*** Invalid selection *** Try again.");
                 break;
 
         }
@@ -67,23 +67,23 @@ public class CurrentSuppliesView extends View {
     }
 
     private void buyOxen() {
-        System.out.println("buyOxen() was called");
+        this.console.println("buyOxen() was called");
     }
 
     private void buyWagon() {
-        System.out.println("buyWagon() was called");
+        this.console.println("buyWagon() was called");
     }
 
     private void buyFood() {
-        System.out.println("buyFood() was called");
+        this.console.println("buyFood() was called");
     }
 
     private void buySpareWagonWheel() {
-        System.out.println("buySpareWagonWheel() was called");
+        this.console.println("buySpareWagonWheel() was called");
     }
 
     private void buyAmmo() {
-        System.out.println("buyAmmo() was called");
+        this.console.println("buyAmmo() was called");
     }
 
     private void quitGame() {
@@ -99,7 +99,7 @@ public class CurrentSuppliesView extends View {
         }
 
         if (userInput.length() < 1) {
-            System.out.println("\nInvalid Value: "
+            ErrorView.display(this.getClass().getName(), "\nInvalid Value: "
                     + "value cannot be blank");
             return false;
         }
@@ -113,29 +113,29 @@ public class CurrentSuppliesView extends View {
         boolean valid = false; // initialize to not valid
 
         while (!valid) { // loop while an invalid value is entered
-            System.out.println("\n" + promptMessage);
+            this.console.println("\n" + promptMessage);
 
             try {
                 value = keyboard.readLine(); // get next line typed on keyboard
                 value = value.trim(); // trim off leading and trailing blanks
                 if (value.length() < 1) {
 
-                    System.out.println("\nInvalid value: Value cannot be blank");
+                    ErrorView.display(this.getClass().getName(), "\nInvalid value: Value cannot be blank");
                     continue;
                 }
 
                 break;
             } catch (Exception e) {
-                System.out.println("Error reading input: " + e.getMessage());
+                ErrorView.display(this.getClass().getName(), "Error reading input: " + e.getMessage());
             }
 
             try {
                 if (value.length() > 1) { // value is too long
-                    System.out.println("\nInvalid value: value cannot be more than 1 character");
+                    ErrorView.display(this.getClass().getName(), "\nInvalid value: value cannot be more than 1 character");
                     continue;
                 }
             } catch (Exception e) {
-                System.out.println("Error reading input: " + e.getMessage());
+                ErrorView.display(this.getClass().getName(), "Error reading input: " + e.getMessage());
             }
 
             break; // end the loop

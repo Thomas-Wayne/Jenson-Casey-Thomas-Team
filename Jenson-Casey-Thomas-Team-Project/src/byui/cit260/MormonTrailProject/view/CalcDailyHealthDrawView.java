@@ -8,10 +8,6 @@ package byui.cit260.MormonTrailProject.view;
 import byui.cit260.MormonTrailProject.control.PlayControl;
 import byui.cit260.MormonTrailProject.exceptions.PlayControlException;
 import byui.cit260.MormonTrailProject.view.ViewInterface.View;
-import java.io.IOException;
-import java.util.Scanner;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 /**
  *
@@ -58,7 +54,7 @@ public class CalcDailyHealthDrawView extends View {
             break;
 
             default:
-                System.out.println("\n*** Invalid selection *** Try again.");
+                ErrorView.display(this.getClass().getName(), "\n*** Invalid selection *** Try again.");
                 break;
 
         }
@@ -67,7 +63,7 @@ public class CalcDailyHealthDrawView extends View {
 
     private int health() throws PlayControlException {
 
-        System.out.println("\nEnter current health (1-100): ");
+        this.console.println("\nEnter current health (1-100): ");
         String health = null;
         int playerHealth = Integer.parseInt(health);
         boolean valid = false;
@@ -80,7 +76,7 @@ public class CalcDailyHealthDrawView extends View {
 
                 if (health.length() < 1) {
 
-                    System.out.println("\nInvalid value: Value cannot be blank");
+                    ErrorView.display(this.getClass().getName(), "\nInvalid value: Value cannot be blank");
                     continue;
                 }
 
@@ -89,25 +85,25 @@ public class CalcDailyHealthDrawView extends View {
             }
         } catch (Exception e) {
 
-            System.out.println("Error reading input: " + e.getMessage());
+            ErrorView.display(this.getClass().getName(), "Error reading input: " + e.getMessage());
         }
 
         try {
 
         } catch (NumberFormatException e) {
 
-            System.out.println("Please enter a numerical value...");
+            this.console.println("Please enter a numerical value...");
             return playerHealth;
         }
 
         try {
             double result = PlayControl.calcDailyHealthDraw(playerHealth, 9, 0, 0, 0);
             //result cannot exceed 100 (playerHealth and playStamina combined) or it will throw an exception. 
-            System.out.println("Good");
+            this.console.println("Good");
             return playerHealth;
 
         } catch (PlayControlException e) {
-            System.out.println(e.getMessage());
+            ErrorView.display(this.getClass().getName(), e.getMessage());
         }
         return playerHealth;
 
@@ -128,7 +124,7 @@ public class CalcDailyHealthDrawView extends View {
 
                 if (stamina.length() < 1) {
 
-                    System.out.println("\nInvalid value: Value cannot be blank");
+                    ErrorView.display(this.getClass().getName(), "\nInvalid value: Value cannot be blank");
                     continue;
                 }
 
@@ -137,21 +133,21 @@ public class CalcDailyHealthDrawView extends View {
             }
         } catch (Exception e) {
 
-            System.out.println("Error reading input: " + e.getMessage());
+            ErrorView.display(this.getClass().getName(), "Error reading input: " + e.getMessage());
         }
         try {
 
         } catch (NumberFormatException e) {
 
-            System.out.println("Please enter a numerical value...");
+            this.console.println("Please enter a numerical value...");
         }
         try {
             double result = PlayControl.calcDailyHealthDraw(90, playerStamina, 0, 0, 0);
             // Result cannot exceed 100 (playerHealth and playStamina combined)or it will throw an exception  
-            System.out.println("Good");
+            this.console.println("Good");
             return playerStamina;
         } catch (PlayControlException e) {
-            System.out.println(e.getMessage());
+            ErrorView.display(this.getClass().getName(), e.getMessage());
         }
         return playerStamina;
 

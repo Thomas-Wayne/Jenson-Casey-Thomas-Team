@@ -35,30 +35,30 @@ public class BuyMenuView extends View {
         quantity[index] = getItemQuantity(("How many of item # " + (index + 1)) + "? ");
     }
 
-    private static void displayCart() {
+    private void displayCart() {
 
-        System.out.println("**************************************************************");
-        System.out.println("                     Your Purchase Details                    ");
-        System.out.println("**************************************************************");
+        this.console.println("**************************************************************");
+        this.console.println("                     Your Purchase Details                    ");
+        this.console.println("**************************************************************");
         for (int i = 0; i < totalItems; i++) {
 
             showLineItem(i);
 
         }
 
-        System.out.println("*******************************************");
+        this.console.println("*******************************************");
 
         double total = calculateTotal();
-        System.out.println("Your Total is: " + total);
+        this.console.println("Your Total is: " + total);
     }
 
-    private static void showLineItem(int index) {
+    private void showLineItem(int index) {
 
         String quantityText = quantity[index] + "\t--\t"; // 3 -- Pencils
         String itemText = items[index] + "............"; // Pencils
         String priceText = prices[index] + " = " + prices[index] * quantity[index];
 
-        System.out.println(quantityText + itemText + priceText);
+        this.console.println(quantityText + itemText + priceText);
 
     }
 
@@ -67,7 +67,7 @@ public class BuyMenuView extends View {
         boolean valid = false; // initialize to not valid
         double input = Double.parseDouble(value);
         while (!valid) { // loop while an invalid value is entered
-            System.out.println("\n" + m);
+            this.console.println("\n" + m);
 
             try {
                 value = keyboard.readLine(); // get next line typed on keyboard
@@ -75,22 +75,22 @@ public class BuyMenuView extends View {
 
                 if (value.length() < 1) {
 
-                    System.out.println("\nInvalid value: Value cannot be blank");
+                    ErrorView.display(this.getClass().getName(), "\nInvalid value: Value cannot be blank");
                     continue;
                 }
 
                 break;
             } catch (Exception e) {
-                System.out.println("Error reading input: " + e.getMessage());
+                ErrorView.display(this.getClass().getName(), "Error reading input: " + e.getMessage());
             }
 
             try {
                 if (value.length() > 1) { // value is too long
-                    System.out.println("\nInvalid value: value cannot be more than 1 character");
+                    ErrorView.display(this.getClass().getName(), "\nInvalid value: value cannot be more than 1 character");
                     continue;
                 }
             } catch (Exception e) {
-                System.out.println("Error reading input: " + e.getMessage());
+                ErrorView.display(this.getClass().getName(), "Error reading input: " + e.getMessage());
             }
 
             break; // end the loop
@@ -123,22 +123,22 @@ public class BuyMenuView extends View {
 
                 if (value.length() < 1) {
 
-                    System.out.println("\nInvalid value: Value cannot be blank");
+                    ErrorView.display(this.getClass().getName(), "\nInvalid value: Value cannot be blank");
                     continue;
                 }
 
                 break;
             } catch (Exception e) {
-                System.out.println("Error reading input: " + e.getMessage());
+                ErrorView.display(this.getClass().getName(), "Error reading input: " + e.getMessage());
             }
 
             try {
                 if (value.length() > 1) { // value is too long
-                    System.out.println("\nInvalid value: value cannot be more than 1 character");
+                    ErrorView.display(this.getClass().getName(), "\nInvalid value: value cannot be more than 1 character");
                     continue;
                 }
             } catch (Exception e) {
-                System.out.println("Error reading input: " + e.getMessage());
+                ErrorView.display(this.getClass().getName(), "Error reading input: " + e.getMessage());
             }
 
             break; // end the loop
@@ -152,7 +152,7 @@ public class BuyMenuView extends View {
         boolean valid = false; // initialize to not valid
         int input = Integer.parseInt(value);
         while (!valid) { // loop while an invalid value is entered
-            System.out.println("\n" + m);
+            this.console.println("\n" + m);
 
             try {
                 value = keyboard.readLine(); // get next line typed on keyboard
@@ -160,22 +160,22 @@ public class BuyMenuView extends View {
 
                 if (value.length() < 1) {
 
-                    System.out.println("\nInvalid value: Value cannot be blank");
+                    ErrorView.display(this.getClass().getName(), "\nInvalid value: Value cannot be blank");
                     continue;
                 }
 
                 break;
             } catch (Exception e) {
-                System.out.println("Error reading input: " + e.getMessage());
+                ErrorView.display(this.getClass().getName(), "Error reading input: " + e.getMessage());
             }
 
             try {
                 if (value.length() > 1) { // value is too long
-                    System.out.println("\nInvalid value: value cannot be more than 1 character");
+                    ErrorView.display(this.getClass().getName(), "\nInvalid value: value cannot be more than 1 character");
                     continue;
                 }
             } catch (Exception e) {
-                System.out.println("Error reading input: " + e.getMessage());
+                ErrorView.display(this.getClass().getName(), "Error reading input: " + e.getMessage());
             }
 
             break; // end the loop
@@ -189,7 +189,7 @@ public class BuyMenuView extends View {
         boolean valid = false; // initialize to not valid
         int input = Integer.parseInt(value);
         while (!valid) { // loop while an invalid value is entered
-            System.out.println("\n" + m);
+            this.console.println("\n" + m);
 
             try {
                 value = keyboard.readLine(); // get next line typed on keyboard
@@ -197,22 +197,22 @@ public class BuyMenuView extends View {
 
                 if (value.length() < 1) {
 
-                    System.out.println("\nInvalid value: Value cannot be blank");
+                    ErrorView.display(this.getClass().getName(), "\nInvalid value: Value cannot be blank");
                     continue;
                 }
 
                 break;
             } catch (Exception e) {
-                System.out.println("Error reading input: " + e.getMessage());
+                ErrorView.display(this.getClass().getName(), "Error reading input: " + e.getMessage());
             }
 
             try {
                 if (value.length() > 1) { // value is too long
-                    System.out.println("\nInvalid value: value cannot be more than 1 character");
+                    ErrorView.display(this.getClass().getName(), "\nInvalid value: value cannot be more than 1 character");
                     continue;
                 }
             } catch (Exception e) {
-                System.out.println("Error reading input: " + e.getMessage());
+                ErrorView.display(this.getClass().getName(), "Error reading input: " + e.getMessage());
             }
 
             break; // end the loop

@@ -2,11 +2,7 @@ package byui.cit260.MormonTrailProject.view;
 
 import byui.cit260.MormonTrailProject.exceptions.GetFruitsException;
 import byui.cit260.MormonTrailProject.view.ViewInterface.View;
-import java.io.IOException;
 import java.util.InputMismatchException;
-import java.util.Scanner;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 
 /* @author Isabel Jenson
@@ -59,7 +55,7 @@ public class GatheringSuccessMenuView extends View {
                 System.exit(0);
 
             default:
-                System.out.println("Please, choose an option from the menu...");
+                ErrorView.display(this.getClass().getName(), "Please, choose an option from the menu...");
                 break;
 
         }
@@ -79,27 +75,27 @@ public class GatheringSuccessMenuView extends View {
         while (!success) {
             try {
 
-                System.out.print("Enter the pounds of fruit you gathered: ");
+                this.console.print("Enter the pounds of fruit you gathered: ");
                 int youCanCarry = Integer.parseInt(poundsGathered);
 
                 if (youCanCarry < 1) {
 
-                    System.out.println("That's not good. Better luck next time!");
+                    this.console.println("That's not good. Better luck next time!");
                     success = true;
                 }
 
                 if (youCanCarry >= 1 && youCanCarry < 100) {
-                    System.out.println("Excellent job, you gather some fruit for your team!");
+                    this.console.println("Excellent job, you gather some fruit for your team!");
                     success = true;
                 } else if (youCanCarry > 100) {
 
-                    System.out.println("You are only able to carry 100 pounds...");
+                    this.console.println("You are only able to carry 100 pounds...");
                     success = true;
                 }
 
             } catch (NumberFormatException | InputMismatchException e) {
 
-                System.out.println("Wrong input. Try a whole number...");
+                ErrorView.display(this.getClass().getName(), "Wrong input. Try a whole number...");
 
             }
 
@@ -107,11 +103,11 @@ public class GatheringSuccessMenuView extends View {
     }
 
     private void getEdiblePlants() {
-        System.out.println("getEdiblePlants() was called");
+        this.console.println("getEdiblePlants() was called");
     }
 
     private void getVegetables() {
-        System.out.println("getVegetables() called");
+        this.console.println("getVegetables() called");
 
     }
 

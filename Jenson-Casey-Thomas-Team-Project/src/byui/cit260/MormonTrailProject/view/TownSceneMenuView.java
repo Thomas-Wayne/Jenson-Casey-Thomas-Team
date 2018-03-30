@@ -41,7 +41,7 @@ public class TownSceneMenuView extends ViewInterface.View {
                 break;
 
             default:
-                System.out.println("\n*** Invalid selection *** Try again.");
+                ErrorView.display(this.getClass().getName(), "\n*** Invalid selection *** Try again.");
                 break;
 
         }
@@ -56,7 +56,7 @@ public class TownSceneMenuView extends ViewInterface.View {
     }
 
     private void hotel() {
-        System.out.println("hotelScene() has been called");
+        this.console.println("hotelScene() has been called");
     }
 
     private void quitGame() {

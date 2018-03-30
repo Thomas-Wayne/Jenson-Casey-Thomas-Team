@@ -6,7 +6,6 @@
 package byui.cit260.MormonTrailProject.view;
 
 import byui.cit260.MormonTrailProject.view.ViewInterface.View;
-import java.util.Scanner;
 
 /**
  *
@@ -55,7 +54,7 @@ public class HelpMenuView extends View {
                 break;
 
             default:
-                System.out.println("\n*** Invalid selection *** Try again.");
+                ErrorView.display(this.getClass().getName(), "\n*** Invalid selection *** Try again.");
                 break;
 
         }
@@ -65,23 +64,23 @@ public class HelpMenuView extends View {
     }
 
     private void goalHelp() {
-        System.out.println("\ngoalHelp() was called");
+        this.console.println("\ngoalHelp() was called");
     }
 
     private void moveHelp() {
-        System.out.println("\nmoveHelp() was called");
+        this.console.println("\nmoveHelp() was called");
     }
 
     private void estimateHelp() {
-        System.out.println("\nestimateHelp() was called");
+        this.console.println("\nestimateHelp() was called");
     }
 
     private void harvestHelp() {
-        System.out.println("\nharvestHelp() was called");
+        this.console.println("\nharvestHelp() was called");
     }
 
     private void deliverHelp() {
-        System.out.println("\ndeliverHelp() was called");
+        this.console.println("\ndeliverHelp() was called");
     }
 
 }

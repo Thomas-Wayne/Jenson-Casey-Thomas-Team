@@ -49,7 +49,7 @@ public class SetPaceView extends View {
                 break;
 
             default:
-                System.out.println("\n*** Invalid selection *** Try again.");
+                ErrorView.display(this.getClass().getName(), "\n*** Invalid selection *** Try again.");
                 break;
 
         }
@@ -60,16 +60,16 @@ public class SetPaceView extends View {
 
     private void slowPace() {
         BYUICIT260MormonTrailProject.getCurrentGame().setPace(Pace.slowSpeed);
-        System.out.println("A nice leisurely stroll today huh?");
+        this.console.println("A nice leisurely stroll today huh?");
     }
 
     private void averagePace() {
         BYUICIT260MormonTrailProject.getCurrentGame().setPace(Pace.averageSpeed);
-        System.out.println("Let's get a move on, time is a waisten!");
+        this.console.println("Let's get a move on, time is a waisten!");
     }
 
     private void fastPace() {
         BYUICIT260MormonTrailProject.getCurrentGame().setPace(Pace.fastSpeed);
-        System.out.println("At this pace we will be there in no time!");
+        this.console.println("At this pace we will be there in no time!");
     }
 }

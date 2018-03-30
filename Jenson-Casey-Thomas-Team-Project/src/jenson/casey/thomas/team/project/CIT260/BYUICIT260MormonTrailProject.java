@@ -62,9 +62,10 @@ public class BYUICIT260MormonTrailProject {
             inFile = new BufferedReader(new InputStreamReader(System.in));
             outFile = new PrintWriter(System.out, true);
             logFile = new PrintWriter("logFile.txt");
-
+            
             StartProgramView startProgramView = new StartProgramView();
             startProgramView.display();
+
         } catch (Exception e) {
 
             System.out.println("Exception: " + e.toString()

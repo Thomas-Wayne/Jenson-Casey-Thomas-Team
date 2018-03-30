@@ -36,7 +36,7 @@ public class FortSceneMenuView extends ViewInterface.View {
                 break;
 
             default:
-                System.out.println("\n*** Invalid selection *** Try again.");
+                ErrorView.display(this.getClass().getName(), "\n*** Invalid selection *** Try again.");
                 break;
 
         }

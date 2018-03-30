@@ -86,29 +86,29 @@ public class GoHuntingView extends View {
         boolean valid = false; // initialize to not valid
 
         while (!valid) { // loop while an invalid value is entered
-            System.out.println("\n" + promptMessage);
+            this.console.println("\n" + promptMessage);
 
             try {
                 value = keyboard.readLine(); // get next line typed on keyboard
                 value = value.trim(); // trim off leading and trailing blanks
                 if (value.length() < 1) {
 
-                    System.out.println("\nInvalid value: Value cannot be blank");
+                    ErrorView.display(this.getClass().getName(), "\nInvalid value: Value cannot be blank");
                     continue;
                 }
 
                 break;
             } catch (Exception e) {
-                System.out.println("Error reading input: " + e.getMessage());
+                ErrorView.display(this.getClass().getName(), "Error reading input: " + e.getMessage());
             }
 
             try {
                 if (value.length() > 1) { // value is too long
-                    System.out.println("\nInvalid value: value cannot be more than 1 character");
+                    ErrorView.display(this.getClass().getName(), "\nInvalid value: value cannot be more than 1 character");
                     continue;
                 }
             } catch (Exception e) {
-                System.out.println("Error reading input: " + e.getMessage());
+                ErrorView.display(this.getClass().getName(), "Error reading input: " + e.getMessage());
             }
 
             break; // end the loop
@@ -120,13 +120,13 @@ public class GoHuntingView extends View {
     private boolean doNumericAction(String userInput) {
 
         if (userInput.contains("[a-zA-Z]+") == true) {
-            System.out.println("\nInvalid Value: "
+            ErrorView.display(this.getClass().getName(), "\nInvalid Value: "
                     + "must be numeric only");
             return false;
         }
 
         if (userInput.length() < 1) {
-            System.out.println("\nInvalid Value: "
+            ErrorView.display(this.getClass().getName(), "\nInvalid Value: "
                     + "value cannot be blank");
             return false;
         }
@@ -139,29 +139,29 @@ public class GoHuntingView extends View {
         boolean valid = false; // initialize to not valid
 
         while (!valid) { // loop while an invalid value is entered
-            System.out.println("\n" + promptMessage);
+            this.console.println("\n" + promptMessage);
 
             try {
                 value = keyboard.readLine(); // get next line typed on keyboard
                 value = value.trim(); // trim off leading and trailing blanks
                 if (value.length() < 1) {
 
-                    System.out.println("\nInvalid value: Value cannot be blank");
+                    ErrorView.display(this.getClass().getName(), "\nInvalid value: Value cannot be blank");
                     continue;
                 }
 
                 break;
             } catch (Exception e) {
-                System.out.println("Error reading input: " + e.getMessage());
+                ErrorView.display(this.getClass().getName(), "Error reading input: " + e.getMessage());
             }
 
             try {
                 if (value.length() > 1) { // value is too long
-                    System.out.println("\nInvalid value: value cannot be more than 1 character");
+                    ErrorView.display(this.getClass().getName(), "\nInvalid value: value cannot be more than 1 character");
                     continue;
                 }
             } catch (Exception e) {
-                System.out.println("Error reading input: " + e.getMessage());
+                ErrorView.display(this.getClass().getName(), "Error reading input: " + e.getMessage());
             }
 
             break; // end the loop
@@ -183,7 +183,7 @@ public class GoHuntingView extends View {
         int location = Integer.parseInt(this.location);
         int localResources = Integer.parseInt(this.localResources);
 
-        System.out.println(PlayControl.calcGatheringSuccess(weather, location, localResources));
+        this.console.println(PlayControl.calcGatheringSuccess(weather, location, localResources));
 
         return null;
     }

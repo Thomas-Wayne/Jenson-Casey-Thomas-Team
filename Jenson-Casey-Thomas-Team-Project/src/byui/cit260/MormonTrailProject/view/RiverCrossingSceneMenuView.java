@@ -6,7 +6,6 @@
 package byui.cit260.MormonTrailProject.view;
 
 import byui.cit260.MormonTrailProject.view.ViewInterface.View;
-import java.util.Scanner;
 
 /**
  *
@@ -61,7 +60,7 @@ public class RiverCrossingSceneMenuView extends View {
             case "Q":
                 this.quitGame();
             default:
-                System.out.println("\n*** Invalid selection *** Try again.");
+                ErrorView.display(this.getClass().getName(), "\n*** Invalid selection *** Try again.");
                 break;
 
         }
@@ -71,7 +70,7 @@ public class RiverCrossingSceneMenuView extends View {
     }
 
     private void lookForCrossingAid() {
-        System.out.println(
+        this.console.println(
                 "\nYou have looked around for a while, but there "
                 + "are no ferry boats or bridges available here. Make another choice");
     }
@@ -82,14 +81,14 @@ public class RiverCrossingSceneMenuView extends View {
     }
 
     private void lookForCampsite() {
-        System.out.println(
+        this.console.println(
                 "\nIf you are planning to stay for a little while, you "
                 + "will want to find a sufficient campsite to rest your "
                 + "team until you are ready to cross.");
     }
 
     private void rest() {
-        System.out.println(
+        this.console.println(
                 "\nFor whatever reason you have decided to rest, ENJOY! "
                 + "This is a good time to rebuild your strength, both "
                 + "physically and spiritually.");

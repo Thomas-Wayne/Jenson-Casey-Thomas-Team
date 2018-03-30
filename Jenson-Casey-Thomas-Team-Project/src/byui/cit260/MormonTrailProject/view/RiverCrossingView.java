@@ -36,7 +36,7 @@ public class RiverCrossingView extends View {
     }
 
     private void displayBanner() {
-        System.out.println(
+        this.console.println(
                 "\n*******************************************************"
                 + "\n*                                                     *"
                 + "\n*       River Crossing Probability Calculation        *"
@@ -115,29 +115,29 @@ public class RiverCrossingView extends View {
         boolean valid = false; // initialize to not valid
 
         while (!valid) { // loop while an invalid value is entered
-            System.out.println("\n" + promptMessage);
+            this.console.println("\n" + promptMessage);
 
             try {
                 value = keyboard.readLine(); // get next line typed on keyboard
                 value = value.trim(); // trim off leading and trailing blanks
                 if (value.length() < 1) {
 
-                    System.out.println("\nInvalid value: Value cannot be blank");
+                    ErrorView.display(this.getClass().getName(), "\nInvalid value: Value cannot be blank");
                     continue;
                 }
 
                 break;
             } catch (Exception e) {
-                System.out.println("Error reading input: " + e.getMessage());
+                ErrorView.display(this.getClass().getName(), "Error reading input: " + e.getMessage());
             }
 
             try {
                 if (value.length() > 1) { // value is too long
-                    System.out.println("\nInvalid value: value cannot be more than 1 character");
+                    ErrorView.display(this.getClass().getName(), "\nInvalid value: value cannot be more than 1 character");
                     continue;
                 }
             } catch (Exception e) {
-                System.out.println("Error reading input: " + e.getMessage());
+                ErrorView.display(this.getClass().getName(), "Error reading input: " + e.getMessage());
             }
 
             break; // end the loop
@@ -149,13 +149,13 @@ public class RiverCrossingView extends View {
     private boolean doNumericAction(String userInput) {
 
         if (userInput.contains("[a-zA-Z]+") == true) {
-            System.out.println("\nInvalid Value: "
+            ErrorView.display(this.getClass().getName(), "\nInvalid Value: "
                     + "must be numeric only");
             return false;
         }
 
         if (userInput.length() < 1) {
-            System.out.println("\nInvalid Value: "
+            ErrorView.display(this.getClass().getName(), "\nInvalid Value: "
                     + "value cannot be blank");
             return false;
         }
@@ -168,29 +168,29 @@ public class RiverCrossingView extends View {
         boolean valid = false; // initialize to not valid
 
         while (!valid) { // loop while an invalid value is entered
-            System.out.println("\n" + promptMessage);
+            this.console.println("\n" + promptMessage);
 
             try {
                 value = keyboard.readLine(); // get next line typed on keyboard
                 value = value.trim(); // trim off leading and trailing blanks
                 if (value.length() < 1) {
 
-                    System.out.println("\nInvalid value: Value cannot be blank");
+                    ErrorView.display(this.getClass().getName(), "\nInvalid value: Value cannot be blank");
                     continue;
                 }
 
                 break;
             } catch (Exception e) {
-                System.out.println("Error reading input: " + e.getMessage());
+                ErrorView.display(this.getClass().getName(), "Error reading input: " + e.getMessage());
             }
 
             try {
                 if (value.length() > 1) { // value is too long
-                    System.out.println("\nInvalid value: value cannot be more than 1 character");
+                    ErrorView.display(this.getClass().getName(), "\nInvalid value: value cannot be more than 1 character");
                     continue;
                 }
             } catch (Exception e) {
-                System.out.println("Error reading input: " + e.getMessage());
+                ErrorView.display(this.getClass().getName(), "Error reading input: " + e.getMessage());
             }
 
             break; // end the loop
@@ -214,7 +214,7 @@ public class RiverCrossingView extends View {
         int riverHeight = Integer.parseInt(this.riverHeight);
         int oxenHealth = Integer.parseInt(this.oxenHealth);
 
-        System.out.println(PlayControl.calcRiverCrossingProbability(riverHeight, wagonWeight, riverFlow, oxenHealth, oxenHealth));
+        this.console.println(PlayControl.calcRiverCrossingProbability(riverHeight, wagonWeight, riverFlow, oxenHealth, oxenHealth));
 
         return null;
     }

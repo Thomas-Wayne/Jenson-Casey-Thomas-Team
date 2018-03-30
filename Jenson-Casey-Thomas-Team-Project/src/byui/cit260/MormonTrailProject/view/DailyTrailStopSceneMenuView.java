@@ -66,7 +66,7 @@ public class DailyTrailStopSceneMenuView extends View {
                 this.quitGame();
                 break;
             default:
-                System.out.println("\n*** Invalid selection *** Try again.");
+                ErrorView.display(this.getClass().getName(), "\n*** Invalid selection *** Try again.");
                 break;
         }
 
@@ -85,7 +85,7 @@ public class DailyTrailStopSceneMenuView extends View {
     }
 
     private void restForTheDay() {
-        System.out.println("\n restForTheDay() has been called");
+        this.console.println("\n restForTheDay() has been called");
     }
 
     private void crossTheRiver() {

@@ -6,7 +6,6 @@
 package byui.cit260.MormonTrailProject.view;
 
 import byui.cit260.MormonTrailProject.control.GameControl;
-import byui.cit260.MormonTrailProject.control.MapControl;
 import byui.cit260.MormonTrailProject.view.ViewInterface.View;
 import jenson.casey.thomas.team.project.CIT260.BYUICIT260MormonTrailProject;
 
@@ -61,7 +60,7 @@ public class MainMenuView extends View {
                 break;
 
             default:
-                System.out.println("\n*** Invalid selection *** Try again.");
+                ErrorView.display(this.getClass().getName(), "\n*** Invalid selection *** Try again.");
                 break;
 
         }
@@ -78,11 +77,11 @@ public class MainMenuView extends View {
     }
 
     private void loadGame() {
-        System.out.println("\nloadGame() was called");
+        this.console.println("\nloadGame() was called");
     }
 
     private void saveGame() {
-        System.out.println("\nsaveGame() was called");
+        this.console.println("\nsaveGame() was called");
     }
 
     private void getHelp() {

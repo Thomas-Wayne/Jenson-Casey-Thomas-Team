@@ -6,11 +6,9 @@
 package byui.cit260.MormonTrailProject.view;
 
 import byui.cit260.MormonTrailProject.control.GameControl;
-import byui.cit260.MormonTrailProject.control.PlayControl;
 import byui.cit260.MormonTrailProject.model.Location;
 import byui.cit260.MormonTrailProject.model.Map;
 import byui.cit260.MormonTrailProject.view.ViewInterface.View;
-import java.util.Scanner;
 import jenson.casey.thomas.team.project.CIT260.BYUICIT260MormonTrailProject;
 
 /**
@@ -105,7 +103,7 @@ public class GameMenuView extends View {
                 this.quitGame();
                 break;
             default:
-                System.out.println("\n*** Invalid selection *** Try again.");
+                ErrorView.display(this.getClass().getName(), "\n*** Invalid selection *** Try again.");
                 break;
         }
 
@@ -129,9 +127,9 @@ public class GameMenuView extends View {
 
         for (int row = 0; row < locations.length; row++) {
             for (int column = 0; column < locations[row].length; column++) {
-                System.out.print(String.format("%3s ", locations[row][column].getMilepost()));
+                this.console.print(String.format("%3s ", locations[row][column].getMilepost()));
             }
-            System.out.println();
+            this.console.println();
         }
     }
 
