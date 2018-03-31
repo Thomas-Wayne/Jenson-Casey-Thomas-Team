@@ -5,6 +5,7 @@
  */
 package byui.cit260.MormonTrailProject.control;
 
+import byui.cit260.MormonTrailProject.exceptions.GameControlException;
 import byui.cit260.MormonTrailProject.model.Actor;
 import byui.cit260.MormonTrailProject.model.Game;
 import byui.cit260.MormonTrailProject.model.Inventory;
@@ -13,6 +14,10 @@ import byui.cit260.MormonTrailProject.model.Location;
 import byui.cit260.MormonTrailProject.model.Map;
 import byui.cit260.MormonTrailProject.model.Player;
 import byui.cit260.MormonTrailProject.model.Scene;
+import byui.cit260.MormonTrailProject.view.ErrorView;
+import java.io.BufferedOutputStream;
+import java.io.FileOutputStream;
+import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 import jenson.casey.thomas.team.project.CIT260.BYUICIT260MormonTrailProject;
 
@@ -52,6 +57,7 @@ public class GameControl {
     }
 
     private static void assignInventoryToScenes() {
+        
     }
 
     private static void assignQuestionsToScenes() {
@@ -160,11 +166,21 @@ public class GameControl {
 
     }
 
-    public static void saveGame(Game game, String filePath) {
-    }
-
-    public void saveGameTryWithResources() {
-        //String fileLocation = "c:\game.txt";
+    public void saveGame(Game game, String filePath) throws Exception  {
+        try (BufferedOutputStream out = new BufferedOutputStream(new FileOutputStream(filePath))) {
+            if (game == null | filePath == null | filePath.length() < 1);
+            throw new GameControlException();
+        } catch (GameControlException e) {
+            ErrorView.display(this.getClass().getName(), e.getMessage());
+            return;
+        } finally {
+            try (ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream(filePath))) {
+                out.writeObject(filePath);
+            } catch (Exception e) {
+                ErrorView.display(this.getClass().getName(), e.getMessage());
+                return;
+            }
+        }
     }
 
     public static void getHelp(Player player) {

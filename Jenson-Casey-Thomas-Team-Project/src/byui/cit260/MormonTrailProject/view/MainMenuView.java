@@ -49,7 +49,7 @@ public class MainMenuView extends View {
             case "S": {
                 try {
                     this.saveGame();
-                } catch (GameControlException ex) {
+                } catch (GameControlException e) {
 
                 }
             }

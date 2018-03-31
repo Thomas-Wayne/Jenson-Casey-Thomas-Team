@@ -20,7 +20,7 @@ public class ErrorView {
     public static void display(String className, String errorMessage) {
 
         console.println(
-                "\n ___Error Will Robinson______________________________________"
+                "\n ___Danger Will Robinson______________________________________"
                 + "\n" + errorMessage
                 + "\n_____________________________________________________________");
 
