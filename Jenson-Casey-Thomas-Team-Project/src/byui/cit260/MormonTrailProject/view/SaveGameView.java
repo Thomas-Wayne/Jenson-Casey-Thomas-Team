@@ -17,13 +17,19 @@ import jenson.casey.thomas.team.project.CIT260.BYUICIT260MormonTrailProject;
 public class SaveGameView extends View {
 
     public SaveGameView() throws GameControlException {
+        
+        
+        console.println(
+                "\n Would you like to save your game? (Yes, No)"
+               );
+       
     }
 
     public SaveGameView(String message) {
         super(message);
     }
 
-    private boolean doAction(String[] inputs) {
+    public boolean doAction(String inputs) {
         Game game = BYUICIT260MormonTrailProject.getCurrentGame();
         if (inputs != null) {
 
@@ -36,7 +42,8 @@ public class SaveGameView extends View {
                 ErrorView.display(this.getClass().getName(), e.getMessage());
                 return false;
             } finally {
-                this.console.println("The file was saved successfully to ");
+                String filePath = "SavedGame.txt";
+                this.console.println("The file was saved successfully to " + filePath);
                 return true;
             }
         }
@@ -74,10 +81,7 @@ public class SaveGameView extends View {
 
     }
 
-    @Override
-    public boolean doAction(String value) {
-        return false;
+    
 
-    }
 
 }
