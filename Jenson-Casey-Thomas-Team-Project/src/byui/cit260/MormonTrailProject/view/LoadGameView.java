@@ -18,7 +18,7 @@ import jenson.casey.thomas.team.project.CIT260.BYUICIT260MormonTrailProject;
 public class LoadGameView extends View {
 
     public LoadGameView() {
-    super("Would you like to load a saved game?");    
+    super("Would you like to load a saved game? (Y or N) ");    
     }
     
     
@@ -28,7 +28,7 @@ public class LoadGameView extends View {
         String filePath = GameControl.saveGamePath;
         Game game = BYUICIT260MormonTrailProject.getCurrentGame();
         if (inputs != null) {
-            this.console.println("we made it this far try statement before loadGame");
+           
             try {
                 GameControl.loadGame(filePath);
                

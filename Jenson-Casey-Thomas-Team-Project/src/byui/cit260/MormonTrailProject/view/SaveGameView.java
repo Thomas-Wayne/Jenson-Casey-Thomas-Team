@@ -30,7 +30,6 @@ public class SaveGameView extends View {
     public boolean doAction(String inputs) {
         String filePath = GameControl.saveGamePath;
         Game game = BYUICIT260MormonTrailProject.getCurrentGame();
-        this.console.println("we made it this far try statement before saveGame");
         if (inputs != null) {
             
            try {
