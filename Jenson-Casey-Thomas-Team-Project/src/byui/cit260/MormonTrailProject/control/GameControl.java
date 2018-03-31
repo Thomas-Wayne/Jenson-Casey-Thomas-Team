@@ -15,8 +15,13 @@ import byui.cit260.MormonTrailProject.model.Map;
 import byui.cit260.MormonTrailProject.model.Player;
 import byui.cit260.MormonTrailProject.model.Scene;
 import byui.cit260.MormonTrailProject.view.ErrorView;
+import java.io.BufferedInputStream;
 import java.io.BufferedOutputStream;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 import jenson.casey.thomas.team.project.CIT260.BYUICIT260MormonTrailProject;
@@ -57,7 +62,7 @@ public class GameControl {
     }
 
     private static void assignInventoryToScenes() {
-        
+
     }
 
     private static void assignQuestionsToScenes() {
@@ -162,11 +167,25 @@ public class GameControl {
         System.out.println("*** createItems()called ***");
     }
 
-    public static void loadGame(Player player) {
+    public Game loadGame(Game game, String filePath) throws FileNotFoundException, IOException {
+        try (BufferedInputStream in = new BufferedInputStream(new FileInputStream(filePath))) {
+            if (game == null | filePath == null | filePath.length() < 1);
+            throw new GameControlException();
+        } catch (GameControlException e) {
+            ErrorView.display(this.getClass().getName(), e.getMessage());
+            return game;
+        } finally {
+            try (ObjectInputStream in = new ObjectInputStream(new FileInputStream(filePath))) {
+                in.readObject();
+            } catch (Exception e) {
+                ErrorView.display(this.getClass().getName(), e.getMessage());
+                return game;
+            }
+        }
 
     }
 
-    public void saveGame(Game game, String filePath) throws Exception  {
+    public void saveGame(Game game, String filePath) throws Exception {
         try (BufferedOutputStream out = new BufferedOutputStream(new FileOutputStream(filePath))) {
             if (game == null | filePath == null | filePath.length() < 1);
             throw new GameControlException();

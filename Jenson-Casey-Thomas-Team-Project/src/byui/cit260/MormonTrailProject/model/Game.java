@@ -150,4 +150,8 @@ public class Game implements Serializable {
     public void saveGame(Game game) {
 
     }
+
+    public void loadGame(Game game) {
+        
+    }
 }
