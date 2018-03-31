@@ -36,9 +36,9 @@ public class LoadGameView extends View {
             }
         }
         return false;
-        
-    }   
-    
+
+    }
+
     private String[] getInputs(String promptMessage) {
         String input = "";
         String[] inputs = new String[]{input};
@@ -70,4 +70,3 @@ public class LoadGameView extends View {
 
     }
 }
-    

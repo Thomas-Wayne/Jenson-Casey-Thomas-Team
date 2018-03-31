@@ -5,7 +5,6 @@
  */
 package byui.cit260.MormonTrailProject.model;
 
-import byui.cit260.MormonTrailProject.control.GameControl;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Objects;
@@ -152,6 +151,6 @@ public class Game implements Serializable {
     }
 
     public void loadGame(Game game) {
-        
+
     }
 }

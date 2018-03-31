@@ -17,12 +17,11 @@ import jenson.casey.thomas.team.project.CIT260.BYUICIT260MormonTrailProject;
 public class SaveGameView extends View {
 
     public SaveGameView() throws GameControlException {
-        
-        
+
         console.println(
                 "\n Would you like to save your game? (Yes, No)"
-               );
-       
+        );
+
     }
 
     public SaveGameView(String message) {
@@ -34,6 +33,7 @@ public class SaveGameView extends View {
         if (inputs != null) {
 
             try {
+                String filePath = "SavedGame.txt";
                 game.saveGame(game);
                 throw new GameControlException();
 
@@ -80,8 +80,5 @@ public class SaveGameView extends View {
         return inputs;
 
     }
-
-    
-
 
 }
