@@ -145,12 +145,4 @@ public class Game implements Serializable {
 
         this.actors = actors;
     }
-
-    public void saveGame(Game game) {
-
-    }
-
-    public void loadGame(Game game) {
-
-    }
 }

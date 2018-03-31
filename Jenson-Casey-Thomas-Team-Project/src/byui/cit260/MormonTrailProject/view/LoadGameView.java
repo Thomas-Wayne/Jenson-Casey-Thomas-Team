@@ -22,7 +22,7 @@ public class LoadGameView extends View {
         if (inputs != null) {
 
             try {
-                game.loadGame(game);
+               
                 throw new GameControlException();
 
             } catch (GameControlException e) {

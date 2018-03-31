@@ -56,33 +56,34 @@ public class BYUICIT260MormonTrailProject {
     public static void main(String[] args) {
 
         try {
-            inFile = new BufferedReader(new InputStreamReader(System.in));
-            outFile = new PrintWriter(System.out, true);
-            logFile = new PrintWriter("logFile.txt");
+            BYUICIT260MormonTrailProject.inFile = new BufferedReader(new InputStreamReader(System.in));
+            BYUICIT260MormonTrailProject.outFile = new PrintWriter(System.out, true);
+            BYUICIT260MormonTrailProject.logFile = new PrintWriter("logFile.txt");
 
             StartProgramView startProgramView = new StartProgramView();
             startProgramView.display();
+            return;
 
-        } catch (Exception e) {
+        } catch (Throwable e){
 
-            System.out.println("Exception: " + e.toString()
-                    + "\nCause:" + e.getCause()
-                    + "\nMessage:" + e.getMessage());
+            System.out.println("Exception: " + e.toString() 
+                                + "nCause:" + e.getCause() 
+                                + "\nMessage:" + e.getMessage());
             e.printStackTrace();;
         } finally {
             try {
 
-                if (inFile != null) {
-                    inFile.close();
+                if (BYUICIT260MormonTrailProject.inFile != null) {
+                    BYUICIT260MormonTrailProject.inFile.close();
                 }
-                if (outFile != null) {
-                    outFile.close();
+                if (BYUICIT260MormonTrailProject.outFile != null) {
+                    BYUICIT260MormonTrailProject.outFile.close();
                 }
-                if (logFile != null) {
-                    logFile.close();
+                if (BYUICIT260MormonTrailProject.logFile != null) {
+                    BYUICIT260MormonTrailProject.logFile.close();
                 }
 
-            } catch (IOException ex) {
+            } catch (Exception e) {
                 System.out.println("Error closing files");
                 return;
 

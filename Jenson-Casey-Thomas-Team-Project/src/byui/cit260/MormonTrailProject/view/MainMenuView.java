@@ -85,7 +85,8 @@ public class MainMenuView extends View {
     }
 
     private void loadGame() {
-        this.console.println("\nloadGame() was called");
+        LoadGameView loadGameView = new LoadGameView(); 
+        loadGameView.display();
     }
 
     private void saveGame() throws GameControlException {

@@ -5,9 +5,11 @@
  */
 package byui.cit260.MormonTrailProject.view;
 
+import byui.cit260.MormonTrailProject.control.GameControl;
 import byui.cit260.MormonTrailProject.exceptions.GameControlException;
 import byui.cit260.MormonTrailProject.model.Game;
 import byui.cit260.MormonTrailProject.view.ViewInterface.View;
+import java.io.IOException;
 import jenson.casey.thomas.team.project.CIT260.BYUICIT260MormonTrailProject;
 
 /**
@@ -19,7 +21,7 @@ public class SaveGameView extends View {
     public SaveGameView() throws GameControlException {
 
         console.println(
-                "\n Would you like to save your game? (Yes, No)"
+                "\n Would you like to save your game? (Y / N)"
         );
 
     }
@@ -29,24 +31,26 @@ public class SaveGameView extends View {
     }
 
     public boolean doAction(String inputs) {
+        String filePath = "SavedGame.txt";
         Game game = BYUICIT260MormonTrailProject.getCurrentGame();
         if (inputs != null) {
+            
+           try {
+                        
+                Game saveGame = new GameControl.saveGame();          
 
-            try {
-                String filePath = "SavedGame.txt";
-                game.saveGame(game);
                 throw new GameControlException();
 
             } catch (GameControlException e) {
 
                 ErrorView.display(this.getClass().getName(), e.getMessage());
                 return false;
-            } finally {
-                String filePath = "SavedGame.txt";
+            } finally {                               
                 this.console.println("The file was saved successfully to " + filePath);
                 return true;
             }
         }
+        
         return false;
     }
 
@@ -61,23 +65,24 @@ public class SaveGameView extends View {
 
                 input = this.keyboard.readLine();
 
-                if (inputs.length < 1) {
+                if (inputs.length < 1 || inputs.length > 1 ) {
 
-                    ErrorView.display(this.getClass().getName(), "\nInvalid value: Value cannot be blank");
+                    ErrorView.display(this.getClass().getName(), "\nInvalid value: Please enter Y or N");
                     continue;
                 }
 
                 break;
 
             }
-        } catch (Exception e) {
+        } catch (IOException e) {
 
             ErrorView.display(this.getClass().getName(), "Error reading input: " + e.getMessage());
         }
 
         this.console.println("\n" + promptMessage);
-
         return inputs;
+
+        
 
     }
 

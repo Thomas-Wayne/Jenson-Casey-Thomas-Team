@@ -18,9 +18,7 @@ import byui.cit260.MormonTrailProject.view.ErrorView;
 import java.io.BufferedInputStream;
 import java.io.BufferedOutputStream;
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
-import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.util.ArrayList;
@@ -148,7 +146,7 @@ public class GameControl {
         if (noOfRows < 0 | noOfColumns < 0) {
             return null;
         }
-        if (inventory == null | inventory.length < 1) {
+        if (inventory == null || inventory.length < 1) {
         }
         Map map = new Map();
         noOfRows = 8;
@@ -167,9 +165,9 @@ public class GameControl {
         System.out.println("*** createItems()called ***");
     }
 
-    public Game loadGame(Game game, String filePath) throws FileNotFoundException, IOException {
+    public Game loadGame(Game game, String filePath) throws Exception {
         try (BufferedInputStream in = new BufferedInputStream(new FileInputStream(filePath))) {
-            if (game == null | filePath == null | filePath.length() < 1);
+            if (game == null || filePath == null || filePath.length() < 1);
             throw new GameControlException();
         } catch (GameControlException e) {
             ErrorView.display(this.getClass().getName(), e.getMessage());
@@ -185,22 +183,7 @@ public class GameControl {
 
     }
 
-    public void saveGame(Game game, String filePath) throws Exception {
-        try (BufferedOutputStream out = new BufferedOutputStream(new FileOutputStream(filePath))) {
-            if (game == null | filePath == null | filePath.length() < 1);
-            throw new GameControlException();
-        } catch (GameControlException e) {
-            ErrorView.display(this.getClass().getName(), e.getMessage());
-            return;
-        } finally {
-            try (ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream(filePath))) {
-                out.writeObject(filePath);
-            } catch (Exception e) {
-                ErrorView.display(this.getClass().getName(), e.getMessage());
-                return;
-            }
-        }
-    }
+    
 
     public static void getHelp(Player player) {
 
@@ -255,5 +238,31 @@ public class GameControl {
     private static void BuyMenuView(Player player) {
 
     }
+
+    public static class saveGame extends Game {
+        
+        public void saveGame(){
+        System.out.println("you have made it to this point");
+        
+        }
+
+       /* public String saveGame(Game game, String filePath) throws Exception {
+       Try (BufferedOutputStream out = new BufferedOutputStream(new FileOutputStream(filePath))) {
+            if (game == null || filePath == null || filePath.length() < 1);
+            throw new GameControlException();
+        } catch (GameControlException e) {
+            ErrorView.display(this.getClass().getName(), e.getMessage());
+            return filePath;
+        } finally {
+            try (ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream(filePath))) {
+                out.writeObject(filePath);
+            } catch (Exception e) {
+                ErrorView.display(this.getClass().getName(), e.getMessage());
+                return filePath;
+            }
+        }
+    }*/
+    }
+  
 
 }
