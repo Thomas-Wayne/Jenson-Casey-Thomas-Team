@@ -24,7 +24,7 @@ public class MainMenuView extends View {
                 + "\n| Main Menu |"
                 + "\n********************************************"
                 + "\nN - Start new game"
-                + "\nL - Load and start a saved game"
+                + "\nL - Load saved game"
                 + "\nH - Get help on how to play the game"
                 + "\nO - HandleObstacleView"
                 + "\nS - Save game"
@@ -47,11 +47,9 @@ public class MainMenuView extends View {
                 break;
 
             case "S": {
-                try {
-                    this.saveGame();
-                } catch (GameControlException e) {
 
-                }
+                this.saveGame();
+
             }
             break;
 
@@ -85,11 +83,11 @@ public class MainMenuView extends View {
     }
 
     private void loadGame() {
-        LoadGameView loadGameView = new LoadGameView(); 
+        LoadGameView loadGameView = new LoadGameView();
         loadGameView.display();
     }
 
-    private void saveGame() throws GameControlException {
+    private void saveGame() {
         SaveGameView saveGameView = new SaveGameView();
         saveGameView.display();
     }
