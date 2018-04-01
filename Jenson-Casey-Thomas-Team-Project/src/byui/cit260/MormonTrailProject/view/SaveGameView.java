@@ -20,7 +20,7 @@ public class SaveGameView extends View {
 
     public SaveGameView() {
 
-        super("\n Would you like to save your game? (Y / N)");
+        super("\n Would you like to save your game? Press Y to Save or Q to return to the previous menu");
     }
 
     public SaveGameView(String message) {
@@ -31,7 +31,7 @@ public class SaveGameView extends View {
         String filePath = GameControl.saveGamePath;
         Game game = BYUICIT260MormonTrailProject.getCurrentGame();
         if (inputs != null) {
-            
+           if(inputs.toUpperCase().equals("Y")){
            try {
                         
                 GameControl.saveGame(game, filePath);
@@ -44,8 +44,11 @@ public class SaveGameView extends View {
                 return false;
             } 
         }
-        
+         
+                   
+        }
         return false;
+        
     }
 
     private String getInputs(String promptMessage) {
