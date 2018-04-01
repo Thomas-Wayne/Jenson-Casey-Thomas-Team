@@ -18,10 +18,12 @@ import byui.cit260.MormonTrailProject.view.ErrorView;
 import java.io.BufferedInputStream;
 import java.io.BufferedOutputStream;
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
+import java.io.PrintWriter;
 import java.util.ArrayList;
 import jenson.casey.thomas.team.project.CIT260.BYUICIT260MormonTrailProject;
 
@@ -215,34 +217,58 @@ public class GameControl {
     }
 
     public static String saveGame(Game game, String filePath) throws GameControlException {
-        
-        if (game == null || filePath == null || filePath.length() < 1){
+
+        if (game == null || filePath == null || filePath.length() < 1) {
             throw new GameControlException();
-            }
+        }
         try (BufferedOutputStream out = new BufferedOutputStream(new FileOutputStream(filePath))) {
-             ObjectOutputStream output = new ObjectOutputStream(new FileOutputStream(filePath));
-             output.writeObject(game);
+            ObjectOutputStream output = new ObjectOutputStream(new FileOutputStream(filePath));
+            output.writeObject(game);
         } catch (IOException e) {
             ErrorView.display(GameControl.class.getName(), e.getMessage());
             return null;
-        } 
+        }
         return filePath;
     }
 
     public static void loadGame(String filePath) throws Exception {
-        
-        if (filePath == null || filePath.length() < 1){
+
+        if (filePath == null || filePath.length() < 1) {
             throw new GameControlException();
-            }
+        }
         try (BufferedInputStream in = new BufferedInputStream(new FileInputStream(filePath))) {
             ObjectInputStream input = new ObjectInputStream(new FileInputStream(filePath));
-             Game game = (Game)input.readObject();
+            Game game = (Game) input.readObject();
             BYUICIT260MormonTrailProject.setCurrentGame(game);
         } catch (IOException e) {
             ErrorView.display(GameControl.class.getName(), e.getMessage());
             return;
-        } 
+        }
     }
-    public static final String saveGamePath = "filePath.dat";
-       
+        public static final String saveGamePath = "filePath.dat";
+        
+
+    public static void printTeamStatusReport(ArrayList<Actor> actors, String outputLocation)throws Exception{
+
+        try (PrintWriter out = new PrintWriter(outputLocation)) {
+
+            out.println("\n\n                    Team Status                    ");
+            out.printf("%n%-20s%-10s%-10s%-30s", "Name", "Health", "Stamina", "Ability");
+            out.printf("%n%-20s%-10s%-10s%-30s", "___________________", "_________","_________","_______________________");
+
+           for (Actor actor : actors) {
+               out.printf("%n%-20s%-10s%-10s%-30s", actor.getName(),
+                         actor.getHealth(),
+                         actor.getStamina(),
+                         actor.getAbility());
+           }
+
+        } catch (IOException e) {
+            ErrorView.display(GameControl.class.getName(), e.getMessage());
+            return;
+
+        }
+
+    }
+
 }

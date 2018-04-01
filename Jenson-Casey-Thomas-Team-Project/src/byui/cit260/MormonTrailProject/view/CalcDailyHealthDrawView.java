@@ -111,7 +111,7 @@ public class CalcDailyHealthDrawView extends View {
 // author Thomas
 
     private int stamina() throws PlayControlException {
-        System.out.println("\nEnter current stamina (1-15): ");
+        this.console.println("\nEnter current stamina (1-15): ");
         String stamina = null;
         int playerStamina = Integer.parseInt(stamina);
         boolean valid = false;

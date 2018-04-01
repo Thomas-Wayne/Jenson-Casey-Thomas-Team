@@ -49,7 +49,6 @@ public class MainMenuView extends View {
             case "S": {
 
                 this.saveGame();
-
             }
             break;
 

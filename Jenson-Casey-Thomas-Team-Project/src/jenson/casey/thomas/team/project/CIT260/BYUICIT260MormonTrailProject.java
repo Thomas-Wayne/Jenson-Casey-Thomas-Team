@@ -67,7 +67,7 @@ public class BYUICIT260MormonTrailProject {
         } catch (Throwable e){
 
             System.out.println("Exception: " + e.toString() 
-                                + "nCause:" + e.getCause() 
+                                + "\nCause:" + e.getCause() 
                                 + "\nMessage:" + e.getMessage());
             e.printStackTrace();;
         } finally {

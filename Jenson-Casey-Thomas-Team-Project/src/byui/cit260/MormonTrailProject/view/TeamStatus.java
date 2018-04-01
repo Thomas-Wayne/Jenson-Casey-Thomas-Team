@@ -9,6 +9,7 @@ import byui.cit260.MormonTrailProject.control.GameControl;
 import byui.cit260.MormonTrailProject.model.Actor;
 import byui.cit260.MormonTrailProject.model.Game;
 import byui.cit260.MormonTrailProject.view.ViewInterface.View;
+import java.io.IOException;
 import java.util.ArrayList;
 import jenson.casey.thomas.team.project.CIT260.BYUICIT260MormonTrailProject;
 
@@ -27,6 +28,7 @@ public class TeamStatus extends View {
                 + "\nH - Health "
                 + "\nS - Stamina "
                 + "\nA - Ability "
+                + "\nP - Print Report "
                 + "\nQ - Return to Previous Menu"
                 + "\n*******************************************"
                 + "\nPlease choose an option: ");
@@ -52,7 +54,9 @@ public class TeamStatus extends View {
             case "A":
                 this.ability();
                 break;
-
+            case "P":
+                this.print();
+                break;
             case "Q":
                 this.quitGame();
 
@@ -107,5 +111,11 @@ public class TeamStatus extends View {
 
     private void quitGame() {
         System.exit(0);
+    }
+
+    private void print() {
+        PrintView printView = new PrintView();
+        printView.display();
+        
     }
 }
