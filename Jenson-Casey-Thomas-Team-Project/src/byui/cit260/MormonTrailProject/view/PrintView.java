@@ -15,8 +15,8 @@ import java.util.ArrayList;
  *
  * @author Thomas'
  */
-public class PrintView extends View{
-    
+public class PrintView extends View {
+
     public PrintView() {
 
         super("To generate a report, please provide a file name below. "
@@ -32,18 +32,18 @@ public class PrintView extends View{
         String printPath = inputs;
         ArrayList<Actor> actors = GameControl.createActorList();
         if (inputs != null) {
-                                
-               try {           
-                   GameControl.printTeamStatusReport(actors, printPath);
-                   this.console.println("The report was generated and saved successfully to " + printPath);
-                   return true;
-            }  catch (Exception e) { 
-                   ErrorView.display(this.getClass().getName(), e.getMessage());
+
+            try {
+                GameControl.printTeamStatusReport(actors, printPath);
+                this.console.println("The report was generated and saved successfully to " + printPath);
+                return true;
+            } catch (Exception e) {
+                ErrorView.display(this.getClass().getName(), e.getMessage());
                 return false;
-               } 
+            }
         }
         return false;
-        
+
     }
 
     private String getInputs(String promptMessage) {
@@ -73,8 +73,6 @@ public class PrintView extends View{
 
         this.console.println("\n" + promptMessage);
         return input;
-
-        
 
     }
 

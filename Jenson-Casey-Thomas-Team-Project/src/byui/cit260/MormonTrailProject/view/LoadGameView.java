@@ -18,28 +18,27 @@ import jenson.casey.thomas.team.project.CIT260.BYUICIT260MormonTrailProject;
 public class LoadGameView extends View {
 
     public LoadGameView() {
-    super("\n Would you like to load a saved game? Press Y to Load or Q to return to the previous menu.");   
-    }    
+        super("\n Would you like to load a saved game? Press Y to Load or Q to return to the previous menu.");
+    }
 
     @Override
     public boolean doAction(String inputs) {
         String filePath = GameControl.saveGamePath;
         Game game = BYUICIT260MormonTrailProject.getCurrentGame();
         if (inputs != null) {
-           if(inputs.toUpperCase().equals("Y")){
-            try {
-                GameControl.loadGame(filePath);
-               
+            if (inputs.toUpperCase().equals("Y")) {
+                try {
+                    GameControl.loadGame(filePath);
 
-            } catch (GameControlException e) {
-                ErrorView.display(this.getClass().getName(), e.getMessage());
-                return false;
-            } finally {
-                GameMenuView gameMenuView = new GameMenuView();
-                gameMenuView.display();
-                return true;
+                } catch (GameControlException e) {
+                    ErrorView.display(this.getClass().getName(), e.getMessage());
+                    return false;
+                } finally {
+                    GameMenuView gameMenuView = new GameMenuView();
+                    gameMenuView.display();
+                    return true;
+                }
             }
-        }
         }
         return false;
 

@@ -116,6 +116,6 @@ public class TeamStatus extends View {
     private void print() {
         PrintView printView = new PrintView();
         printView.display();
-        
+
     }
 }

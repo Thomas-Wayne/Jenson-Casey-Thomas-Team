@@ -31,24 +31,23 @@ public class SaveGameView extends View {
         String filePath = GameControl.saveGamePath;
         Game game = BYUICIT260MormonTrailProject.getCurrentGame();
         if (inputs != null) {
-           if(inputs.toUpperCase().equals("Y")){
-           try {
-                        
-                GameControl.saveGame(game, filePath);
-                this.console.println("The file was saved successfully to " + filePath);
-                return true;
+            if (inputs.toUpperCase().equals("Y")) {
+                try {
 
-            } catch (GameControlException e) {
+                    GameControl.saveGame(game, filePath);
+                    this.console.println("The file was saved successfully to " + filePath);
+                    return true;
 
-                ErrorView.display(this.getClass().getName(), e.getMessage());
-                return false;
-            } 
-        }
-         
-                   
+                } catch (GameControlException e) {
+
+                    ErrorView.display(this.getClass().getName(), e.getMessage());
+                    return false;
+                }
+            }
+
         }
         return false;
-        
+
     }
 
     private String getInputs(String promptMessage) {
@@ -62,7 +61,7 @@ public class SaveGameView extends View {
 
                 input = this.keyboard.readLine();
 
-                if (inputs.length < 1 || inputs.length > 1 ) {
+                if (inputs.length < 1 || inputs.length > 1) {
 
                     ErrorView.display(this.getClass().getName(), "\nInvalid value: Please enter Y or N");
                     continue;
@@ -78,8 +77,6 @@ public class SaveGameView extends View {
 
         this.console.println("\n" + promptMessage);
         return input;
-
-        
 
     }
 

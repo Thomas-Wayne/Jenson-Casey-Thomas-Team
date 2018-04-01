@@ -245,23 +245,22 @@ public class GameControl {
             return;
         }
     }
-        public static final String saveGamePath = "filePath.dat";
-        
+    public static final String saveGamePath = "filePath.dat";
 
-    public static void printTeamStatusReport(ArrayList<Actor> actors, String outputLocation)throws Exception{
+    public static void printTeamStatusReport(ArrayList<Actor> actors, String outputLocation) throws Exception {
 
         try (PrintWriter out = new PrintWriter(outputLocation)) {
 
             out.println("\n\n                    Team Status                    ");
             out.printf("%n%-20s%-10s%-10s%-30s", "Name", "Health", "Stamina", "Ability");
-            out.printf("%n%-20s%-10s%-10s%-30s", "___________________", "_________","_________","_______________________");
+            out.printf("%n%-20s%-10s%-10s%-30s", "___________________", "_________", "_________", "_______________________");
 
-           for (Actor actor : actors) {
-               out.printf("%n%-20s%-10s%-10s%-30s", actor.getName(),
-                         actor.getHealth(),
-                         actor.getStamina(),
-                         actor.getAbility());
-           }
+            for (Actor actor : actors) {
+                out.printf("%n%-20s%-10s%-10s%-30s", actor.getName(),
+                        actor.getHealth(),
+                        actor.getStamina(),
+                        actor.getAbility());
+            }
 
         } catch (IOException e) {
             ErrorView.display(GameControl.class.getName(), e.getMessage());
