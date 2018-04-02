@@ -85,4 +85,9 @@ public class Scene implements Serializable {
         return distanceFromNauvoo;
     }
 
+    public Object createScenes() {
+        Object scenes = null;
+        return scenes;
+    }
+
 }

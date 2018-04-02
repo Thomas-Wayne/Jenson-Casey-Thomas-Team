@@ -5,6 +5,7 @@
  */
 package byui.cit260.MormonTrailProject.control;
 
+import byui.cit260.MormonTrailProject.exceptions.MapControlException;
 import byui.cit260.MormonTrailProject.model.InventoryItem;
 import byui.cit260.MormonTrailProject.model.Location;
 import byui.cit260.MormonTrailProject.model.LocationType;
@@ -39,6 +40,61 @@ public class MapControl {
 
         //locations[2][5].setScene(new TownScene());
         return locations;
+    }
+
+    public enum SceneType {
+        start,
+        grove,
+        pisgah,
+        kanesville,
+        quarters,
+        chimney,
+        laramie,
+        martins,
+        kearny,
+        rock,
+        bridger,
+        salt;
+    }
+
+    static Map createMap() {
+        // create the map
+        Map map = new Map(2, 13);
+
+        // create the scenes for the game
+        Scene[] scenes = createScenes();
+
+        // assign scenes to locations
+        GameControl.assignScenesToLocations(map, scenes);
+
+        return map;
+    }
+
+    static void moveActorsToStartingLocation(Map map)
+            throws MapControlException {
+        // Set starting location to 0,0
+        movePlayer(map, 0, 0);
+    }
+
+    public static void movePlayer(Map map, int row, int column)
+            throws MapControlException {
+        if (map == null) {
+            throw new MapControlException("Invalid, map cannot be null.");
+        }
+        map.setCurrentLocation(map.getLocations()[row][column]);
+
+        if (row < 0 || row >= map.getLocations().length
+                || column < 0 || column >= map.getLocations()[row].length) {
+            throw new MapControlException("Invalid, coordinates are outside map boundaries.");
+        }
+
+        map.setCurrentRow(row);
+        map.setCurrentColumn(column);
+    }
+
+    public static Scene[] getLocations() {
+        return null;
+
     }
 
     public long getRemainingDistance(int[] distance) {
@@ -185,7 +241,7 @@ public class MapControl {
         itemsInScene.add(inventory[InventoryItem.rope.ordinal()]);
         
     }*/
-    static Map createMap() {
+ /* static Map createMap() {
         Map map = new Map();
         Location[][] locations = createLocations(8, 10);
         map.setLocations(locations);
@@ -195,8 +251,7 @@ public class MapControl {
 
         return map;
 
-    }
-
+    }*/
     private static void assignInventoryToScenes() {
         System.out.println("*** assignInventoryToScenes()called ***");
     }

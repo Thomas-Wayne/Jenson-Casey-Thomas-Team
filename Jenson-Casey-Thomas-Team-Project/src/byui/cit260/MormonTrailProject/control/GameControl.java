@@ -58,7 +58,22 @@ public class GameControl {
 
     }
 
-    private static void assignScenesToLocations() {
+    static void assignScenesToLocations(Map map, Scene[] scenes) {
+        Location[][] locations = map.getLocations();
+
+        // starting point
+        locations[0][0].setScene(scenes[MapControl.SceneType.start.ordinal()]);
+        locations[0][1].setScene(scenes[MapControl.SceneType.grove.ordinal()]);
+        locations[0][2].setScene(scenes[MapControl.SceneType.pisgah.ordinal()]);
+        locations[0][3].setScene(scenes[MapControl.SceneType.kanesville.ordinal()]);
+        locations[0][4].setScene(scenes[MapControl.SceneType.quarters.ordinal()]);
+        locations[0][5].setScene(scenes[MapControl.SceneType.chimney.ordinal()]);
+        locations[1][0].setScene(scenes[MapControl.SceneType.laramie.ordinal()]);
+        locations[1][1].setScene(scenes[MapControl.SceneType.martins.ordinal()]);
+        locations[1][2].setScene(scenes[MapControl.SceneType.kearny.ordinal()]);
+        locations[1][3].setScene(scenes[MapControl.SceneType.rock.ordinal()]);
+        locations[1][4].setScene(scenes[MapControl.SceneType.bridger.ordinal()]);
+        locations[1][5].setScene(scenes[MapControl.SceneType.salt.ordinal()]);
 
     }
 
@@ -108,10 +123,8 @@ public class GameControl {
 
         Map map = MapControl.createMap();
         game.setMap(map);
-        if (map == null) {
-            return -1;
-        }
-        return 1;
+        return 0;
+
     }
 
     public static ArrayList<Actor> createActorList() {
@@ -145,7 +158,7 @@ public class GameControl {
         return inventory;
     }
 
-    public static Map createMap(int noOfRows, int noOfColumns, Inventory[] inventory) {
+    /*public static Map createMap(int noOfRows, int noOfColumns, Inventory[] inventory) {
         if (noOfRows < 0 | noOfColumns < 0) {
             return null;
         }
@@ -156,14 +169,11 @@ public class GameControl {
         noOfColumns = 10;
         Location[][] locationsInMap = new Location[noOfRows][noOfColumns];
         Scene scenes = createScenes();
-        //questions = createQuestions();
-        //assignQuestionsToScenes();
         assignInventoryToScenes();
         assignScenesToLocations();
 
         return map;
-    }
-
+    }*/
     public static void createItems(Player player) {
         System.out.println("*** createItems()called ***");
     }

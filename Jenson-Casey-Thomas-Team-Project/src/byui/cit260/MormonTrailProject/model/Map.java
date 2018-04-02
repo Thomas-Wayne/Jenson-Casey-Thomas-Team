@@ -5,6 +5,7 @@
  */
 package byui.cit260.MormonTrailProject.model;
 
+import byui.cit260.MormonTrailProject.view.ErrorView;
 import java.util.Objects;
 import java.io.Serializable;
 
@@ -14,38 +15,100 @@ import java.io.Serializable;
  */
 public class Map implements Serializable {
 
-    private String currentLocation;
+    private String description;
+    private int rowCount;
+    private int columnCount;
+    private int currentRow;
+    private int currentColumn;
+    private Scene currentScene;
     private Location[][] locations;
+    private Location currentLocation;
 
-    public Map() {
+    public Map(int rowCount, int columnCount) {
+
+        if (rowCount < 1 || columnCount < 1) {
+            ErrorView.display(this.getClass().getName(),
+                    "The number of rows and columns must be > zero");
+            return;
+        }
+
+        this.rowCount = rowCount;
+        this.columnCount = columnCount;
+
+        this.locations = new Location[rowCount][columnCount];
+
+        for (int row = 0; row < rowCount; row++) {
+            for (int column = 0; column < columnCount; column++) {
+
+                Location location = new Location();
+                location.setColumn(column);
+                location.setRow(row);
+
+                locations[row][column] = location;
+            }
+        }
     }
 
-    public String getCurrentLocation() {
-        return currentLocation;
+    public int getCurrentRow() {
+        return currentRow;
     }
 
-    public void setCurrentLocation(String currentLocation) {
-        this.currentLocation = currentLocation;
+    public void setCurrentRow(int currentRow) {
+        this.currentRow = currentRow;
     }
 
-    public Location[][] getLocations() {
-        return locations;
+    public int getCurrentColumn() {
+        return currentColumn;
     }
 
-    public void setLocations(Location[][] locations) {
-        this.locations = locations;
+    public void setCurrentColumn(int currentColumn) {
+        this.currentColumn = currentColumn;
+    }
+
+    public Scene getCurrentScene() {
+        return currentScene;
+    }
+
+    public void setCurrentScene(Scene currentScene) {
+        this.currentScene = currentScene;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public int getRowCount() {
+        return rowCount;
+    }
+
+    public void setRowCount(int rowCount) {
+        this.rowCount = rowCount;
+    }
+
+    public int getColumnCount() {
+        return columnCount;
+    }
+
+    public void setColumnCount(int columnCount) {
+        this.columnCount = columnCount;
     }
 
     @Override
     public int hashCode() {
-        int hash = 7;
-        hash = 53 * hash + Objects.hashCode(this.currentLocation);
+        int hash = 3;
+        hash = 41 * hash + Objects.hashCode(this.description);
+        hash = 41 * hash + Objects.hashCode(this.rowCount);
+        hash = 41 * hash + Objects.hashCode(this.columnCount);
         return hash;
     }
 
     @Override
     public String toString() {
-        return "Map{" + "currentLocation=" + currentLocation + '}';
+        return "Map{" + "description=" + description + ", rowCount=" + rowCount + ", columnCount=" + columnCount + '}';
     }
 
     @Override
@@ -60,10 +123,28 @@ public class Map implements Serializable {
             return false;
         }
         final Map other = (Map) obj;
-        if (!Objects.equals(this.currentLocation, other.currentLocation)) {
+        if (!Objects.equals(this.description, other.description)) {
+            return false;
+        }
+        if (!Objects.equals(this.rowCount, other.rowCount)) {
+            return false;
+        }
+        if (!Objects.equals(this.columnCount, other.columnCount)) {
             return false;
         }
         return true;
+    }
+
+    public Location[][] getLocations() {
+        return locations;
+    }
+
+    public Location getCurrentLocation() {
+        return currentLocation;
+    }
+
+    public void setCurrentLocation(Location location) {
+        this.currentLocation = location;
     }
 
 }

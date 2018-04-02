@@ -17,6 +17,10 @@ public class Location implements Serializable {
     private LocationType type;
     private String milepost;
     private Scene scene;
+    private int row;
+    private int column;
+    private Boolean visited;
+    private int distanceFromNauvoo;
 
     public Location() {
     }
@@ -85,4 +89,19 @@ public class Location implements Serializable {
         return true;
     }
 
+    public int getRow() {
+        return row;
+    }
+
+    public void setRow(int row) {
+        this.row = row;
+    }
+
+    public int getColumn() {
+        return column;
+    }
+
+    public void setColumn(int column) {
+        this.column = column;
+    }
 }

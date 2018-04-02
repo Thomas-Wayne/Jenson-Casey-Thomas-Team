@@ -114,7 +114,7 @@ public class CalcDailyHealthDrawView extends View {
         this.console.println("\nEnter current stamina (1-15): ");
         int playerStamina = 0;
         boolean valid = false;
-        
+
         try {
 
             while (!valid) {
