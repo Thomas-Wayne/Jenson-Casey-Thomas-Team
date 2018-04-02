@@ -64,14 +64,14 @@ public class CalcDailyHealthDrawView extends View {
     private int health() throws PlayControlException {
 
         this.console.println("\nEnter current health (1-100): ");
-        String health = null;
-        int playerHealth = Integer.parseInt(health);
+        int playerHealth = 0;
         boolean valid = false;
         try {
 
             while (!valid) {
 
-                health = this.keyboard.readLine();
+                String health = this.keyboard.readLine();
+                playerHealth = Integer.parseInt(health);
                 health = health.trim();
 
                 if (health.length() < 1) {
@@ -112,14 +112,15 @@ public class CalcDailyHealthDrawView extends View {
 
     private int stamina() throws PlayControlException {
         this.console.println("\nEnter current stamina (1-15): ");
-        String stamina = null;
-        int playerStamina = Integer.parseInt(stamina);
+        int playerStamina = 0;
         boolean valid = false;
+        
         try {
 
             while (!valid) {
 
-                stamina = this.keyboard.readLine();
+                String stamina = this.keyboard.readLine();
+                playerStamina = Integer.parseInt(stamina);
                 stamina = stamina.trim();
 
                 if (stamina.length() < 1) {
@@ -142,7 +143,7 @@ public class CalcDailyHealthDrawView extends View {
             this.console.println("Please enter a numerical value...");
         }
         try {
-            double result = PlayControl.calcDailyHealthDraw(90, playerStamina, 0, 0, 0);
+            double result = PlayControl.calcDailyHealthDraw(85, playerStamina, 0, 0, 0);
             // Result cannot exceed 100 (playerHealth and playStamina combined)or it will throw an exception  
             this.console.println("Good");
             return playerStamina;
