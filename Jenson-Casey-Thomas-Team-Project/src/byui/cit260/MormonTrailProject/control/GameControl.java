@@ -280,4 +280,24 @@ public class GameControl {
 
     }
 
+    public static void printInventory(Inventory[] inventory, String outputLocation) throws Exception {
+        try (PrintWriter out = new PrintWriter(outputLocation)) {
+
+            out.println("\n\n                    Inventory Items                   ");
+            out.printf("%n%-20s%-10s%-10s%-30s", "Item Type", "Current Weight", "Current Strength");
+            out.printf("%n%-20s%-30s", "                                              ");
+
+            for (Inventory items : inventory) {
+                out.printf("%n%-20s%-10s%-10s%-30s", items.getItemType(),
+                        items.getCurrentWeight(),
+                        items.getCurrentStrength());
+            }
+
+        } catch (IOException e) {
+            ErrorView.display(GameControl.class.getName(), e.getMessage());
+            return;
+
+        }
+
+    }
 }

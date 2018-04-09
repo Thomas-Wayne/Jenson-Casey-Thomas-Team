@@ -28,6 +28,7 @@ public class GeneralStoreMenuView extends View {
                 + "\nC - View current supplies                    *"
                 + "\nB - Buy                                      *"
                 + "\nS - Sell                                     *"
+                + "\nP - Print Inventory                          *"
                 + "\nQ - Leave General Store                      *"
                 + "\n**********************************************");
     }
@@ -48,6 +49,10 @@ public class GeneralStoreMenuView extends View {
 
             case "S":
                 this.sell();
+                break;
+                
+            case "P":
+                this.print();
                 break;
 
             case "Q":
@@ -76,6 +81,11 @@ public class GeneralStoreMenuView extends View {
     private void sell() {
 
         this.console.println("\n sell() was called.");
+    }
+    
+    private void print() {
+        PrintInventoryView printInventoryView = new PrintInventoryView();
+        printInventoryView.display();
     }
 
     private void quitGame() {
